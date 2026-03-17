@@ -63,7 +63,7 @@
                 >About Us</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">About METI</a></li>
+                <li><a class="dropdown-item" href="about.php">About METI</a></li>
                 <li><a class="dropdown-item" href="#">Why Us</a></li>
                 <li><a class="dropdown-item" href="#">Staff & Faculty</a></li>
                 <li><a class="dropdown-item" href="#">Facilities</a></li>
