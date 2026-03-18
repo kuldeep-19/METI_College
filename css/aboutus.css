@@ -1,0 +1,283 @@
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+
+    /* Section Title */
+    .section-title {
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    /* Cards */
+    .card:hover {
+      transform: translateY(-5px);
+      transition: 0.3s;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #0a1f44, #1e90ff);
+      color: white;
+      padding: 50px;
+      text-align: center;
+    }
+    .top-tab {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(10px);
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.top-tab.active,
+.top-tab:hover {
+    background: linear-gradient(135deg,#4f46e5,#7c3aed);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Content box */
+.modern-content-box {
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Glass cards */
+.glass-card {
+    background: rgba(255,255,255,0.6);
+    padding: 20px;
+
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* Tabs */
+.tab-content-custom {
+    display: none;
+}
+
+.tab-content-custom.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(20px);}
+    to {opacity:1; transform: translateY(0);}
+}
+
+
+/* why us section start here */
+
+
+.carousel img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+h4 {
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Smooth hover effect */
+.carousel {
+    transition: 0.3s;
+}
+
+.carousel:hover {
+    transform: scale(1.02);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Layout */
+.main-wrapper {
+    display: flex;
+    gap: 30px;
+    
+}
+
+/* Sidebar FIXED STYLE */
+.floating-sidebar {
+    width: 220px;
+    min-height: 450px;
+    background: #f1f5f9;
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Buttons */
+.tab-btn {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+    text-align: left;
+}
+
+.tab-btn:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.tab-btn.active {
+    background: #2563eb;
+    color: #fff;
+}
+
+/* Content Box */
+.content-container {
+    flex: 1;
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+/* Horizontal Layout */
+.content-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Left */
+.content-left {
+    flex: 1;
+}
+
+/* Right */
+.content-right {
+    flex: 1;
+}
+
+/* Slider */
+.carousel img {
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+/* Heading */
+.main-heading {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Tabs */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+
+.text-item{
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+
+.text-item.active {
+    display: block;
+}
+
+.text-item h5 {
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.text-item p {
+    color: #555;
+}
+
+
+
+
+.testimonial-card {
+    background: #f1f5f9;
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* Quote Icon */
+.quote-icon {
+    font-size: 50px;
+    color: #4f46e5;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+/* Review Text */
+.review {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+    padding-top: 20px;
+}
+
+/* Name */
+.name {
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 5px;
+}
+
+/* Course */
+.course {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Animation */
+.testimonial-item {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.testimonial-item.active {
+    display: block;
+}

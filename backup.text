@@ -1,0 +1,291 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>  
+  
+  
+  
+  <style>  
+    /* Faculty Section */
+/* FACULTY 3D SECTION */
+.faculty-slider {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #eef2f7, #ffffff);
+}
+.faculty-slider .swiper {
+  width: 90%;
+  margin: auto; /* center */
+}
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 80px;
+}
+
+.swiper-slide {
+  width: 260px;
+    opacity: 0.5;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+}
+/* Default (side cards) */
+.swiper-slide {
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: all 0.4s ease;
+}
+
+/* Center card */
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 2;
+}
+
+
+/* Soft blur side cards */
+.swiper-slide:not(.swiper-slide-active) {
+  filter: blur(1px);
+}
+/* Card Design */
+.faculty-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.faculty-card {
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Image */
+.faculty-img {
+  height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f0f4ff, #e6ecff);
+  padding: 10px;
+}
+
+.faculty-img img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: 0.3s;
+}
+/* Slight zoom on hover */
+.faculty-card:hover img {
+  transform: scale(1.05);
+}
+/* Text */
+.faculty-body {
+  padding: 15px;
+}
+
+.faculty-name {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.faculty-role {
+  font-size: 14px;
+  color: gray;
+}
+
+#facultyModal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+/* Active Center Card */
+.swiper-slide-active .faculty-card {
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+  </style>  
+  
+  
+  
+  
+  
+  
+  
+  <!-- FACULTY -->
+  <section class="container py-5">
+    <h2 class="section-title text-center">Faculty</h2>
+    <p class="text-center">METI has full time faculty, visiting faculty, instructors and other
+       faculty who are full time employees of CSL. The trainee to teacher ratio is about 4:1. 
+       The faculties are well qualified and experienced in their respective subjects and have actual operational experience of marine engineering on both ashore 
+      (Shipbuilding, Ship design and Ship repair) and on board merchant ships.<br/><br/>
+    
+    Most of the students at METI are sponsored candidates and are chosen by the sponsoring shipping companies. 
+    For non-sponsored candidates, selection is primarily based on academic performance at the graduate level. 
+    Evaluation and assessment of the trainees are made through practical, written and oral tests given after completion of each assignment. 
+    Assessment is continuous and results of tests for various competencies are recorded in the TAR Book. Students have to qualify in each competency separately. 
+    Overall evaluation also considers individual initiative, aptitude, performance in games and sports, swimming and overall discipline. 
+    In sum, the assessment assists in achieving the course objective of imparting the required competencies and attitude to the trainees.
+    </p>
+  </section>
+
+<section class="faculty-slider">
+  <h2 class="text-center fw-bold mb-4">Our Faculty</h2>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">Elizabeth K A</h5>
+            <p class="faculty-role">Faculty</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/noushad-th-706x872.jpeg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">Noushad Th</h5>
+            <p class="faculty-role">Faculty</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/photo-george-abraham-hod-150x200.jpg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">George Abraham</h5>
+            <p class="faculty-role">HOD</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/saju-md-course-in-charge-photo-706x942.jpg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">Saju MD</h5>
+            <p class="faculty-role">Course In Charge</p>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- duplicate slider  -->
+
+            <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">Elizabeth K A</h5>
+            <p class="faculty-role">Faculty</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/noushad-th-706x872.jpeg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">Noushad Th</h5>
+            <p class="faculty-role">Faculty</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/photo-george-abraham-hod-150x200.jpg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">George Abraham</h5>
+            <p class="faculty-role">HOD</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="swiper-slide">
+        <div class="faculty-card" onclick="openModal(this)">
+          <div class="faculty-img">
+            <img src="./Assets/faculty/saju-md-course-in-charge-photo-706x942.jpg">
+          </div>
+          <div class="faculty-body">
+            <h5 class="faculty-name">Saju MD</h5>
+            <p class="faculty-role">Course In Charge</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ <script>
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  centeredSlides: true,
+  slidesPerView: 3,
+  loop: true,
+  loopedSlides: 6, // 🔥 important (>= number of cards)
+  grabCursor: true,
+  spaceBetween: 30,
+
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 180,
+    modifier: 2,
+    slideShadows: false,
+  },
+
+  autoplay: {
+    delay: 2000,
+    disableOnInteraction: false,
+  },
+
+  speed: 800, // smooth transition
+
+});
+</script>
