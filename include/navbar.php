@@ -54,20 +54,20 @@
 
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-house"></i> Home</a></li>
 
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle nav-dropdown"
                 href="#"
                 data-bs-toggle="dropdown"
-                >About Us</a
+                ><i class="fa-solid fa-circle-info"></i> About Us</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="about.php">About METI</a></li>
-                <li><a class="dropdown-item" href="#">Why Us</a></li>
-                <li><a class="dropdown-item" href="#">Staff & Faculty</a></li>
-                <li><a class="dropdown-item" href="#">Facilities</a></li>
+                <li><a class="dropdown-item" href="about.php#tab-about"><i class="fa-solid fa-building-columns"></i> About METI</a></li>
+                <li><a class="dropdown-item" href="about.php#tab-whyus"><i class="fa-solid fa-star"></i> Why Us</a></li>
+                <li><a class="dropdown-item" href="about.php#tab-staff-faculty"><i class="fa-solid fa-users"></i> Staff & Faculty</a></li>
+                <li><a class="dropdown-item" href="about.php#tab-facilities"><i class="fa-solid fa-building"></i> Facilities</a></li>
               </ul>
             </li>
 
@@ -76,37 +76,37 @@
                 class="nav-link dropdown-toggle nav-dropdown"
                 href="#"
                 data-bs-toggle="dropdown"
-                >Course & Admission</a
+                ><i class="fa-solid fa-graduation-cap"></i> Course & Admission</a
               >
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Course</a></li>
-                <li><a class="dropdown-item" href="#">Apply Now</a></li>
-                <li><a class="dropdown-item" href="#">Fee Payment</a></li>
-                <li><a class="dropdown-item" href="#">Admission Info</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#course"><i class="fa-solid fa-book-open"></i> Course</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#apply"><i class="fa-solid fa-pen-to-square"></i> Apply Now</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#fee"><i class="fa-solid fa-credit-card"></i> Fee Payment</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#info"><i class="fa-solid fa-clipboard-list"></i> Admission Info</a></li>
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link " href="#">Placement & Carrer</a>
+              <a class="nav-link " href="placement-career.php"><i class="fa-solid fa-briefcase"></i> Placement & Career</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Alumni</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-user-group"></i> Alumni</a></li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle nav-dropdown"
                 href="#"
                 data-bs-toggle="dropdown"
               >
-                Blog
+                <i class="fa-solid fa-blog"></i> Blog
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Event</a></li>
-                <li><a class="dropdown-item" href="#">Activities</a></li>
-                <li><a class="dropdown-item" href="#">Photo</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-calendar-days"></i> Event</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-person-running"></i> Activities</a></li>
+                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-camera"></i> Photo</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-images"></i> Gallery</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sign in/ Login</a>
+              <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i> Sign in/ Login</a>
             </li>
             <!-- <li class="nav-item"> <button class="apply-btn">Apply Now</button> </li> -->
           </ul>

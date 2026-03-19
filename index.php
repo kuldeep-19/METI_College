@@ -17,6 +17,8 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
 
@@ -53,38 +55,27 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
           <img src="Assets/image/<?php echo $row['image']; ?>" class="d-block w-100">
 
           <div class="carousel-caption hero-content">
-              <h1><?php echo $row['title']; ?></h1>
-              <p><?php echo $row['subtitle']; ?></p>
+              <h1 data-aos="fade-down" data-aos-duration="1200"><?php echo $row['title']; ?></h1>
+              <p data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200"><?php echo $row['subtitle']; ?></p>
 <?php if($row['button_text'] != "") { ?>
-    
-    <a href="<?php echo $row['button_link']; ?>" class="btn btn-warning btn-lg mt-3">
-        <?php echo $row['button_text']; ?>
-    </a>
-
+    <div data-aos="zoom-in" data-aos-delay="400">
+        <a href="<?php echo $row['button_link']; ?>" class="btn btn-warning btn-lg mt-3">
+            <?php echo $row['button_text']; ?>
+        </a>
+    </div>
 <?php } ?>
           </div>
-
         </div>
       <?php $i++; } ?>
     </div>
-
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-
   </div>
 </section>
 
 
-    <section class="partners">
-      <div class="partner-section">
+    <section class="partners py-5">
+      <div class="partner-section" data-aos="fade-up">
         <div class="section-title text-center">
-                <h2 >Our Trusted Partners</h2>
+                <h2 class="fw-bold">Our Trusted Partners</h2>
         </div>  
       <div class="logo-slider">
         <div class="logo-track">
@@ -114,80 +105,68 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
       </div>
     </section>
 
-  <section class="achievements">
+  <section class="achievements py-5">
     <div class="container ">
 
-      <div class="section-title text-center">
-      <h2>Our Achievements</h2>
+      <div class="section-title text-center" data-aos="fade-down">
+      <h2 class="fw-bold">Our Achievements</h2>
       </div>
 
       <div class="row g-4">
 
       <!-- CARD 1 -->
 
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="0">
       <div class="achievement-card">
-
       <img src="./Assets/image/2-days-scba-886x1147.jpg">
-
       <div class="achievement-overlay">
-      <button class="btn btn-light"
+      <button class="btn btn-light shadow-sm fw-bold"
       onclick="openPopup('./Assets/image/2-days-scba-886x1147.jpg')">
-      View
+      <i class="fa-solid fa-eye me-2"></i>View
       </button>
       </div>
-
       </div>
       </div>
 
       <!-- CARD 2 -->
 
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
       <div class="achievement-card">
-
       <img src="./Assets/image/3-days-bff-886x1147.jpg">
-
       <div class="achievement-overlay">
-      <button class="btn btn-light"
+      <button class="btn btn-light shadow-sm fw-bold"
       onclick="openPopup('./Assets/image/3-days-bff-886x1147.jpg')">
-      View
+      <i class="fa-solid fa-eye me-2"></i>View
       </button>
       </div>
-
       </div>
       </div>
 
       <!-- CARD 3 -->
 
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
       <div class="achievement-card">
-
       <img src="./Assets/image/advert2-886x1108.jpeg">
-
       <div class="achievement-overlay">
-      <button class="btn btn-light"
+      <button class="btn btn-light shadow-sm fw-bold"
       onclick="openPopup('./Assets/image/advert2-886x1108.jpeg')">
-      View
+      <i class="fa-solid fa-eye me-2"></i>View
       </button>
       </div>
-
       </div>
       </div>
 
       <!-- CARD 4 -->
 
-      <div class="col-lg-3 col-md-6">
+      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
       <div class="achievement-card">
-
       <img src="./Assets/image/maersk-advrt-2-886x1083.jpg">
-
       <div class="achievement-overlay">
-      <button class="btn btn-light"
+      <button class="btn btn-light shadow-sm fw-bold"
       onclick="openPopup('./Assets/image/maersk-advrt-2-886x1083.jpg')">
-      View
+      <i class="fa-solid fa-eye me-2"></i>View
       </button>
       </div>
-
       </div>
       </div>
 
@@ -207,9 +186,9 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
 </div>
 
 <section class="ask-us">
-  <div class="container">
+  <div class="container" data-aos="fade-up">
     <h2 class="section-title">Ask Us</h2>
-    <p class="section-subtitle">Have a question? Fill out the form below and we'll get back to you.</p>
+    <p class="section-subtitle">Have a question? Our recruitment experts are ready to help.</p>
 
     <div class="ask-us-content">
       <!-- Inquiry Form -->
@@ -246,6 +225,14 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+    <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
   </body>
 </html>

@@ -121,7 +121,7 @@ p {
 /* Sidebar FIXED STYLE */
 .floating-sidebar {
     width: 220px;
-    min-height: 450px;
+    height: 70vh;
     background: #f1f5f9;
     padding: 20px;
     border-radius: 15px;
@@ -157,15 +157,48 @@ p {
 .content-container {
     flex: 1;
     background: #fff;
-    padding: 30px;
+    padding: 20px 30px; /* Reduced top/bottom padding from 30px */
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+    height: 70vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Reduced Section Title Padding for Tabs */
+.content-container .section-title h2 {
+    padding-bottom: 25px; /* Reduced from 50px */
+    font-size: 28px; /* Slightly smaller for compactness */
+}
+
+.content-container .section-title h2::after {
+    bottom: 15px; /* Adjust underline position */
+}
+
+/* Custom Scrollbar for Content Container */
+.content-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.content-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+.content-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #00b4d8, #1e3a5f);
+    border-radius: 10px;
+}
+
+.content-container::-webkit-scrollbar-thumb:hover {
+    background: #00b4d8;
 }
 
 /* Horizontal Layout */
 .content-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
 }
 
@@ -187,11 +220,7 @@ p {
 }
 
 /* Heading */
-.main-heading {
-    text-align: center;
-    font-weight: 700;
-    margin-bottom: 30px;
-}
+/* Styles now handled by .section-title in index.css */
 
 /* Tabs */
 .tab-content {
@@ -229,6 +258,249 @@ p {
     color: #555;
 }
 
+/* Placement Info Styling */
+.placement-info-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    padding: 15px; /* Reduced from 20px */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.placement-info-card:hover {
+    border-color: #00b4d8;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.testimonial-box {
+    margin-top: 15px !important; /* Reduced from 1.5rem / mt-4 */
+}
+
+/* Passport-style Slider for Placements */
+.passport-slider {
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+.passport-img {
+    width: 200px; /* Passport-style width */
+    height: 260px; /* Passport-style height */
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    margin: 10px 0;
+    transition: transform 0.3s ease;
+}
+
+.passport-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,180,216,0.2);
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.info-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b; /* Slate 500 */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-label i {
+    width: 18px;
+    color: #00b4d8; /* Teal accent */
+    margin-right: 4px;
+}
+
+.info-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a; /* Navy 900 */
+    line-height: 1.4;
+}
+
+/* Staff & Faculty Styling */
+.dept-header {
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.dept-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3a5f;
+    display: flex;
+    align-items: center;
+}
+
+.dept-header h3 i {
+    color: #00b4d8;
+}
+
+.faculty-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #f1f5f9;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(30, 58, 95, 0.1);
+    border-color: #00b4d8;
+}
+
+.faculty-photo-wrapper {
+    width: 100%;
+    padding: 20px 20px 10px 20px;
+    text-align: center;
+    background: #f8fafc;
+}
+
+.faculty-photo {
+    width: 140px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.faculty-info {
+    padding: 15px 20px 20px 20px;
+    text-align: center;
+}
+
+.faculty-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 5px;
+}
+
+.faculty-designation {
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.faculty-experience {
+    font-size: 12px;
+    color: #00b4d8;
+    background: rgba(0, 180, 216, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-block;
+    font-weight: 700;
+}
+
+/* Modal Styling */
+.faculty-modal-content {
+    border-radius: 20px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.modal-photo-col {
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.profile-modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 400px;
+}
+
+.modal-faculty-name {
+    font-weight: 800;
+    color: #1e3a5f;
+    font-size: 28px;
+}
+
+.faculty-detail-item label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.faculty-detail-item p {
+    font-size: 15px;
+    color: #1e293b;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.text-navy {
+    color: #1e3a5f;
+}
+
+/* Card Hover Overlay */
+.faculty-card {
+    cursor: pointer;
+    position: relative;
+}
+
+.view-profile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(30, 58, 95, 0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.faculty-photo-wrapper {
+    position: relative;
+}
+
+.faculty-card:hover .view-profile-overlay {
+    opacity: 1;
+}
+
+.faculty-card:hover .faculty-photo {
+    transform: scale(1.05);
+}
+
+.faculty-photo {
+    transition: transform 0.3s ease;
+}
+
+
+
 
 
 
@@ -243,11 +515,18 @@ p {
 
 /* Quote Icon */
 .quote-icon {
-    font-size: 50px;
-    color: #4f46e5;
+    font-size: 38px;
+    color: rgba(30, 58, 95, 0.15); /* Faded Primary Color */
     position: absolute;
-    top: 10px;
+    top: 15px;
     left: 20px;
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+.testimonial-card:hover .quote-icon {
+    color: rgba(0, 180, 216, 0.3); /* Accent teal on hover */
+    transform: translateY(-5px) rotate(-10deg);
 }
 
 /* Review Text */
@@ -257,6 +536,8 @@ p {
     color: #333;
     margin-bottom: 15px;
     padding-top: 20px;
+    position: relative;
+    z-index: 1;
 }
 
 /* Name */
@@ -273,6 +554,31 @@ p {
 }
 
 /* Animation */
+/* Facilities Layout Styling */
+.facility-nav-menu button {
+    border-radius: 30px;
+    padding: 6px 15px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.facility-nav-menu button.active {
+    background-color: #00b4d8;
+    color: white;
+    border-color: #00b4d8;
+    box-shadow: 0 4px 10px rgba(0, 180, 216, 0.3);
+}
+
+.facility-sub-tab {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.facility-sub-tab.active {
+    display: block;
+}
+
 .testimonial-item {
     display: none;
     animation: fadeIn 0.5s ease;
