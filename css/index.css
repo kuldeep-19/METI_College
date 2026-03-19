@@ -12,11 +12,24 @@
      --surface-alt:   #e8edf3 (Blue Grey)
      --text-dark:     #1a1a2e (Near Black)
      --text-muted:    #6b7b8d (Muted)
-     --white:         #ffffff
-     --glass-nav:    rgba(10, 22, 40, 0.9);
-     --glass-card:   rgba(255, 255, 255, 0.95);
      --shadow-premium: 0 15px 40px rgba(0, 0, 0, 0.08);
+     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
    ================================================ */
+
+/* Page Fluid Entrance */
+body {
+    animation: pageReveal 0.8s ease-out forwards;
+}
+
+@keyframes pageReveal {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Global Micro-interactions */
+.btn, .card, .glass-card, .achievement-card {
+    transition: var(--transition-smooth) !important;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 

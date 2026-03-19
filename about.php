@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/aboutus.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -57,7 +57,7 @@
                         <!-- TEXT -->
                         <div class="col-12">
 
-                            <div class="glass-card mb-4">
+                            <div class="glass-card mb-4" data-aos="fade-right">
                                 <h4 class="text-primary fw-bold">
                                     <i class="fa fa-building me-2"></i>ABOUT US
                                 </h4>
@@ -70,7 +70,7 @@
                                 </p>
                             </div>
 
-                            <div class="glass-card">
+                            <div class="glass-card" data-aos="fade-left">
                                 <h4 class="text-success fw-bold">
                                     <i class="fa fa-graduation-cap me-2"></i>ABOUT METI
                                 </h4>
@@ -131,8 +131,8 @@
                         <div class="content-container">
 
                             <!-- TOP HEADING -->
-                            <div class="section-title text-center">
-                                <h2 id="mainHeading">Achievements</h2>
+                            <div class="section-title text-center" data-aos="fade-down">
+                                <h2 id="mainHeading" class="fw-bold">Achievements</h2>
                             </div>
 
                             <!-- ACHIEVEMENTS -->
@@ -403,7 +403,7 @@
                         </div>
                         <div class="row g-4">
                             <!-- Faculty 1 -->
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="0">
                                 <div class="faculty-card"
                                     data-bs-toggle="modal"
                                     data-bs-target="#facultyModal"
@@ -428,7 +428,7 @@
                                 </div>
                             </div>
                             <!-- Faculty 2 -->
-                            <div class="col-lg-4 col-md-6">
+                            <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
                                 <div class="faculty-card"
                                     data-bs-toggle="modal"
                                     data-bs-target="#facultyModal"
@@ -717,7 +717,10 @@
     <script src="./js/common.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
     </script>
     <script>
         const tabs = document.querySelectorAll(".top-tab");
