@@ -1,45 +1,22 @@
-function updateTime() {
 
-    const now = new Date();
+const slider = document.querySelector(".testimonial-wrapper");
 
-    const date = now.toLocaleDateString('en-IN', {
-        weekday: 'long',
-        year: 'numeric',
-        month: 'long',
-        day: 'numeric'
-    });
+let scrollAmount = 0;
 
-    const time = now.toLocaleTimeString('en-IN');
+function autoSlide() {
+    scrollAmount += 1;
 
-    document.getElementById("currentDate").innerHTML = date;
-    document.getElementById("currentTime").innerHTML = time;
-
-}
-
-setInterval(updateTime, 1000);
-updateTime();
-
-
-
-function closePopup() {
-
-    document.getElementById("imagePopup").style.display = "none";
-
-}
-
-/* CLOSE WHEN CLICK OUTSIDE IMAGE */
-
-window.onclick = function (e) {
-
-    let popup = document.getElementById("imagePopup");
-
-    if (e.target == popup) {
-
-        popup.style.display = "none";
-
+    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+        scrollAmount = 0;
     }
 
+    slider.scrollTo({
+        left: scrollAmount,
+        behavior: "smooth"
+    });
 }
+
+setInterval(autoSlide, 30);
 
 
 

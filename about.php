@@ -7,9 +7,12 @@
     <title>About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./css/aboutus.css">
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 
 <body>
@@ -18,97 +21,189 @@
     <?php
     include "./include/navbar.php";
     ?>
-    <section class="py-5" style="background: linear-gradient(135deg,#eef2ff,#f8fafc);">
+    <section>
+        <div class="py-5" style="background: linear-gradient(135deg,#eef2ff,#f8fafc);">
 
-        <div class="container">
+            <div class="container">
 
-            <!-- TOP BUTTONS -->
-            <div id="top-tabs-section" class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+                <!-- TOP BUTTONS -->
+                <div id="top-tabs-section" class="d-flex justify-content-center flex-wrap gap-3 mb-4">
 
-                <button class="top-tab active" data-tab="about">
-                    <i class="fa fa-building me-2"></i>About METI
-                </button>
+                    <button class="top-tab active" data-tab="about">
+                        <i class="fa fa-building me-2"></i>About METI
+                    </button>
 
-                <button class="top-tab" data-tab="whyus">
-                    <i class="fa fa-graduation-cap me-2"></i>Why Us
-                </button>
+                    <button class="top-tab" data-tab="whyus">
+                        <i class="fa fa-graduation-cap me-2"></i>Why Us
+                    </button>
 
-                <button class="top-tab" data-tab="staff-faculty">
-                    <i class="fa fa-eye me-2"></i>Staff & Faculty
-                </button>
+                    <button class="top-tab" data-tab="staff-faculty">
+                        <i class="fa fa-eye me-2"></i>Staff & Faculty
+                    </button>
 
-                <button class="top-tab" data-tab="facilities">
-                    <i class="fa fa-bullseye me-2"></i>Facilities
-                </button>
+                    <button class="top-tab" data-tab="facilities">
+                        <i class="fa fa-bullseye me-2"></i>Facilities
+                    </button>
 
-            </div>
+                </div>
 
+                <!-- CONTENT AREA -->
 
-
-
-            <!-- CONTENT AREA -->
-            <div class="modern-content-box">
-
-                <!-- ABOUT CSL + METI (DEFAULT OPEN) -->
                 <div class="tab-content-custom active" id="about">
 
-                    <div class="row g-4 align-items-center">
+                    <div class="glass-card p-3 mb-3" data-aos="fade-up">
+                        <div class="left-overview">     
+                            <h2 class="section-title mb-4">
+                                <i class="fa-solid fa-info-circle me-2 text-primary"></i>Overview
+                            </h2>
+                            <p class="lead mb-4">Cochin Shipyard was incorporated in the year 1972 as a fully owned Government of India company. In the last three decades the company has emerged as a forerunner in the Indian Shipbuilding & Ship repair industry. This yard can build and repair the largest vessels in India.<br/><br/>
+                            The Marine Engineering Training Institute (METI) of the Cochin Shipyard Ltd. was set up as a division of CSL in September 1993 as recommended by the Expert Committee on Maritime Education and Training, constituted by the Government of India in 1992. The institute is approved by the Director General of Shipping (DGS). Govt. of India.<br/><br/>
 
-                        <!-- TEXT -->
-                        <div class="col-12">
-
-                            <div class="glass-card mb-4" data-aos="fade-right">
-                                <h4 class="text-primary fw-bold">
-                                    <i class="fa fa-building me-2"></i>ABOUT US
-                                </h4>
-                                <p>
-                                    Cochin Shipyard was incorporated in the year 1972 as a fully owned Government of
-                                    India company.
-                                    In the last three decades the company has emerged as a forerunner in the Indian
-                                    Shipbuilding
-                                    & Ship repair industry. This yard can build and repair the largest vessels in India.
-                                </p>
+                            <strong>Grade A1</strong> by Lloyd's Register.</p>
+                        </div>
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-card h-100 p-4">
+                                    <i class="fa fa-star fa-3x text-warning mb-3"></i>
+                                    <h4 class="fw-bold text-primary">Grade A1</h4>
+                                    <p class="text-muted">Lloyd's Rating</p>
+                                </div>
                             </div>
-
-                            <div class="glass-card" data-aos="fade-left">
-                                <h4 class="text-success fw-bold">
-                                    <i class="fa fa-graduation-cap me-2"></i>ABOUT METI
-                                </h4>
-                                <p>
-                                    The Marine Engineering Training Institute (METI) of the Cochin Shipyard Ltd. was set
-                                    up
-                                    as a division of CSL in September 1993 as recommended by the Expert Committee on
-                                    Maritime
-                                    Education and Training.
-                                </p>
-                                <p>
-                                    The institute is approved by the Director General of Shipping (DGS), Government of
-                                    India.
-                                </p>
-                                <p>The Institute has been conducting courses in Marine Engineering Training from the
-                                    Year 1993 onwards.
-                                    Vigyana Sagar, the new premises of METI was inaugurated by the Honorable Prime
-                                    Minister of India on the 14th of Feb 2021.
-                                    M/s Lioyd's Register, a leading independent rating agency designated by Director
-                                    General of Shipping, Government of India, for Benchmarking Maritime Training
-                                    Institutions, has rated the Institute as Grade A1.
-                                    This grading certifies the outstanding ability of the Institute to meet the
-                                    requirement of the course.
-                                </p>
-
-                                <p> The hands-on practical training imparted to the young trainee engineer is the
-                                    hallmark of the course at METI.
-                                    The institute can train up to 160 GME's annually in 04 batches.</p>
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-card h-100 p-4">
+                                    <i class="fa fa-graduation-cap fa-3x text-success mb-3"></i>
+                                    <h4 class="fw-bold text-success">160 Seats</h4>
+                                    <p class="text-muted">Annual GME Capacity</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="stat-card h-100 p-4">
+                                    <i class="fa fa-users fa-3x text-info mb-3"></i>
+                                    <h4 class="fw-bold text-info">World-Class</h4>
+                                    <p class="text-muted">Faculty Team</p>
+                                </div>
                             </div>
                         </div>
-
                     </div>
 
+                    <div class="glass-card p-5 mb-5" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="content-title mb-4">
+                            <i class="fa fa-history me-2 text-success"></i>Our History
+                        </h2>
+                        <div class="row">
+                            <div class="col-lg-8 mx-auto">
+                                <p class="lead mb-4">Established in 1993 as CSL division, METI pioneered maritime
+                                    training
+                                    in India. Vigyana Sagar - the state-of-the-art campus - was inaugurated by the
+                                    <strong>Honourable Prime Minister</strong> in 2021.
+                                </p>
+                                <div class="timeline-modern">
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon "><i class="fa fa-building"></i></div>
+                                        <div class="timeline-content">
+                                            <h5 class="fw-bold">1993: Foundation</h5>
+                                            <p>METI established as CSL training division per DGS recommendations</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon "><i class="fa fa-graduation-cap"></i></div>
+                                        <div class="timeline-content">
+                                            <h5 class="fw-bold">2021: New Era</h5>
+                                            <p>Vigyana Sagar campus inaugurated - 5x capacity expansion</p>
+                                        </div>
+                                    </div>
+                                    <div class="timeline-item">
+                                        <div class="timeline-icon "><i class="fa fa-star"></i></div>
+                                        <div class="timeline-content">
+                                            <h5 class="fw-bold">2024: Excellence</h5>
+                                            <p>Lloyd's Register awards Grade A1 - Highest possible rating</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5 mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="content-title mb-4">
+                            <i class="fa fa-bullseye me-2 text-info"></i>Our Mission
+                        </h2>
+                        <p class="lead mb-4">To deliver <strong>world-class maritime training</strong> that produces
+                            technically proficient, safety-conscious marine engineers ready for global shipping
+                            challenges.
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="mission-point p-4 border-start border-5 border-primary">
+                                    <div class="mb-3">
+                                        <i class="fa fa-anchor fa-3x text-primary"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Practical Excellence</h5>
+                                    <p><strong>60% hands-on training</strong> with real engines, simulators & afloat
+                                        experience at Cochin Shipyard</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mission-point p-4 border-start border-5 border-success">
+                                    <div class="mb-3">
+                                        <i class="fa fa-shield-alt fa-3x text-success"></i>
+                                    </div>
+                                    <h5 class="fw-bold mb-2">Safety First</h5>
+                                    <p>STCW-compliant training with emphasis on <strong>emergency response & risk
+                                            management</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-5" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class="content-title mb-4">
+                            <i class="fa fa-gem me-2 text-warning"></i>Core Values
+                        </h2>
+                        <div class="row g-3">
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
+                                    <div class="value-icon mb-3">
+                                        <i class="fa fa-handshake fa-3x text-primary"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-2">Discipline</h6>
+                                    <p class="text-muted small">Regimented lifestyle builds shipboard readiness</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
+                                    <div class="value-icon mb-3">
+                                        <i class="fa fa-rocket fa-3x text-success"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-2">Innovation</h6>
+                                    <p class="text-muted small">Cutting-edge simulators & tech training</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
+                                    <div class="value-icon mb-3">
+                                        <i class="fa fa-users fa-3x text-info"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-2">Teamwork</h6>
+                                    <p class="text-muted small">Leadership development for command roles</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3 mb-4">
+                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
+                                    <div class="value-icon mb-3">
+                                        <i class="fa fa-globe fa-3x text-warning"></i>
+                                    </div>
+                                    <h6 class="fw-bold mb-2">Global Ready</h6>
+                                    <p class="text-muted small">International shipping standards met</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- METI TAB -->
                 <div class="tab-content-custom" id="whyus">
-                    <div class="main-wrapper">
+                        <div class="main-wrapper">
 
                         <!-- LEFT SIDEBAR (FIXED STYLE) -->
                         <div class="floating-sidebar">
@@ -254,26 +349,36 @@
                                                     <div class="row g-3">
                                                         <div class="col-sm-6">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-hashtag"></i> Slot No:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-hashtag"></i>
+                                                                    Slot No:</span>
                                                                 <span class="info-value">01</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Batch:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-graduation-cap"></i>
+                                                                    Batch:</span>
                                                                 <span class="info-value">2023-24</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-user"></i> Name:</span>
-                                                                <span class="info-value">Devendra Partap Kumar Singh</span>
-                                                                <div class="text-muted small ps-4">Deoria, Uttar Pradesh</div>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-user"></i>
+                                                                    Name:</span>
+                                                                <span class="info-value">Devendra Partap Kumar
+                                                                    Singh</span>
+                                                                <div class="text-muted small ps-4">Deoria, Uttar Pradesh
+                                                                </div>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-anchor"></i> Sponsored By:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-anchor"></i>
+                                                                    Sponsored By:</span>
                                                                 <span class="info-value">Cochin Shipyard Limited</span>
                                                             </div>
                                                         </div>
@@ -286,26 +391,34 @@
                                                     <div class="row g-3">
                                                         <div class="col-sm-6">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-hashtag"></i> Slot No:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-hashtag"></i>
+                                                                    Slot No:</span>
                                                                 <span class="info-value">02</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-sm-6">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-graduation-cap"></i> Batch:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-graduation-cap"></i>
+                                                                    Batch:</span>
                                                                 <span class="info-value">2023-24</span>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-user"></i> Name:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-user"></i>
+                                                                    Name:</span>
                                                                 <span class="info-value">Sample Student Name</span>
                                                                 <div class="text-muted small ps-4">Location Detail</div>
                                                             </div>
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="info-row">
-                                                                <span class="info-label"><i class="fa-solid fa-anchor"></i> Sponsored By:</span>
+                                                                <span class="info-label"><i
+                                                                        class="fa-solid fa-anchor"></i>
+                                                                    Sponsored By:</span>
                                                                 <span class="info-value">Partner Shipping Co.</span>
                                                             </div>
                                                         </div>
@@ -349,7 +462,8 @@
                                                 <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
 
                                                 <p class="review">
-                                                    Indian Institute Of Information Technology, Pune is the hub of skills,
+                                                    Indian Institute Of Information Technology, Pune is the hub of
+                                                    skills,
                                                     knowledge and success. Faculty members are very supportive and
                                                     placement opportunities are excellent.
                                                 </p>
@@ -404,11 +518,8 @@
                         <div class="row g-4">
                             <!-- Faculty 1 -->
                             <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="0">
-                                <div class="faculty-card"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#facultyModal"
-                                    data-name="Prof. Vikram Singh"
-                                    data-designation="Head of Department"
+                                <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModal"
+                                    data-name="Prof. Vikram Singh" data-designation="Head of Department"
                                     data-dept="Marine Engineering"
                                     data-education="M.Tech (Marine Engineering), Ph.D (Maritime Science)"
                                     data-experience="25+ Years in Maritime Training & Research"
@@ -416,7 +527,9 @@
                                     data-photo="https://picsum.photos/400/533?10">
                                     <div class="faculty-photo-wrapper">
                                         <img src="https://picsum.photos/400/533?10" alt="Faculty" class="faculty-photo">
-                                        <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View Profile</div>
+                                        <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View
+                                            Profile
+                                        </div>
                                     </div>
                                     <div class="faculty-info">
                                         <h5 class="faculty-name">Prof. Vikram Singh</h5>
@@ -429,11 +542,8 @@
                             </div>
                             <!-- Faculty 2 -->
                             <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                                <div class="faculty-card"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#facultyModal"
-                                    data-name="Cmdr. Ramesh Nair"
-                                    data-designation="Senior Instructor"
+                                <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModal"
+                                    data-name="Cmdr. Ramesh Nair" data-designation="Senior Instructor"
                                     data-dept="Marine Engineering"
                                     data-education="B.E. (Mechanical), Retired Navy Commander"
                                     data-experience="20+ Years in Naval Operations & Training"
@@ -441,7 +551,9 @@
                                     data-photo="https://picsum.photos/400/533?11">
                                     <div class="faculty-photo-wrapper">
                                         <img src="https://picsum.photos/400/533?11" alt="Faculty" class="faculty-photo">
-                                        <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View Profile</div>
+                                        <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View
+                                            Profile
+                                        </div>
                                     </div>
                                     <div class="faculty-info">
                                         <h5 class="faculty-name">Cmdr. Ramesh Nair</h5>
@@ -463,11 +575,8 @@
                         <div class="row g-4">
                             <!-- Faculty 3 -->
                             <div class="col-lg-4 col-md-6">
-                                <div class="faculty-card"
-                                    data-bs-toggle="modal"
-                                    data-bs-target="#facultyModal"
-                                    data-name="Dr. Anjali Verma"
-                                    data-designation="Asst. Professor (Mechanics)"
+                                <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModal"
+                                    data-name="Dr. Anjali Verma" data-designation="Asst. Professor (Mechanics)"
                                     data-dept="Applied Sciences & Humanities"
                                     data-education="M.Sc (Physics), Ph.D (Theoretical Mechanics)"
                                     data-experience="15+ Years in Engineering Academics"
@@ -475,7 +584,9 @@
                                     data-photo="https://picsum.photos/400/533?12">
                                     <div class="faculty-photo-wrapper">
                                         <img src="https://picsum.photos/400/533?12" alt="Faculty" class="faculty-photo">
-                                        <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View Profile</div>
+                                        <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View
+                                            Profile
+                                        </div>
                                     </div>
                                     <div class="faculty-info">
                                         <h5 class="faculty-name">Dr. Anjali Verma</h5>
@@ -524,27 +635,33 @@
                                         <div class="placement-info-card">
                                             <h4 class="fw-bold fs-5 text-navy mb-3">Campus Infrastructure</h4>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-maximize"></i> Total Area:</span>
+                                                <span class="info-label"><i class="fa-solid fa-maximize"></i> Total
+                                                    Area:</span>
                                                 <span class="info-value">15+ Acres Green Campus</span>
                                             </div>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-location-dot"></i> Location:</span>
+                                                <span class="info-label"><i class="fa-solid fa-location-dot"></i>
+                                                    Location:</span>
                                                 <span class="info-value">Vigyana Sagar, Kochi</span>
                                             </div>
                                             <div class="info-row">
-                                                <span class="info-label"><i class="fa-solid fa-leaf"></i> Environment:</span>
+                                                <span class="info-label"><i class="fa-solid fa-leaf"></i>
+                                                    Environment:</span>
                                                 <span class="info-value">Eco-friendly & Sustainable</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="content-right">
-                                        <div id="facilityCampusSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                        <div id="facilityCampusSlider" class="carousel slide carousel-fade"
+                                            data-bs-ride="carousel">
                                             <div class="carousel-inner rounded-4 shadow">
                                                 <div class="carousel-item active">
-                                                    <img src="https://picsum.photos/800/533?20" class="w-100" alt="Campus 1">
+                                                    <img src="https://picsum.photos/800/533?20" class="w-100"
+                                                        alt="Campus 1">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="https://picsum.photos/800/533?30" class="w-100" alt="Campus 2">
+                                                    <img src="https://picsum.photos/800/533?30" class="w-100"
+                                                        alt="Campus 2">
                                                 </div>
                                             </div>
                                         </div>
@@ -559,27 +676,34 @@
                                         <div class="placement-info-card">
                                             <h4 class="fw-bold fs-5 text-navy mb-3">Academic Facilities</h4>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-wind"></i> Classrooms:</span>
+                                                <span class="info-label"><i class="fa-solid fa-wind"></i>
+                                                    Classrooms:</span>
                                                 <span class="info-value">Fully A/C Smart Rooms</span>
                                             </div>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-microchip"></i> Engineering Labs:</span>
+                                                <span class="info-label"><i class="fa-solid fa-microchip"></i>
+                                                    Engineering
+                                                    Labs:</span>
                                                 <span class="info-value">Modern Engine Simulators</span>
                                             </div>
                                             <div class="info-row">
-                                                <span class="info-label"><i class="fa-solid fa-screwdriver-wrench"></i> Workshops:</span>
+                                                <span class="info-label"><i class="fa-solid fa-screwdriver-wrench"></i>
+                                                    Workshops:</span>
                                                 <span class="info-value">Heavy-duty Fabrication Units</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="content-right">
-                                        <div id="facilityAcademicSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                        <div id="facilityAcademicSlider" class="carousel slide carousel-fade"
+                                            data-bs-ride="carousel">
                                             <div class="carousel-inner rounded-4 shadow">
                                                 <div class="carousel-item active">
-                                                    <img src="https://picsum.photos/800/533?21" class="w-100" alt="Academics 1">
+                                                    <img src="https://picsum.photos/800/533?21" class="w-100"
+                                                        alt="Academics 1">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="https://picsum.photos/800/533?31" class="w-100" alt="Academics 2">
+                                                    <img src="https://picsum.photos/800/533?31" class="w-100"
+                                                        alt="Academics 2">
                                                 </div>
                                             </div>
                                         </div>
@@ -594,27 +718,33 @@
                                         <div class="placement-info-card">
                                             <h4 class="fw-bold fs-5 text-navy mb-3">Residential & Dining</h4>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-shield-halved"></i> Hostel:</span>
+                                                <span class="info-label"><i class="fa-solid fa-shield-halved"></i>
+                                                    Hostel:</span>
                                                 <span class="info-value">24/7 Secure Boys & Girls Blocks</span>
                                             </div>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-utensils"></i> Mess:</span>
+                                                <span class="info-label"><i class="fa-solid fa-utensils"></i>
+                                                    Mess:</span>
                                                 <span class="info-value">Multicuisine Sanitized Dining</span>
                                             </div>
                                             <div class="info-row">
-                                                <span class="info-label"><i class="fa-solid fa-wifi"></i> Connectivity:</span>
+                                                <span class="info-label"><i class="fa-solid fa-wifi"></i>
+                                                    Connectivity:</span>
                                                 <span class="info-value">High-speed Campus-wide Wi-Fi</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="content-right">
-                                        <div id="facilityResidentialSlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                        <div id="facilityResidentialSlider" class="carousel slide carousel-fade"
+                                            data-bs-ride="carousel">
                                             <div class="carousel-inner rounded-4 shadow">
                                                 <div class="carousel-item active">
-                                                    <img src="https://picsum.photos/800/533?23" class="w-100" alt="Residential 1">
+                                                    <img src="https://picsum.photos/800/533?23" class="w-100"
+                                                        alt="Residential 1">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="https://picsum.photos/800/533?33" class="w-100" alt="Residential 2">
+                                                    <img src="https://picsum.photos/800/533?33" class="w-100"
+                                                        alt="Residential 2">
                                                 </div>
                                             </div>
                                         </div>
@@ -629,27 +759,33 @@
                                         <div class="placement-info-card">
                                             <h4 class="fw-bold fs-5 text-navy mb-3">Technical Library</h4>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-book"></i> Volumes:</span>
+                                                <span class="info-label"><i class="fa-solid fa-book"></i>
+                                                    Volumes:</span>
                                                 <span class="info-value">5,000+ Maritime Collections</span>
                                             </div>
                                             <div class="info-row mb-2">
-                                                <span class="info-label"><i class="fa-solid fa-laptop-code"></i> Digital:</span>
+                                                <span class="info-label"><i class="fa-solid fa-laptop-code"></i>
+                                                    Digital:</span>
                                                 <span class="info-value">Access to global E-Journals</span>
                                             </div>
                                             <div class="info-row">
-                                                <span class="info-label"><i class="fa-solid fa-clock"></i> Study Zones:</span>
+                                                <span class="info-label"><i class="fa-solid fa-clock"></i> Study
+                                                    Zones:</span>
                                                 <span class="info-value">Dedicated Silent Reading Areas</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="content-right">
-                                        <div id="facilityLibrarySlider" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                        <div id="facilityLibrarySlider" class="carousel slide carousel-fade"
+                                            data-bs-ride="carousel">
                                             <div class="carousel-inner rounded-4 shadow">
                                                 <div class="carousel-item active">
-                                                    <img src="https://picsum.photos/800/533?25" class="w-100" alt="Library 1">
+                                                    <img src="https://picsum.photos/800/533?25" class="w-100"
+                                                        alt="Library 1">
                                                 </div>
                                                 <div class="carousel-item">
-                                                    <img src="https://picsum.photos/800/533?35" class="w-100" alt="Library 2">
+                                                    <img src="https://picsum.photos/800/533?35" class="w-100"
+                                                        alt="Library 2">
                                                 </div>
                                             </div>
                                         </div>
@@ -763,7 +899,7 @@
 
 
         // Achievements
-        document.getElementById('achieveSlider')?.addEventListener('slid.bs.carousel', function(e) {
+        document.getElementById('achieveSlider')?.addEventListener('slid.bs.carousel', function (e) {
             let index = e.to;
             let items = document.querySelectorAll('#textContent .text-item');
 
@@ -774,7 +910,7 @@
         });
 
         // Awards
-        document.getElementById('awardSlider')?.addEventListener('slid.bs.carousel', function(e) {
+        document.getElementById('awardSlider')?.addEventListener('slid.bs.carousel', function (e) {
             let index = e.to;
             let items = document.querySelectorAll('#awardTextContent .text-item');
 
@@ -785,7 +921,7 @@
         });
 
         // Placement
-        document.getElementById('placementSlider')?.addEventListener('slid.bs.carousel', function(e) {
+        document.getElementById('placementSlider')?.addEventListener('slid.bs.carousel', function (e) {
 
             let index = e.to;
 
@@ -808,7 +944,7 @@
         // Faculty Modal Logic
         const facultyModal = document.getElementById('facultyModal');
         if (facultyModal) {
-            facultyModal.addEventListener('show.bs.modal', function(event) {
+            facultyModal.addEventListener('show.bs.modal', function (event) {
                 const button = event.relatedTarget;
                 const name = button.getAttribute('data-name');
                 const designation = button.getAttribute('data-designation');
@@ -856,7 +992,7 @@
             item.addEventListener('click', () => {
                 sidebarButtons.forEach(i => i.classList.remove('active'));
                 tabBoxes.forEach(c => c.classList.remove('active'));
-                
+
                 item.classList.add('active');
                 const tabId = item.getAttribute('data-tab');
                 document.getElementById(tabId).classList.add('active');
@@ -876,7 +1012,7 @@
             if (hash) {
                 // Remove # and the "tab-" prefix to get the actual tabId
                 const tabId = hash.replace("#tab-", "").replace("#", "");
-                
+
                 // Ensure everything is settled
                 setTimeout(() => {
                     const targetTab = document.querySelector(`.top-tab[data-tab="${tabId}"]`);
@@ -884,9 +1020,9 @@
 
                     if (targetTab) {
                         targetTab.click();
-                        
+
                         if (scrollTarget) {
-                            const offset = 120; 
+                            const offset = 120;
                             const bodyRect = document.body.getBoundingClientRect().top;
                             const elementRect = scrollTarget.getBoundingClientRect().top;
                             const elementPosition = elementRect - bodyRect;
@@ -903,7 +1039,7 @@
         }
 
         // Run once on load and every time hash changes
-        handleHash(); 
+        handleHash();
         window.addEventListener("hashchange", handleHash);
     </script>
 
@@ -912,7 +1048,8 @@
         <div class="modal-dialog modal-lg modal-dialog-centered">
             <div class="modal-content faculty-modal-content">
                 <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="z-index: 10;"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="z-index: 10;"></button>
                 </div>
                 <div class="modal-body p-0">
                     <div class="row g-0">

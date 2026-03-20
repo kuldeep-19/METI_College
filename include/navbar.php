@@ -1,7 +1,7 @@
 
-   <!-- TOP BAR -->
-    <div class="top-bar">
-      <div class="container header-container">
+    <!-- TOP BAR -->
+    <div class="top-bar py-2">
+      <div class="container d-flex align-items-center">
         <div class="logo">
           <img
             src="https://cslmeti.in/assets/images/new-logo-1-137x75.jpg"
@@ -25,8 +25,8 @@
 
         <!-- RIGHT SIDE CONTENT -->
 
-        <div class="header-right">
-          <div class="language-switch">
+        <div class="ms-auto text-end">
+          <div class="language-switch mb-1">
             <button>EN</button>
             <button>HI</button>
           </div>

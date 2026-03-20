@@ -19,7 +19,9 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
     />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/global.css" />
+<link rel="stylesheet" href="./css/index.css" />
+
   </head>
 
   <body>
@@ -72,38 +74,85 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
 </section>
 
 
-    <section class="partners py-5">
-      <div class="partner-section" data-aos="fade-up">
-        <div class="section-title text-center">
-                <h2 class="fw-bold">Our Trusted Partners</h2>
-        </div>  
-      <div class="logo-slider">
-        <div class="logo-track">
-          <!-- original logos -->
-          <img src="./Assets/partner-log/bsm1-1-173x100.jpg" />
-          <img src="./Assets/partner-log/damico-logo1-195x231.jpg" />
-          <img src="./Assets/partner-log/elegant-logo1-311x114.jpg" />
-          <img src="./Assets/partner-log/fleet-logo1-256x97.jpg" />
-          <img src="./Assets/partner-log/klsm1-256x248.jpg" />
-          <img src="./Assets/partner-log/massa1-218x198.jpg" />
-          <img src="./Assets/partner-log/sima-marine-logo-new-126x98.jpg" />
-          <img src="./Assets/partner-log/synergy1-355x352.jpg" />
-          <img src="./Assets/partner-log/wilhelmsen1-506x260.jpg" />
+<section class="content-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
 
-          <!-- duplicate logos for smooth loop -->
-          <img src="./Assets/partner-log/bsm1-1-173x100.jpg" />
-          <img src="./Assets/partner-log/damico-logo1-195x231.jpg" />
-          <img src="./Assets/partner-log/elegant-logo1-311x114.jpg" />
-          <img src="./Assets/partner-log/fleet-logo1-256x97.jpg" />
-          <img src="./Assets/partner-log/klsm1-256x248.jpg" />
-          <img src="./Assets/partner-log/massa1-218x198.jpg" />
-          <img src="./Assets/partner-log/sima-marine-logo-new-126x98.jpg" />
-          <img src="./Assets/partner-log/synergy1-355x352.jpg" />
-          <img src="./Assets/partner-log/wilhelmsen1-506x260.jpg" />
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6 content-text">
+                <h2 class="content-title">
+                    Transforming Ideas Into Reality
+                </h2>
+
+                <p class="content-desc">
+                    We deliver innovative and scalable solutions designed to 
+                    empower businesses and enhance digital experiences. 
+                    Our focus is on quality, performance, and user satisfaction.
+                </p>
+
+                <a href="#" class="btn btn-teal mt-3">
+                    Learn More
+                </a>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6 text-center content-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMdfbEvV5dE9TM8l-VMI9fOpGuASecJEmQ8A&s" alt="Content Image">
+            </div>
+
         </div>
-      </div>
-      </div>
-    </section>
+    </div>
+</section>
+
+
+
+<section class="testimonials-section py-5">
+    <div class="container">
+        
+        <!-- Section Title -->
+        <div class="section-title text-center">
+            <h2>What Our Clients Say</h2>
+        </div>
+
+        <div class="testimonial-wrapper">
+
+            <!-- Card 1 -->
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p class="testimonial-text">
+                    This organization provided excellent service and support. 
+                    Highly satisfied with the professionalism and timely delivery.
+                </p>
+                <h5 class="client-name">Rahul Sharma</h5>
+                <span class="client-role">Software Engineer</span>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p class="testimonial-text">
+                    Amazing experience! The team is very cooperative and skilled. 
+                    I would definitely recommend them.
+                </p>
+                <h5 class="client-name">Priya Verma</h5>
+                <span class="client-role">HR Manager</span>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="testimonial-card">
+                <div class="quote-icon">“</div>
+                <p class="testimonial-text">
+                    One of the best services I have ever used. Everything was smooth 
+                    and perfectly managed.
+                </p>
+                <h5 class="client-name">Amit Singh</h5>
+                <span class="client-role">Entrepreneur</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
   <section class="achievements py-5">
     <div class="container ">
@@ -190,28 +239,32 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
     <h2 class="section-title">Ask Us</h2>
     <p class="section-subtitle">Have a question? Our recruitment experts are ready to help.</p>
 
-    <div class="ask-us-content">
+    <div class="row g-4 justify-content-center align-items-stretch">
       <!-- Inquiry Form -->
-      <form id="inquiryForm" class="inquiry-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Contact" required>
-        <input type="text" name="subject" placeholder="Subject" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Submit Inquiry</button>
-      </form>
+      <div class="col-lg-5 col-md-10">
+        <form id="inquiryForm" class="inquiry-form d-flex flex-column gap-3 h-100">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="tel" name="phone" placeholder="Your Contact" required>
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Your Message" required class="flex-grow-1"></textarea>
+          <button type="submit" class="mt-auto">Submit Inquiry</button>
+        </form>
+      </div>
 
       <!-- Google Map -->
-      <div class="map-container">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.418206773479!2d76.29768997468354!3d9.95735327978698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08733ffafb78af%3A0x4c96f22c7023776a!2sMETI%2C%20VIGYANA%20SAGAR%20-%20HOSTEL%2C%20COCHIN%20SHIPYARD%20LIMITED%20MARINE%20ENGINEERING%20TRAINING%20INSTITUTE!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
-          width="100%" 
-          height="100%" 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="col-lg-7 col-md-10">
+        <div class="map-container h-100">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.418206773479!2d76.29768997468354!3d9.95735327978698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08733ffafb78af%3A0x4c96f22c7023776a!2sMETI%2C%20VIGYANA%20SAGAR%20-%20HOSTEL%2C%20COCHIN%20SHIPYARD%20LIMITED%20MARINE%20ENGINEERING%20TRAINING%20INSTITUTE!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            width="100%" 
+            height="100%" 
+            style="border:0; min-height: 400px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
     </div>
   </div>
