@@ -17,6 +17,254 @@
       padding: 50px;
       text-align: center;
     }
+
+
+    /* Glass Card - Side by Side Layout */
+    .glass-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: flex-start;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(0, 180, 216, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      border-color: rgba(0, 180, 216, 0.2);
+    }
+
+    .glass-card .left-overview {
+      flex: 1 1 45%;
+      min-width: 300px;
+    }
+
+    .glass-card > .row {
+      flex: 1 1 50%;
+      min-width: 300px;
+      width: 100%;
+    }
+
+    /* Content Title - History Section */
+    .content-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1e3a5f;
+      margin-bottom: 30px !important;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 15px;
+    }
+
+    .content-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #00b4d8, #f0a500);
+      border-radius: 2px;
+    }
+
+    /* Responsive: Stack on smaller screens */
+    @media (max-width: 968px) {
+      .glass-card {
+        flex-direction: column;
+      }
+
+      .glass-card .left-overview {
+        flex: 1 1 100%;
+      }
+
+      .glass-card > .row {
+        flex: 1 1 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .glass-card {
+        flex-direction: column;
+        padding: 20px !important;
+      }
+
+      .glass-card .left-overview {
+        flex: 1 1 100%;
+      }
+
+      .glass-card > .row {
+        flex: 1 1 100%;
+      }
+
+      .content-title {
+        font-size: 24px;
+      }
+    }
+
+    /* ===== LEFT & RIGHT HISTORY LAYOUT ===== */
+    .glass-card .left-history,
+    .glass-card .right-history {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+    }
+
+    /* Left History - Text Content */
+    .glass-card .left-history {
+      flex: 1 1 45%;
+      min-width: 280px;
+      padding-right: 20px;
+    }
+
+    /* Right History - Timeline */
+    .glass-card .right-history {
+      flex: 1 1 50%;
+      min-width: 280px;
+      padding-left: 20px;
+      border-left: 2px solid rgba(0, 180, 216, 0.2);
+    }
+
+    /* Responsive: Stack on smaller screens */
+    @media (max-width: 992px) {
+      .glass-card .left-history,
+      .glass-card .right-history {
+        flex: 1 1 100%;
+        padding-right: 0;
+        padding-left: 0;
+        border-left: none;
+        margin-bottom: 30px;
+      }
+
+      .glass-card .right-history {
+        margin-bottom: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .glass-card .left-history,
+      .glass-card .right-history {
+        flex: 1 1 100%;
+        padding: 0;
+        margin-bottom: 20px;
+      }
+
+      .glass-card .right-history {
+        margin-bottom: 0;
+      }
+    }
+
+    /* ===== STAT CARDS STYLING ===== */
+    .stat-card {
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid rgba(0, 180, 216, 0.1);
+      border-radius: 15px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 35px 25px !important;
+    }
+
+    /* Stat Card Icon Container */
+    .stat-card i {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      filter: drop-shadow(0 4px 12px rgba(30, 58, 95, 0.1));
+    }
+
+    /* Stat Card Hover Effects */
+    .stat-card:hover {
+      transform: translateY(-15px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+      border-color: rgba(0, 180, 216, 0.3);
+    }
+
+    .stat-card:hover i {
+      transform: scale(1.25) rotateY(10deg);
+    }
+
+    /* Stat Card Title */
+    .stat-card h4 {
+      font-size: 22px;
+      font-weight: 700;
+      margin: 15px 0 10px 0 !important;
+      letter-spacing: -0.3px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-card h4.text-primary {
+      color: #1e3a5f !important;
+    }
+
+    .stat-card h4.text-success {
+      color: #28a745 !important;
+    }
+
+    .stat-card h4.text-info {
+      color: #17a2b8 !important;
+    }
+
+    /* Stat Card Description */
+    .stat-card p {
+      font-size: 14px;
+      color: #6b7b8d;
+      margin: 0 !important;
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Stat Card Background Animation */
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(240, 165, 0, 0.05));
+      transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 1;
+    }
+
+    .stat-card:hover::before {
+      top: 0;
+    }
+
+    /* Responsive Stat Cards */
+    @media (max-width: 992px) {
+      .stat-card {
+        padding: 30px 20px !important;
+      }
+
+      .stat-card h4 {
+        font-size: 20px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .stat-card {
+        padding: 25px 18px !important;
+      }
+
+      .stat-card h4 {
+        font-size: 18px;
+      }
+
+      .stat-card p {
+        font-size: 13px;
+      }
+    }
 .top-tab {
     padding: 12px 24px;
     border: none;
@@ -101,6 +349,399 @@ p {
 
 .carousel:hover {
     transform: scale(1.02);
+}
+
+
+/* ===== TIMELINE MODERN STYLING ===== */
+.timeline-modern {
+    position: relative;
+    padding: 30px 0;
+}
+
+/* Vertical connecting line */
+.timeline-modern::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, #00b4d8 0%, #f0a500 100%);
+    border-radius: 2px;
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 100px;
+    animation: timelineItemFade 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes timelineItemFade {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Timeline Icon Circle */
+.timeline-icon {
+    position: absolute;
+    left: -5px;
+    top: 5px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #00b4d8 0%, #0099bb 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 4px solid white;
+}
+
+.timeline-item:hover .timeline-icon {
+    transform: scale(1.15) translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 180, 216, 0.5);
+    background: linear-gradient(135deg, #f0a500 0%, #ffc947 100%);
+}
+
+/* Timeline Content Card */
+.timeline-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    padding: 25px 28px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 180, 216, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient overlay on hover */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 180, 216, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 180, 216, 0.3);
+}
+
+.timeline-item:hover .timeline-content::before {
+    left: 100%;
+}
+
+/* Timeline Content Typography */
+.timeline-content h5 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1e3a5f;
+    margin-bottom: 10px;
+    letter-spacing: -0.3px;
+}
+
+.timeline-content p {
+    font-size: 14px;
+    color: #6b7b8d;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .timeline-modern::before {
+        left: 20px;
+    }
+
+    .timeline-item {
+        padding-left: 80px;
+    }
+
+    .timeline-icon {
+        left: -15px;
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+    }
+
+    .timeline-content {
+        padding: 20px 22px;
+    }
+
+    .timeline-content h5 {
+        font-size: 16px;
+    }
+
+    .timeline-content p {
+        font-size: 13px;
+    }
+}
+
+
+/* ===== MISSION CARDS STYLING ===== */
+.mission-point {
+    position: relative;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    border: 1px solid rgba(0, 180, 216, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Mission Card Icon Container */
+.mission-point .mb-3 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mission Card Icon Styling */
+.mission-point i {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 4px 12px rgba(30, 58, 95, 0.15));
+}
+
+/* Mission Point Hover Effects */
+.mission-point:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 180, 216, 0.3) !important;
+}
+
+.mission-point:hover i {
+    transform: scale(1.15) rotate(10deg);
+}
+
+/* Mission Card Title */
+.mission-point h5 {
+    font-size: 18px;
+    color: #1e3a5f;
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mission Card Title Underline */
+.mission-point h5::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #00b4d8, #f0a500);
+    transition: width 0.4s ease;
+}
+
+.mission-point:hover h5::after {
+    width: 100%;
+}
+
+/* Mission Card Text */
+.mission-point p {
+    font-size: 14px;
+    color: #6b7b8d;
+    line-height: 1.65;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mission Card Background Gradient on Hover */
+.mission-point::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.05), rgba(240, 165, 0, 0.05));
+    transition: top 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
+}
+
+.mission-point:hover::before {
+    top: 0;
+}
+
+/* Responsive Mission Cards */
+@media (max-width: 768px) {
+    .mission-point {
+        padding: 30px 20px !important;
+    }
+
+    .mission-point h5 {
+        font-size: 16px;
+    }
+
+    .mission-point p {
+        font-size: 13px;
+    }
+}
+
+
+/* ===== CORE VALUES CARDS STYLING ===== */
+.value-card-modern {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border: 1px solid rgba(0, 180, 216, 0.1) !important;
+    border-radius: 18px !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Value Icon Container */
+.value-card-modern .value-icon {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 20px !important;
+    position: relative;
+    z-index: 2;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(240, 165, 0, 0.05));
+    border: 2px solid rgba(0, 180, 216, 0.2);
+}
+
+.value-card-modern i {
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 12px rgba(30, 58, 95, 0.1));
+}
+
+/* Value Card Hover Effects */
+.value-card-modern:hover {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    border-color: rgba(0, 180, 216, 0.3) !important;
+}
+
+.value-card-modern:hover .value-icon {
+    background: linear-gradient(135deg, #00b4d8, #0099bb);
+    border-color: transparent;
+    box-shadow: 0 12px 30px rgba(0, 180, 216, 0.3);
+}
+
+.value-card-modern:hover i {
+    color: white !important;
+    transform: scale(1.2) rotateZ(360deg);
+}
+
+/* Value Card Title */
+.value-card-modern h6 {
+    font-size: 16px;
+    color: #1e3a5f;
+    letter-spacing: -0.3px;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 12px !important;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Value Card Description */
+.value-card-modern p {
+    font-size: 13px;
+    color: #6b7b8d;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+/* Value Card Background Animation */
+.value-card-modern::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, transparent 70%);
+    transition: all 0.6s ease;
+    z-index: 1;
+}
+
+.value-card-modern:hover::before {
+    top: -25%;
+    right: -25%;
+}
+
+/* Preserve Hover Lift Class */
+.hover-lift {
+    position: relative;
+}
+
+.hover-lift::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00b4d8, #f0a500);
+    transition: width 0.4s ease;
+    z-index: 2;
+}
+
+.value-card-modern:hover::after {
+    width: 100%;
+}
+
+/* Responsive Value Cards */
+@media (max-width: 992px) {
+    .value-card-modern {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .value-card-modern {
+        padding: 30px 20px !important;
+    }
+
+    .value-icon {
+        width: 70px !important;
+        height: 70px !important;
+    }
+
+    .value-card-modern h6 {
+        font-size: 14px;
+    }
+
+    .value-card-modern p {
+        font-size: 12px;
+    }
 }
 
 

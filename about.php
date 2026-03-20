@@ -51,33 +51,42 @@
 
                 <div class="tab-content-custom active" id="about">
 
-                    <div class="glass-card p-3 mb-3" data-aos="fade-up">
-                        <div class="left-overview">     
+                    <div class="glass-card p-5 mb-5" data-aos="fade-up">
+                        <div class="left-overview">
                             <h2 class="section-title mb-4">
                                 <i class="fa-solid fa-info-circle me-2 text-primary"></i>Overview
                             </h2>
-                            <p class="lead mb-4">Cochin Shipyard was incorporated in the year 1972 as a fully owned Government of India company. In the last three decades the company has emerged as a forerunner in the Indian Shipbuilding & Ship repair industry. This yard can build and repair the largest vessels in India.<br/><br/>
-                            The Marine Engineering Training Institute (METI) of the Cochin Shipyard Ltd. was set up as a division of CSL in September 1993 as recommended by the Expert Committee on Maritime Education and Training, constituted by the Government of India in 1992. The institute is approved by the Director General of Shipping (DGS). Govt. of India.<br/><br/>
+                            <p class="lead mb-4" style="color: #6b7b8d; line-height: 1.8;">Cochin Shipyard was
+                                incorporated in the year 1972 as a fully owned Government of India company. In the last
+                                three decades the company has emerged as a forerunner in the Indian Shipbuilding & Ship
+                                repair industry. This yard can build and repair the largest vessels in
+                                India.<br /><br />
+                                The Marine Engineering Training Institute (METI) of the Cochin Shipyard Ltd. was set up
+                                as a division of CSL in September 1993 as recommended by the Expert Committee on
+                                Maritime Education and Training, constituted by the Government of India in 1992. The
+                                institute is approved by the Director General of Shipping (DGS). Govt. of
+                                India.<br /><br />
 
-                            <strong>Grade A1</strong> by Lloyd's Register.</p>
+                                <strong style="color: #1e3a5f;">Grade A1</strong> by Lloyd's Register.
+                            </p>
                         </div>
-                        <div class="row text-center">
-                            <div class="col-md-4 mb-3">
-                                <div class="stat-card h-100 p-4">
+                        <div class="row text-center g-4">
+                            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="50">
+                                <div class="stat-card h-100">
                                     <i class="fa fa-star fa-3x text-warning mb-3"></i>
                                     <h4 class="fw-bold text-primary">Grade A1</h4>
                                     <p class="text-muted">Lloyd's Rating</p>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="stat-card h-100 p-4">
+                            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="stat-card h-100">
                                     <i class="fa fa-graduation-cap fa-3x text-success mb-3"></i>
                                     <h4 class="fw-bold text-success">160 Seats</h4>
                                     <p class="text-muted">Annual GME Capacity</p>
                                 </div>
                             </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="stat-card h-100 p-4">
+                            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="stat-card h-100">
                                     <i class="fa fa-users fa-3x text-info mb-3"></i>
                                     <h4 class="fw-bold text-info">World-Class</h4>
                                     <p class="text-muted">Faculty Team</p>
@@ -87,69 +96,70 @@
                     </div>
 
                     <div class="glass-card p-5 mb-5" data-aos="fade-up" data-aos-delay="100">
+
                         <h2 class="content-title mb-4">
                             <i class="fa fa-history me-2 text-success"></i>Our History
                         </h2>
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <p class="lead mb-4">Established in 1993 as CSL division, METI pioneered maritime
-                                    training
-                                    in India. Vigyana Sagar - the state-of-the-art campus - was inaugurated by the
-                                    <strong>Honourable Prime Minister</strong> in 2021.
-                                </p>
-                                <div class="timeline-modern">
-                                    <div class="timeline-item">
-                                        <div class="timeline-icon "><i class="fa fa-building"></i></div>
-                                        <div class="timeline-content">
-                                            <h5 class="fw-bold">1993: Foundation</h5>
-                                            <p>METI established as CSL training division per DGS recommendations</p>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-icon "><i class="fa fa-graduation-cap"></i></div>
-                                        <div class="timeline-content">
-                                            <h5 class="fw-bold">2021: New Era</h5>
-                                            <p>Vigyana Sagar campus inaugurated - 5x capacity expansion</p>
-                                        </div>
-                                    </div>
-                                    <div class="timeline-item">
-                                        <div class="timeline-icon "><i class="fa fa-star"></i></div>
-                                        <div class="timeline-content">
-                                            <h5 class="fw-bold">2024: Excellence</h5>
-                                            <p>Lloyd's Register awards Grade A1 - Highest possible rating</p>
-                                        </div>
-                                    </div>
+                        <p class="lead mb-5" style="color: #6b7b8d; line-height: 1.8; font-size: 16px;">
+                            Established in 1993 as CSL division, METI pioneered maritime
+                            training in India. Vigyana Sagar - the state-of-the-art campus - was inaugurated by the
+                            <strong style="color: #1e3a5f;">Honourable Prime Minister</strong> in 2021.
+                        </p>
+                        <div class="timeline-modern">
+                            <div class="timeline-item">
+                                <div class="timeline-icon "><i class="fa fa-building"></i></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold">1993: Foundation</h5>
+                                    <p>METI established as CSL training division per DGS recommendations</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon "><i class="fa fa-graduation-cap"></i></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold">2021: New Era</h5>
+                                    <p>Vigyana Sagar campus inaugurated - 5x capacity expansion</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-icon "><i class="fa fa-star"></i></div>
+                                <div class="timeline-content">
+                                    <h5 class="fw-bold">2024: Excellence</h5>
+                                    <p>Lloyd's Register awards Grade A1 - Highest possible rating</p>
                                 </div>
                             </div>
                         </div>
+
                     </div>
 
                     <div class="glass-card p-5 mb-5" data-aos="fade-up" data-aos-delay="200">
                         <h2 class="content-title mb-4">
                             <i class="fa fa-bullseye me-2 text-info"></i>Our Mission
                         </h2>
-                        <p class="lead mb-4">To deliver <strong>world-class maritime training</strong> that produces
+                        <p class="lead mb-5" style="color: #6b7b8d; line-height: 1.8; font-size: 16px;">To deliver
+                            <strong style="color: #1e3a5f;">world-class maritime training</strong> that produces
                             technically proficient, safety-conscious marine engineers ready for global shipping
                             challenges.
                         </p>
                         <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="mission-point p-4 border-start border-5 border-primary">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="50">
+                                <div class="mission-point p-5">
                                     <div class="mb-3">
                                         <i class="fa fa-anchor fa-3x text-primary"></i>
                                     </div>
-                                    <h5 class="fw-bold mb-2">Practical Excellence</h5>
-                                    <p><strong>60% hands-on training</strong> with real engines, simulators & afloat
+                                    <h5 class="fw-bold mb-3">Practical Excellence</h5>
+                                    <p><strong style="color: #00b4d8;">60% hands-on training</strong> with real engines,
+                                        simulators & afloat
                                         experience at Cochin Shipyard</p>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="mission-point p-4 border-start border-5 border-success">
+                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="mission-point p-5">
                                     <div class="mb-3">
                                         <i class="fa fa-shield-alt fa-3x text-success"></i>
                                     </div>
-                                    <h5 class="fw-bold mb-2">Safety First</h5>
-                                    <p>STCW-compliant training with emphasis on <strong>emergency response & risk
+                                    <h5 class="fw-bold mb-3">Safety First</h5>
+                                    <p>STCW-compliant training with emphasis on <strong
+                                            style="color: #28a745;">emergency response & risk
                                             management</strong></p>
                                 </div>
                             </div>
@@ -157,44 +167,44 @@
                     </div>
 
                     <div class="glass-card p-5" data-aos="fade-up" data-aos-delay="300">
-                        <h2 class="content-title mb-4">
+                        <h2 class="content-title mb-5">
                             <i class="fa fa-gem me-2 text-warning"></i>Core Values
                         </h2>
-                        <div class="row g-3">
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
-                                    <div class="value-icon mb-3">
+                        <div class="row g-4">
+                            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="50">
+                                <div class="value-card-modern text-center p-5 h-100 hover-lift">
+                                    <div class="value-icon mb-4">
                                         <i class="fa fa-handshake fa-3x text-primary"></i>
                                     </div>
-                                    <h6 class="fw-bold mb-2">Discipline</h6>
-                                    <p class="text-muted small">Regimented lifestyle builds shipboard readiness</p>
+                                    <h6 class="fw-bold mb-3">Discipline</h6>
+                                    <p class="text-muted">Regimented lifestyle builds shipboard readiness</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
-                                    <div class="value-icon mb-3">
+                            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="100">
+                                <div class="value-card-modern text-center p-5 h-100 hover-lift">
+                                    <div class="value-icon mb-4">
                                         <i class="fa fa-rocket fa-3x text-success"></i>
                                     </div>
-                                    <h6 class="fw-bold mb-2">Innovation</h6>
-                                    <p class="text-muted small">Cutting-edge simulators & tech training</p>
+                                    <h6 class="fw-bold mb-3">Innovation</h6>
+                                    <p class="text-muted">Cutting-edge simulators & tech training</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
-                                    <div class="value-icon mb-3">
+                            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="150">
+                                <div class="value-card-modern text-center p-5 h-100 hover-lift">
+                                    <div class="value-icon mb-4">
                                         <i class="fa fa-users fa-3x text-info"></i>
                                     </div>
-                                    <h6 class="fw-bold mb-2">Teamwork</h6>
-                                    <p class="text-muted small">Leadership development for command roles</p>
+                                    <h6 class="fw-bold mb-3">Teamwork</h6>
+                                    <p class="text-muted">Leadership development for command roles</p>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="value-card-modern text-center p-4 h-100 border rounded-3 hover-lift">
-                                    <div class="value-icon mb-3">
+                            <div class="col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="200">
+                                <div class="value-card-modern text-center p-5 h-100 hover-lift">
+                                    <div class="value-icon mb-4">
                                         <i class="fa fa-globe fa-3x text-warning"></i>
                                     </div>
-                                    <h6 class="fw-bold mb-2">Global Ready</h6>
-                                    <p class="text-muted small">International shipping standards met</p>
+                                    <h6 class="fw-bold mb-3">Global Ready</h6>
+                                    <p class="text-muted">International shipping standards met</p>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +213,7 @@
 
                 <!-- METI TAB -->
                 <div class="tab-content-custom" id="whyus">
-                        <div class="main-wrapper">
+                    <div class="main-wrapper">
 
                         <!-- LEFT SIDEBAR (FIXED STYLE) -->
                         <div class="floating-sidebar">
