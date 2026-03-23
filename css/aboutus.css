@@ -1,7 +1,96 @@
-    /* Section Title */
-    .section-title {
-      font-weight: bold;
-      margin-bottom: 20px;
+  
+    /* Stat Box Container - Horizontal & Centered */
+    .col-lg-6 .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Stat Box - Horizontal Layout */
+    .stat-box {
+      text-align: center;
+      padding: 30px 20px;
+      background: #f8fafc;
+      border-radius: 10px;
+      border-left: 4px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:nth-child(1) {
+      border-left-color: #1e3a5f;
+    }
+
+    .stat-box:nth-child(2) {
+      border-left-color: #28a745;
+    }
+
+    .stat-box:nth-child(3) {
+      border-left-color: #17a2b8;
+    }
+
+    .stat-box:hover {
+      background: #eef2ff;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .stat-box i {
+      transition: all 0.3s ease;
+    }
+
+    .stat-box:hover i {
+      transform: scale(1.2);
+    }
+
+    .stat-box h4 {
+      font-size: 20px;
+      margin: 15px 0 8px 0 !important;
+    }
+
+    .stat-box p {
+      font-size: 14px;
+      margin: 0 !important;
+    }
+
+    @media (max-width: 992px) {
+      .col-lg-6 .row {
+        gap: 1rem;
+      }
+
+      .stat-box {
+        padding: 25px 15px;
+      }
+
+      .stat-box h4 {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .col-lg-6 .row {
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .col-lg-6 .row > div {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .stat-box {
+        padding: 25px 15px;
+      }
+
+      .stat-box h4 {
+        font-size: 18px;
+      }
+
+      .stat-box p {
+        font-size: 13px;
+      }
     }
 
     /* Cards */
@@ -29,47 +118,16 @@
       border-color: rgba(0, 180, 216, 0.2);
     }
 
-    .glass-card .left-overview {
-      flex: 1 1 45%;
-      min-width: 300px;
-    }
-
     .glass-card > .row {
       flex: 1 1 50%;
       min-width: 300px;
       width: 100%;
     }
 
-    /* Content Title - History Section */
-    .content-title {
-      font-size: 28px;
-      font-weight: 700;
-      color: #1e3a5f;
-      margin-bottom: 30px !important;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 15px;
-    }
-
-    .content-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 4px;
-      background: linear-gradient(90deg, #00b4d8, #f0a500);
-      border-radius: 2px;
-    }
-
     /* Responsive: Stack on smaller screens */
     @media (max-width: 968px) {
       .glass-card {
         flex-direction: column;
-      }
-
-      .glass-card .left-overview {
-        flex: 1 1 100%;
       }
 
       .glass-card > .row {
@@ -83,72 +141,11 @@
         padding: 20px !important;
       }
 
-      .glass-card .left-overview {
-        flex: 1 1 100%;
-      }
-
       .glass-card > .row {
         flex: 1 1 100%;
       }
 
-      .content-title {
-        font-size: 24px;
-      }
     }
-
-    /* ===== LEFT & RIGHT HISTORY LAYOUT ===== */
-    .glass-card .left-history,
-    .glass-card .right-history {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: stretch;
-    }
-
-    /* Left History - Text Content */
-    .glass-card .left-history {
-      flex: 1 1 45%;
-      min-width: 280px;
-      padding-right: 20px;
-    }
-
-    /* Right History - Timeline */
-    .glass-card .right-history {
-      flex: 1 1 50%;
-      min-width: 280px;
-      padding-left: 20px;
-      border-left: 2px solid rgba(0, 180, 216, 0.2);
-    }
-
-    /* Responsive: Stack on smaller screens */
-    @media (max-width: 992px) {
-      .glass-card .left-history,
-      .glass-card .right-history {
-        flex: 1 1 100%;
-        padding-right: 0;
-        padding-left: 0;
-        border-left: none;
-        margin-bottom: 30px;
-      }
-
-      .glass-card .right-history {
-        margin-bottom: 0;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .glass-card .left-history,
-      .glass-card .right-history {
-        flex: 1 1 100%;
-        padding: 0;
-        margin-bottom: 20px;
-      }
-
-      .glass-card .right-history {
-        margin-bottom: 0;
-      }
-    }
-
     /* ===== STAT CARDS STYLING ===== */
     .stat-card {
       position: relative;
@@ -455,54 +452,7 @@ p {
     margin: 0;
 }
 
-/* ===== HISTORY 2-COLUMN LAYOUT ===== */
-.glass-card .left-history,
-.glass-card .right-history {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: stretch;
-}
 
-.glass-card .left-history {
-  flex: 1 1 45%;
-  min-width: 280px;
-  padding-right: 20px;
-}
-
-.glass-card .right-history {
-  flex: 1 1 50%;
-  min-width: 280px;
-  padding-left: 20px;
-  border-left: 2px solid rgba(0, 180, 216, 0.2);
-}
-
-/* Responsive: Stack on smaller screens */
-@media (max-width: 992px) {
-  .glass-card .left-history,
-  .glass-card .right-history {
-    flex: 1 1 100%;
-    padding-right: 0;
-    padding-left: 0;
-    border-left: none;
-    margin-bottom: 30px;
-  }
-  .glass-card .right-history {
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: 768px) {
-  .glass-card .left-history,
-  .glass-card .right-history {
-    flex: 1 1 100%;
-    padding: 0;
-    margin-bottom: 20px;
-  }
-  .glass-card .right-history {
-    margin-bottom: 0;
-  }
-}
 
 /* Responsive Timeline */
 @media (max-width: 768px) {
@@ -796,16 +746,6 @@ p {
     color: #444;
     position: relative;
     padding-left: 10px;
-}
-
-/* Reduced Section Title Padding for Tabs */
-.content-container .section-title h2 {
-    padding-bottom: 25px; /* Reduced from 50px */
-    font-size: 28px; /* Slightly smaller for compactness */
-}
-
-.content-container .section-title h2::after {
-    bottom: 15px; /* Adjust underline position */
 }
 
 /* Heading */
@@ -1158,59 +1098,3 @@ p {
   font-size: 14px;
 }
 
-
-
-
-/* CAMPUS CSS */
-
-.campus-item {
-    transition: all 0.3s ease;
-}
-/* TEXT */
-/* SECTION */
-.campus-section {
-    background: #f8f9fa;
-}
-
-/* TEXT */
-.campus-title {
-    color: #0d6efd;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-
-.campus-desc {
-    color: #555;
-    line-height: 1.6;
-}
-
-/* GRID */
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-/* IMAGE STYLE */
-.image-grid img {
-    width: 100%;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 12px;
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    display: block;
-}
-
-/* HOVER EFFECT 🔥 */
-.image-grid img:hover {
-    transform: scale(1.08) rotate(1deg);
-    z-index: 2;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-    .image-grid img {
-        height: 120px;
-    }
-}

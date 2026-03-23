@@ -1,25 +1,12 @@
 
-const slider = document.querySelector(".testimonial-wrapper");
-
-let scrollAmount = 0;
-
-function autoSlide() {
-    scrollAmount += 1;
-
-    if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
-        scrollAmount = 0;
-    }
-
-    slider.scrollTo({
-        left: scrollAmount,
-        behavior: "smooth"
-    });
+// Initialize Swiper for testimonials
+if (document.querySelector('.init-swiper')) {
+  const swiperConfigElement = document.querySelector('.init-swiper .swiper-config');
+  if (swiperConfigElement) {
+    const swiperConfig = JSON.parse(swiperConfigElement.textContent);
+    new Swiper('.init-swiper', swiperConfig);
+  }
 }
-
-setInterval(autoSlide, 30);
-
-
-
 
   document.getElementById("inquiryForm").addEventListener("submit", function(e){
 

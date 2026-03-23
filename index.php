@@ -74,9 +74,9 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
 </section>
 
 
-<section class="content-section py-5">
+<section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" class="content-section py-5">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row gy-4 align-items-center">
 
             <!-- LEFT CONTENT -->
             <div class="col-lg-6 content-text">
@@ -96,143 +96,187 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
             </div>
 
             <!-- RIGHT IMAGE -->
-            <div class="col-lg-6 text-center content-image">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMdfbEvV5dE9TM8l-VMI9fOpGuASecJEmQ8A&s" alt="Content Image">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
+                <img class="img-fluid" src="./Assets/students-2000x1279.jpg" alt="Content Image">
             </div>
 
         </div>
     </div>
 </section>
 
+    <!-- Counts Section -->
+    <section id="counts" class="section counts">
 
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
 
-<section class="testimonials-section py-5">
-    <div class="container">
-        
-        <!-- Section Title -->
-        <div class="section-title text-center">
-            <h2>What Our Clients Say</h2>
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="0">
+            <div class="stats-item text-center h-100">
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1232" data-purecounter-duration="2">0</span>
+              <p>Students</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="stats-item text-center h-100">
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="64" data-purecounter-duration="2">0</span>
+              <p>Courses</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="stats-item text-center h-100">
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="42" data-purecounter-duration="2">0</span>
+              <p>Events</p>
+            </div>
+          </div><!-- End Stats Item -->
+
+          <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="stats-item text-center h-100">
+              <span class="purecounter" data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="2">0</span>
+              <p>Trainers</p>
+            </div>
+          </div><!-- End Stats Item -->
+
         </div>
 
-        <div class="testimonial-wrapper">
+      </div>
 
-            <!-- Card 1 -->
-            <div class="testimonial-card">
-                <div class="quote-icon">“</div>
-                <p class="testimonial-text">
-                    This organization provided excellent service and support. 
-                    Highly satisfied with the professionalism and timely delivery.
-                </p>
-                <h5 class="client-name">Rahul Sharma</h5>
-                <span class="client-role">Software Engineer</span>
-            </div>
+    </section><!-- /Counts Section -->
 
-            <!-- Card 2 -->
-            <div class="testimonial-card">
-                <div class="quote-icon">“</div>
-                <p class="testimonial-text">
-                    Amazing experience! The team is very cooperative and skilled. 
-                    I would definitely recommend them.
-                </p>
-                <h5 class="client-name">Priya Verma</h5>
-                <span class="client-role">HR Manager</span>
-            </div>
+   <!-- Testimonials Section -->
+    <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" id="testimonials" class="testimonials section container" >
 
-            <!-- Card 3 -->
-            <div class="testimonial-card">
-                <div class="quote-icon">“</div>
-                <p class="testimonial-text">
-                    One of the best services I have ever used. Everything was smooth 
-                    and perfectly managed.
-                </p>
-                <h5 class="client-name">Amit Singh</h5>
-                <span class="client-role">Entrepreneur</span>
-            </div>
+        <h2 class="section-title">Testimonials</h2>
 
+      <div class="" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              },
+              "breakpoints": {
+                "320": {
+                  "slidesPerView": 1,
+                  "spaceBetween": 40
+                },
+                "1200": {
+                  "slidesPerView": 3,
+                  "spaceBetween": 20
+                }
+              }
+            }
+          </script>
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
+                  <h3>Saul Goodman</h3>
+                  <h4>Ceo &amp; Founder</h4>
+                  <div class="stars">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                  </div>
+                  <p>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>
+                  <div class="stars">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                  </div>
+                  <p>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
+                  <h3>Jena Karlis</h3>
+                  <h4>Store Owner</h4>
+                  <div class="stars">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                  </div>
+                  <p>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
+                  <h3>Matt Brandon</h3>
+                  <h4>Freelancer</h4>
+                  <div class="stars">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                  </div>
+                  <p>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-wrap">
+                <div class="testimonial-item">
+                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
+                  <h3>John Larson</h3>
+                  <h4>Entrepreneur</h4>
+                  <div class="stars">
+                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
+                  </div>
+                  <p>
+                    <i class="fa-solid fa-quote-left quote-icon"></i>
+                    <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+                    <i class="fa-solid fa-quote-right quote-icon"></i>
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
-    </div>
-</section>
-
-
-  <section class="achievements py-5">
-    <div class="container ">
-
-      <div class="section-title text-center" data-aos="fade-down">
-      <h2 class="fw-bold">Our Achievements</h2>
-      </div>
-
-      <div class="row g-4">
-
-      <!-- CARD 1 -->
-
-      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="0">
-      <div class="achievement-card">
-      <img src="./Assets/image/2-days-scba-886x1147.jpg">
-      <div class="achievement-overlay">
-      <button class="btn btn-light shadow-sm fw-bold"
-      onclick="openPopup('./Assets/image/2-days-scba-886x1147.jpg')">
-      <i class="fa-solid fa-eye me-2"></i>View
-      </button>
-      </div>
-      </div>
-      </div>
-
-      <!-- CARD 2 -->
-
-      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-      <div class="achievement-card">
-      <img src="./Assets/image/3-days-bff-886x1147.jpg">
-      <div class="achievement-overlay">
-      <button class="btn btn-light shadow-sm fw-bold"
-      onclick="openPopup('./Assets/image/3-days-bff-886x1147.jpg')">
-      <i class="fa-solid fa-eye me-2"></i>View
-      </button>
-      </div>
-      </div>
-      </div>
-
-      <!-- CARD 3 -->
-
-      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-      <div class="achievement-card">
-      <img src="./Assets/image/advert2-886x1108.jpeg">
-      <div class="achievement-overlay">
-      <button class="btn btn-light shadow-sm fw-bold"
-      onclick="openPopup('./Assets/image/advert2-886x1108.jpeg')">
-      <i class="fa-solid fa-eye me-2"></i>View
-      </button>
-      </div>
-      </div>
-      </div>
-
-      <!-- CARD 4 -->
-
-      <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-      <div class="achievement-card">
-      <img src="./Assets/image/maersk-advrt-2-886x1083.jpg">
-      <div class="achievement-overlay">
-      <button class="btn btn-light shadow-sm fw-bold"
-      onclick="openPopup('./Assets/image/maersk-advrt-2-886x1083.jpg')">
-      <i class="fa-solid fa-eye me-2"></i>View
-      </button>
-      </div>
-      </div>
-      </div>
 
       </div>
-      </div>
-</section>
 
-
-<!-- POPUP -->
-
-<div id="imagePopup" class="popup">
-
-<button class="close-btn" onclick="closePopup()">✕</button>
-
-<img id="popupImg">
-
-</div>
+    </section>
+    <!-- /Testimonials Section -->
 
 <section class="ask-us">
   <div class="container" data-aos="fade-up">
@@ -279,11 +323,66 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- PureCounter Vanilla JS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/purecounter/1.5.0/purecounter_vanilla.min.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
+        // Wait for DOM to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+
+            // Initialize PureCounter with proper timing
+            if (window.PureCounter) {
+                new PureCounter();
+            } else {
+                // Fallback if PureCounter library fails
+                console.warn('PureCounter library not loaded, using fallback');
+                initCountersFallback();
+            }
         });
+
+        // Fallback counter animation
+        function initCountersFallback() {
+            const counters = document.querySelectorAll('.purecounter');
+            const observerOptions = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const start = parseInt(counter.dataset.purecounterStart) || 0;
+                        const end = parseInt(counter.dataset.purecounterEnd) || 0;
+                        const duration = (parseInt(counter.dataset.purecounterDuration) || 2) * 1000;
+                        
+                        if (end > 0) {
+                            animateCounter(counter, start, end, duration);
+                            observer.unobserve(counter);
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            counters.forEach(counter => observer.observe(counter));
+        }
+
+        function animateCounter(element, start, end, duration) {
+            const increment = (end - start) / (duration / 16);
+            let current = start;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= end) {
+                    element.textContent = end.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 16);
+        }
     </script>
     <script src="./js/common.js"></script>
     <script src="./js/index.js"></script>
