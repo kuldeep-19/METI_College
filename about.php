@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
     <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./css/aboutus.css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
 </head>
 
@@ -21,29 +23,37 @@
     <?php
     include "./include/navbar.php";
     ?>
-    <section class="p-5">
+    <section>
         <div style="background: linear-gradient(135deg,#eef2ff,#f8fafc);">
             <div class="container">
 
                 <!-- TOP BUTTONS -->
-                <div id="top-tabs-section" class="d-flex justify-content-center flex-wrap gap-3 mb-4">
+                <div id="top-tabs-section" class="top-tabs-banner mb-5" data-aos="fade-up">
+                    <img src="./Assets/577a7723-2643x1762.jpg" alt="METI campus banner" class="top-tabs-banner-image">
+                    <div class="top-tabs-banner-overlay"></div>
+                    <div class="top-tabs-content">
+                        <h1 class="top-tabs-title">Explore METI</h1>
+                        <div class="top-tabs-actions d-flex justify-content-center flex-wrap gap-3">
+                            <button type="button" class="top-tab active" data-tab="about"
+                                onclick="showTabSection('about')">
+                                <i class="fa fa-building me-2"></i>About METI
+                            </button>
 
-                    <button class="top-tab active" data-tab="about">
-                        <i class="fa fa-building me-2"></i>About METI
-                    </button>
+                            <button type="button" class="top-tab" data-tab="whyus" onclick="showTabSection('whyus')">
+                                <i class="fa fa-graduation-cap me-2"></i>Why Us
+                            </button>
 
-                    <button class="top-tab" data-tab="whyus">
-                        <i class="fa fa-graduation-cap me-2"></i>Why Us
-                    </button>
+                            <button type="button" class="top-tab" data-tab="staff-faculty"
+                                onclick="showTabSection('staff-faculty')">
+                                <i class="fa fa-eye me-2"></i>Staff & Faculty
+                            </button>
 
-                    <button class="top-tab" data-tab="staff-faculty">
-                        <i class="fa fa-eye me-2"></i>Staff & Faculty
-                    </button>
-
-                    <button class="top-tab" data-tab="facilities">
-                        <i class="fa fa-bullseye me-2"></i>Facilities
-                    </button>
-
+                            <button type="button" class="top-tab" data-tab="facilities"
+                                onclick="showTabSection('facilities')">
+                                <i class="fa fa-bullseye me-2"></i>Facilities
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- CONTENT AREA -->
@@ -156,7 +166,8 @@
                                             <i class="fa fa-anchor fa-3x text-primary"></i>
                                         </div>
                                         <h5 class="fw-bold mb-3">Practical Excellence</h5>
-                                        <p><strong style="color: #00b4d8;">60% hands-on training</strong> with real engines,
+                                        <p><strong style="color: #00b4d8;">60% hands-on training</strong> with real
+                                            engines,
                                             simulators & afloat
                                             experience at Cochin Shipyard</p>
                                     </div>
@@ -224,379 +235,498 @@
                 <!-- WHY US TAB - 3 Static Subsections -->
                 <div class="tab-content-custom container" id="whyus">
 
-                        <!-- 1. ACHIEVEMENTS - Updated Layout -->
+                    <!-- 1. ACHIEVEMENTS - Updated Layout -->
 
-                        <div class="" data-aos="fade-up" data-aos-delay="100">
+                    <div class="" data-aos="fade-up" data-aos-delay="100">
 
-                            <h2 class="section-title mb-4">
-                                <i class="fa fa-trophy me-2 text-danger"></i>Achievements
-                            </h2>
+                        <h2 class="section-title mb-4">
+                            <i class="fa fa-trophy me-2 text-danger"></i>Achievements
+                        </h2>
 
-                            <div class="row row-cols-1 row-cols-md-4 g-4">
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/2-days-scba-886x1147.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit longer.
-                                            </p>
-                                        </div>
+                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/2-days-scba-886x1147.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/3-days-bff-886x1147.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit longer.
-                                            </p>
-                                        </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/3-days-bff-886x1147.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/advert2-886x1108.jpeg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content.</p>
-                                        </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/advert2-886x1108.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content.</p>
                                     </div>
                                 </div>
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/maersk-advrt-2-886x1083.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit longer.
-                                            </p>
-                                        </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/maersk-advrt-2-886x1083.jpg" class="card-img-top"
+                                        alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
-                        <!-- 2. AWARDS & CERTIFICATION -->
-                        <div class=" p-5 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <!-- 2. AWARDS & CERTIFICATION -->
+                    <div class=" p-5 mb-5" data-aos="fade-up" data-aos-delay="100">
 
-                            <h2 class="section-title mb-4">
-                                <i class="fa fa-trophy me-2 text-danger"></i>Awards & Certificates
-                            </h2>
+                        <h2 class="section-title mb-4">
+                            <i class="fa fa-trophy me-2 text-danger"></i>Awards & Certificates
+                        </h2>
 
-                            <div class="row row-cols-1 row-cols-md-4 g-4">
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/2-days-scba-886x1147.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit longer.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/3-days-bff-886x1147.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit longer.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/advert2-886x1108.jpeg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col">
-                                    <div class="card h-100">
-                                        <img src="./Assets/image/maersk-advrt-2-886x1083.jpg" class="card-img-top" alt="...">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Card title</h5>
-                                            <p class="card-text">This is a longer card with supporting text below as a
-                                                natural lead-in to additional content. This content is a little bit longer.
-                                            </p>
-                                        </div>
+                        <div class="row row-cols-1 row-cols-md-4 g-4">
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/2-days-scba-886x1147.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-
-                        <!-- 3. PLACEMENT -->
-                        <div class="p-5 mb-5" data-aos="fade-up" data-aos-delay="200">
-                            <h2 class="section-title mb-4">
-                                <i class="fa fa-briefcase me-2 text-success"></i>Placement Record
-                            </h2>
-                            <!-- PLACEMENT AUTO SLIDER -->
-                            <div class="placement-slider">
-
-                                <div class="placement-track">
-
-                                    <!-- CARD 1 -->
-                                    <div class="card">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg"
-                                                    class="img-fluid rounded-4 border border-2" alt="">
-                                            </div>
-
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h6><span class="label text-danger">Slot No:</span> 01</h6>
-                                                    <h6><span class="label text-primary">Name:</span> Devendra Kumar</h6>
-                                                    <h6><span class="label text-success">Sponsored by:</span> Maersk</h6>
-                                                    <h6><span class="label text-warning">Batch:</span> 2023</h6>
-                                                </div>
-                                            </div>
-
-                                            <!-- Testimonial -->
-                                            <div class="placement-testimonial">
-                                                <i class="fa-solid fa-quote-left quote-icon"></i>
-                                                <p class="testimonial-text">
-                                                    METI training made me job-ready from day one!
-                                                </p>
-                                                <small class="author">- Rahul K.</small>
-                                            </div>
-                                        </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/3-days-bff-886x1147.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
                                     </div>
-
-                                    <!-- CARD 2 -->
-                                    <div class="card">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg"
-                                                    class="img-fluid rounded-4 border border-2" alt="">
-                                            </div>
-
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h6><span class="label text-danger">Slot No:</span> 02</h6>
-                                                    <h6><span class="label text-primary">Name:</span> Aman Singh</h6>
-                                                    <h6><span class="label text-success">Sponsored by:</span> Shell</h6>
-                                                    <h6><span class="label text-warning">Batch:</span> 2022</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="placement-testimonial">
-                                                <i class="fa-solid fa-quote-left quote-icon"></i>
-                                                <p class="testimonial-text">
-                                                    Great faculty and placement support!
-                                                </p>
-                                                <small class="author">- Aman S.</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- CARD 3 -->
-                                    <div class="card">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg"
-                                                    class="img-fluid rounded-4 border border-2" alt="">
-                                            </div>
-
-                                            <div class="col-md-8">
-                                                <div class="card-body">
-                                                    <h6><span class="label text-danger">Slot No:</span> 03</h6>
-                                                    <h6><span class="label text-primary">Name:</span> Rohit Sharma</h6>
-                                                    <h6><span class="label text-success">Sponsored by:</span> BPCL</h6>
-                                                    <h6><span class="label text-warning">Batch:</span> 2021</h6>
-                                                </div>
-                                            </div>
-
-                                            <div class="placement-testimonial">
-                                                <i class="fa-solid fa-quote-left quote-icon"></i>
-                                                <p class="testimonial-text">
-                                                    Best institute for marine training!
-                                                </p>
-                                                <small class="author">- Rohit</small>
-                                            </div>
-                                        </div>
-                                    </div>
-
                                 </div>
-
-                                <!-- Navigation Arrows -->
-                                <button class="slider-nav slider-prev" onclick="scrollSlider('prev')">
-                                    <i class="fa fa-chevron-left"></i>
-                                </button>
-                                <button class="slider-nav slider-next" onclick="scrollSlider('next')">
-                                    <i class="fa fa-chevron-right"></i>
-                                </button>
-
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/advert2-886x1108.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card h-100">
+                                    <img src="./Assets/image/maersk-advrt-2-886x1083.jpg" class="card-img-top"
+                                        alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a longer card with supporting text below as a
+                                            natural lead-in to additional content. This content is a little bit longer.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
 
-                    <!-- staff-faculty -->
+                    <!-- 3. PLACEMENT -->
+                    <div class="p-5 mb-5" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="section-title mb-4">
+                            <i class="fa fa-briefcase me-2 text-success"></i>Placement Record
+                        </h2>
+                        <!-- PLACEMENT AUTO SLIDER -->
+                        <div class="placement-slider">
+
+                            <div class="placement-track">
+
+                                <!-- CARD 1 -->
+                                <div class="card">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg"
+                                                class="img-fluid rounded-4 border border-2" alt="">
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h6><span class="label text-danger">Slot No:</span> 01</h6>
+                                                <h6><span class="label text-primary">Name:</span> Devendra Kumar</h6>
+                                                <h6><span class="label text-success">Sponsored by:</span> Maersk</h6>
+                                                <h6><span class="label text-warning">Batch:</span> 2023</h6>
+                                            </div>
+                                        </div>
+
+                                        <!-- Testimonial -->
+                                        <div class="placement-testimonial">
+                                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                                            <p class="testimonial-text">
+                                                METI training made me job-ready from day one!
+                                            </p>
+                                            <small class="author">- Rahul K.</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 2 -->
+                                <div class="card">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg"
+                                                class="img-fluid rounded-4 border border-2" alt="">
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h6><span class="label text-danger">Slot No:</span> 02</h6>
+                                                <h6><span class="label text-primary">Name:</span> Aman Singh</h6>
+                                                <h6><span class="label text-success">Sponsored by:</span> Shell</h6>
+                                                <h6><span class="label text-warning">Batch:</span> 2022</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="placement-testimonial">
+                                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                                            <p class="testimonial-text">
+                                                Great faculty and placement support!
+                                            </p>
+                                            <small class="author">- Aman S.</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- CARD 3 -->
+                                <div class="card">
+                                    <div class="row g-0">
+                                        <div class="col-md-4">
+                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg"
+                                                class="img-fluid rounded-4 border border-2" alt="">
+                                        </div>
+
+                                        <div class="col-md-8">
+                                            <div class="card-body">
+                                                <h6><span class="label text-danger">Slot No:</span> 03</h6>
+                                                <h6><span class="label text-primary">Name:</span> Rohit Sharma</h6>
+                                                <h6><span class="label text-success">Sponsored by:</span> BPCL</h6>
+                                                <h6><span class="label text-warning">Batch:</span> 2021</h6>
+                                            </div>
+                                        </div>
+
+                                        <div class="placement-testimonial">
+                                            <i class="fa-solid fa-quote-left quote-icon"></i>
+                                            <p class="testimonial-text">
+                                                Best institute for marine training!
+                                            </p>
+                                            <small class="author">- Rohit</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Navigation Arrows -->
+                            <button class="slider-nav slider-prev" onclick="scrollSlider('prev')">
+                                <i class="fa fa-chevron-left"></i>
+                            </button>
+                            <button class="slider-nav slider-next" onclick="scrollSlider('next')">
+                                <i class="fa fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- staff-faculty -->
                 <div class="tab-content-custom container" id="staff-faculty">
 
-                        <!-- Department: Marine Engineering -->
-                        <div class="dept-section mb-5">
-                            <div class="dept-header">
-                                <h3><i class="fa-solid fa-ship me-2"></i> Marine Engineering Department</h3>
-                            </div>
-                            <div class="row g-4">
-                                <!-- Faculty 1 -->
-                                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="0">
-                                    <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModal"
-                                        data-name="Prof. Vikram Singh" data-designation="Head of Department"
-                                        data-dept="Marine Engineering"
-                                        data-education="M.Tech (Marine Engineering), Ph.D (Maritime Science)"
-                                        data-experience="25+ Years in Maritime Training & Research"
-                                        data-specialty="Marine Engines, Ship Propulsion"
-                                        data-photo="https://picsum.photos/400/533?10">
-                                        <div class="faculty-photo-wrapper">
-                                            <img src="https://picsum.photos/400/533?10" alt="Faculty" class="faculty-photo">
-                                            <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View
-                                                Profile
+                   <!-- Trainers Section -->
+                    <section id="trainers" class="section trainers">
+                        <div class="container row my-4 border " data-aos="fade-up" data-aos-delay="100">
+                         <div class="d-flex align-items-center">
+                        <h2 class="section-title mb-0">Department 1</h2></div>
+                                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up"        data-aos-delay="100">
+                                            <div class="member-img">
+                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="img-fluid" alt="">
                                             </div>
-                                        </div>
-                                        <div class="faculty-info">
-                                            <h5 class="faculty-name">Prof. Vikram Singh</h5>
-                                            <p class="faculty-designation">Head of Department</p>
-                                            <div class="faculty-experience">
-                                                <i class="fa-solid fa-clock-rotate-left me-1"></i> 25+ Years Experience
+                                            <div class="member-info text-center">
+                                            <h4>Walter White</h4>
+                                            <span>Business</span>
+                                            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Faculty 2 -->
-                                <div class="col-lg-4 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                                    <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModal"
-                                        data-name="Cmdr. Ramesh Nair" data-designation="Senior Instructor"
-                                        data-dept="Marine Engineering"
-                                        data-education="B.E. (Mechanical), Retired Navy Commander"
-                                        data-experience="20+ Years in Naval Operations & Training"
-                                        data-specialty="Naval Architecture, Marine Safety"
-                                        data-photo="https://picsum.photos/400/533?11">
-                                        <div class="faculty-photo-wrapper">
-                                            <img src="https://picsum.photos/400/533?11" alt="Faculty" class="faculty-photo">
-                                            <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View
-                                                Profile
-                                            </div>
-                                        </div>
-                                        <div class="faculty-info">
-                                            <h5 class="faculty-name">Cmdr. Ramesh Nair</h5>
-                                            <p class="faculty-designation">Senior Instructor</p>
-                                            <div class="faculty-experience">
-                                                <i class="fa-solid fa-clock-rotate-left me-1"></i> 20+ Years Experience
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div><!-- End Team Member -->
                         </div>
 
-                        <!-- Department: Applied Sciences -->
-                        <div class="dept-section">
-                            <div class="dept-header">
-                                <h3><i class="fa-solid fa-atom me-2"></i> Applied Sciences & Humanities</h3>
-                            </div>
-                            <div class="row g-4">
-                                <!-- Faculty 3 -->
-                                <div class="col-lg-4 col-md-6">
-                                    <div class="faculty-card" data-bs-toggle="modal" data-bs-target="#facultyModal"
-                                        data-name="Dr. Anjali Verma" data-designation="Asst. Professor (Mechanics)"
-                                        data-dept="Applied Sciences & Humanities"
-                                        data-education="M.Sc (Physics), Ph.D (Theoretical Mechanics)"
-                                        data-experience="15+ Years in Engineering Academics"
-                                        data-specialty="Quantum Mechanics, Structural Analysis"
-                                        data-photo="https://picsum.photos/400/533?12">
-                                        <div class="faculty-photo-wrapper">
-                                            <img src="https://picsum.photos/400/533?12" alt="Faculty" class="faculty-photo">
-                                            <div class="view-profile-overlay"><i class="fa-solid fa-eye me-1"></i> View
-                                                Profile
+                        <div class="container row my-4 border " data-aos="fade-up" data-aos-delay="100">
+                         <div class="d-flex align-items-center">
+                        <h2 class="section-title mb-0">Department 2</h2></div>
+                                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up"        data-aos-delay="100">
+                                            <div class="member-img">
+                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="img-fluid" alt="">
                                             </div>
-                                        </div>
-                                        <div class="faculty-info">
-                                            <h5 class="faculty-name">Dr. Anjali Verma</h5>
-                                            <p class="faculty-designation">Asst. Professor (Mechanics)</p>
-                                            <div class="faculty-experience">
-                                                <i class="fa-solid fa-clock-rotate-left me-1"></i> 15+ Years Experience
+                                            <div class="member-info text-center">
+                                            <h4>Walter White</h4>
+                                            <span>Business</span>
+                                            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
                                             </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                        </div><!-- End Team Member -->
                         </div>
+                    </section>
+    
+                        <!-- /Trainers Section -->
                 </div>
 
-                <!-- facilities -->
-                <div class="tab-content-custom container" id="facilities">
+                    <!-- facilities -->
+                    <div class="tab-content-custom " id="facilities">
+
+                        <!-- campus & Infrastructure -->
+
                         <h2 class="section-title">Campus & Infrastructure</h2>
-                        
-                </div>
+                        <div class="my-4">
+                            <div class="row facilities-overlap-row align-items-center">
 
+                                <!-- LEFT SIDE IMAGE SLIDER -->
+                                <div class="col-md-7 p-0 facilities-slider-col">
+                                    <div class="swiper facilitiesSwiper">
+                                        <div class="swiper-wrapper">
+
+                                            <div class="swiper-slide">
+                                                <img src="https://picsum.photos/800/500?1" class="img-fluid w-100">
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <img src="https://picsum.photos/800/500?2" class="img-fluid w-100">
+                                            </div>
+
+                                            <div class="swiper-slide">
+                                                <img src="https://picsum.photos/800/500?2" class="img-fluid w-100">
+                                            </div>
+
+                                        </div>
+
+                                        <!-- dots -->
+                                        <div class="swiper-pagination facilities-pagination"></div>
+                                    </div>
+                                </div>
+
+                                <!-- RIGHT SIDE TEXT -->
+                                <div class="col-md-5 facilities-content-col">
+                                    <div class="text-white p-4 facilities-content-box">
+                                        <div class="content-scroll">
+                                            <h4 class="mb-3">Campus & Infrastructure</h4>
+
+                                            <p>
+                                                Collection of print as well as electronic resources. It has around 30534
+                                                volumes...
+                                            </p>
+
+                                            <p>
+                                                The services and operations in the Central Library are fully computerized...
+                                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore laboriosam
+                                                possimus nesciunt ipsa dolorem odit molestiae voluptatum delectus est ex
+                                                voluptates tempora placeat incidunt excepturi qui, nisi harum! Tempora
+                                                quibusdam odio voluptatum consectetur eligendi quo debitis error ipsum sit
+                                                provident.
+                                            </p>
+
+                                            <p>
+                                                Keeping the library on modern techniques, the reading materials has been
+                                                classified... Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                                Obcaecati aut, quod similique quasi doloribus labore nulla beatae quae sunt
+                                                nihil tenetur architecto, modi iure recusandae cupiditate facere porro
+                                                corporis eum dolorem, excepturi aperiam possimus nostrum rem? Totam quam est
+                                                recusandae aliquam vitae, quas dolor libero assumenda consectetur, magni
+                                                reiciendis blanditiis provident ab? Placeat voluptatum voluptate suscipit
+                                                saepe nostrum quae, eaque iste corrupti animi inventore doloribus cumque ut
+                                                at illo! Facilis cum quaerat omnis nam modi, eaque animi optio maxime
+                                                reprehenderit officiis aspernatur cupiditate possimus vel facere dignissimos
+                                                ducimus tempore deleniti et. Commodi iure fugit quaerat pariatur incidunt et
+                                                dolor maiores.
+                                            </p>
+
+                                            <p>
+                                                The library is managed by highly qualified professionals...
+                                            </p>
+
+                                            <p>
+                                                (Aur bhi content add kar sakte ho scroll ke liye)
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- campus & Infrastructure -->
+
+                            <!-- class Roooms & Practical's -->
+                        <h2 class="section-title mt-4">Class Roooms & Practical's</h2>
+                        <div class="my-2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, accusamus ex optio velit soluta
+                                hic minus officiis. Iusto necessitatibus architecto doloribus est ipsum soluta, doloremque,
+                                exercitationem obcaecati, sed suscipit accusamus. Delectus nulla ducimus perferendis
+                                voluptatibus non exercitationem natus neque. Recusandae vero, exercitationem eos iste
+                                numquam harum unde! Doloribus, perspiciatis suscipit, qui maiores ab rem incidunt iste
+                                veniam non, dolor perferendis facere possimus cum! Dolorem, corporis itaque suscipit ea qui
+                                quo minus veniam dolor, beatae tempora, neque tempore consectetur esse? Iusto fuga
+                                consectetur atque repellendus aperiam quasi at hic fugit, optio ad aspernatur error. Eum
+                                quia laboriosam repudiandae deleniti, reiciendis aliquam?</p>
+                            <div class="container text-center">
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi9TKfSm6mAe_SR5Z3xYOtmlpinEhJ9_MC_A&s"
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 1">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://news.uchicago.edu/sites/default/files/styles/gallery/public/images/2018-07/Campus.jpg?h=81f7e332&itok=VDRipNcI"
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 2">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://media.istockphoto.com/id/948400550/photo/students-in-balliol-college-oxford-england.jpg?s=612x612&w=0&k=20&c=HTHAY0WjnlJeYOM2ii60JRrMlZr50k--wpVqq3yYGrU="
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 3">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://media.istockphoto.com/id/1323420737/photo/aerial-over-north-carolina-central-university-in-the-spring.jpg?s=612x612&w=0&k=20&c=KgNudHx1-Dnf7PaZprc6LgevoyjCUt2LV-ca2KkDcH0="
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 4">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                            <!-- class Roooms & Practical's -->
+
+                                <!-- WorkShops -->
+                        <h2 class="section-title mt-4">WorkShops</h2>
+                        <div class="my-2">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, accusamus ex optio velit soluta
+                                hic minus officiis. Iusto necessitatibus architecto doloribus est ipsum soluta, doloremque,
+                                exercitationem obcaecati, sed suscipit accusamus. Delectus nulla ducimus perferendis
+                                voluptatibus non exercitationem natus neque. Recusandae vero, exercitationem eos iste
+                                numquam harum unde! Doloribus, perspiciatis suscipit, qui maiores ab rem incidunt iste
+                                veniam non, dolor perferendis facere possimus cum! Dolorem, corporis itaque suscipit ea qui
+                                quo minus veniam dolor, beatae tempora, neque tempore consectetur esse? Iusto fuga
+                                consectetur atque repellendus aperiam quasi at hic fugit, optio ad aspernatur error. Eum
+                                quia laboriosam repudiandae deleniti, reiciendis aliquam?</p>
+                            <div class="container text-center">
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi9TKfSm6mAe_SR5Z3xYOtmlpinEhJ9_MC_A&s"
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 1">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://news.uchicago.edu/sites/default/files/styles/gallery/public/images/2018-07/Campus.jpg?h=81f7e332&itok=VDRipNcI"
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 2">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://media.istockphoto.com/id/948400550/photo/students-in-balliol-college-oxford-england.jpg?s=612x612&w=0&k=20&c=HTHAY0WjnlJeYOM2ii60JRrMlZr50k--wpVqq3yYGrU="
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 3">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://media.istockphoto.com/id/1323420737/photo/aerial-over-north-carolina-central-university-in-the-spring.jpg?s=612x612&w=0&k=20&c=KgNudHx1-Dnf7PaZprc6LgevoyjCUt2LV-ca2KkDcH0="
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 4">
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        </div>
+                        <!-- WorkShops -->
+
+                        <!-- Hostel -->
+                            <h2 class="section-title mt-4">Hostel</h2>
+                            <div class="my-2">
+                                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas recusandae nisi repellat beatae, praesentium iste voluptatem sit nam, eveniet dolores animi enim provident asperiores sunt nemo vitae ut repellendus corporis, officia cumque! Fugit ab illo sapiente ullam eius dolore praesentium minima porro eveniet fuga sed, impedit veritatis culpa suscipit voluptates modi reprehenderit labore doloribus. Incidunt facere, enim non ex magni quibusdam sed vel quae earum, pariatur suscipit accusantium molestiae, ducimus dicta error vero! Quo placeat inventore perferendis error magni ratione perspiciatis quaerat, eum, corrupti at sapiente! Voluptate beatae excepturi veniam nulla, maxime exercitationem cumque laboriosam quas reiciendis, expedita corporis accusantium, eum neque dolor dolorum. Nihil ad, consequuntur hic porro maxime corporis ratione rerum voluptatem aliquam labore voluptatum. Corrupti similique velit quis, vel vero debitis laudantium excepturi illum aliquid, explicabo ab deserunt consequatur perspiciatis minus esse nulla nemo. Officiis dolores perferendis laboriosam, et, expedita doloremque perspiciatis error iure pariatur vero itaque?</p>
+
+                                    <div class="container text-center">
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi9TKfSm6mAe_SR5Z3xYOtmlpinEhJ9_MC_A&s"
+                                                    class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 1">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://news.uchicago.edu/sites/default/files/styles/gallery/public/images/2018-07/Campus.jpg?h=81f7e332&itok=VDRipNcI"
+                                                    class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 2">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://media.istockphoto.com/id/948400550/photo/students-in-balliol-college-oxford-england.jpg?s=612x612&w=0&k=20&c=HTHAY0WjnlJeYOM2ii60JRrMlZr50k--wpVqq3yYGrU="
+                                                    class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 3">
+                                            </div>
+                                            <div class="col-4">
+                                                <img src="https://media.istockphoto.com/id/1323420737/photo/aerial-over-north-carolina-central-university-in-the-spring.jpg?s=612x612&w=0&k=20&c=KgNudHx1-Dnf7PaZprc6LgevoyjCUt2LV-ca2KkDcH0="
+                                                    class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 4">
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+
+                            </div>
+                        <!-- Hostel -->
+
+
+                        <!-- Mess -->
+                        <h2 class="section-title mt-4">Mess</h2>
+                        <div class="my-2">
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas recusandae nisi repellat beatae, praesentium
+                                iste voluptatem sit nam, eveniet dolores animi enim provident asperiores sunt nemo vitae ut repellendus
+                                corporis, officia cumque! Fugit ab illo sapiente ullam eius dolore praesentium minima porro eveniet fuga sed,
+                                impedit veritatis culpa suscipit voluptates modi reprehenderit labore doloribus. Incidunt facere, enim non ex
+                                magni quibusdam sed vel quae earum, pariatur suscipit accusantium molestiae, ducimus dicta error vero! Quo
+                                placeat inventore perferendis error magni ratione perspiciatis quaerat, eum, corrupti at sapiente! Voluptate
+                                beatae excepturi veniam nulla, maxime exercitationem cumque laboriosam quas reiciendis, expedita corporis
+                                accusantium, eum neque dolor dolorum. Nihil ad, consequuntur hic porro maxime corporis ratione rerum voluptatem
+                                aliquam labore voluptatum. Corrupti similique velit quis, vel vero debitis laudantium excepturi illum aliquid,
+                                explicabo ab deserunt consequatur perspiciatis minus esse nulla nemo. Officiis dolores perferendis laboriosam,
+                                et, expedita doloremque perspiciatis error iure pariatur vero itaque?</p>
+                        
+                            <div class="container text-center">
+                                <div class="row g-3">
+                                    <div class="col-4">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi9TKfSm6mAe_SR5Z3xYOtmlpinEhJ9_MC_A&s"
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 1">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://news.uchicago.edu/sites/default/files/styles/gallery/public/images/2018-07/Campus.jpg?h=81f7e332&itok=VDRipNcI"
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 2">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://media.istockphoto.com/id/948400550/photo/students-in-balliol-college-oxford-england.jpg?s=612x612&w=0&k=20&c=HTHAY0WjnlJeYOM2ii60JRrMlZr50k--wpVqq3yYGrU="
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 3">
+                                    </div>
+                                    <div class="col-4">
+                                        <img src="https://media.istockphoto.com/id/1323420737/photo/aerial-over-north-carolina-central-university-in-the-spring.jpg?s=612x612&w=0&k=20&c=KgNudHx1-Dnf7PaZprc6LgevoyjCUt2LV-ca2KkDcH0="
+                                            class="img-fluid w-100 rounded shadow-sm h-100 object-fit-cover" alt="Image 4">
+                                    </div>
+                                </div>
+                        
+                            </div>
+                        
+                        </div>
+                        <!-- Mess -->
+                    </div>
             </div>
-        </div>
     </section>
 
     <?php
     include "./include/footer.php";
     ?>
 
-
-    <!-- Faculty Detail Modal -->
-    <div class="modal fade" id="facultyModal" tabindex="-1" aria-labelledby="facultyModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-            <div class="modal-content faculty-modal-content">
-                <div class="modal-header border-0 pb-0">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        style="z-index: 10;"></button>
-                </div>
-                <div class="modal-body p-0">
-                    <div class="row g-0">
-                        <div class="col-md-5 modal-photo-col">
-                            <img src="" id="modalImg" class="img-fluid profile-modal-img" alt="Faculty">
-                        </div>
-                        <div class="col-md-7 p-4 modal-info-col bg-white">
-                            <h2 class="modal-faculty-name mb-1" id="modalName"></h2>
-                            <h5 class="modal-faculty-designation text-primary mb-4" id="modalDesignation"></h5>
-
-                            <div class="faculty-detail-item mb-3">
-                                <label><i class="fa-solid fa-building-user me-2"></i> Department</label>
-                                <p id="modalDept" class="fw-bold text-navy"></p>
-                            </div>
-
-                            <div class="faculty-detail-item mb-3">
-                                <label><i class="fa-solid fa-graduation-cap me-2"></i> Education</label>
-                                <p id="modalEducation"></p>
-                            </div>
-
-                            <div class="faculty-detail-item mb-3">
-                                <label><i class="fa-solid fa-briefcase me-2"></i> Experience</label>
-                                <p id="modalExperience"></p>
-                            </div>
-
-                            <div class="faculty-detail-item">
-                                <label><i class="fa-solid fa-star me-2"></i> Area of Expertise</label>
-                                <p id="modalSpecialty"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-
     <script src="./js/common.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
         AOS.init({
             duration: 1000,
@@ -604,80 +734,58 @@
         });
     </script>
     <script>
-        const tabs = document.querySelectorAll(".top-tab");
-        const contents = document.querySelectorAll(".tab-content-custom");
+        document.addEventListener("DOMContentLoaded", function () {
+            const tabs = document.querySelectorAll(".top-tab");
+            const contents = document.querySelectorAll(".tab-content-custom");
 
-        tabs.forEach(btn => {
-            btn.addEventListener("click", () => {
+            window.showTabSection = function (tabId) {
+                const targetContent = document.getElementById(tabId);
+                const targetButton = document.querySelector(`.top-tab[data-tab="${tabId}"]`);
 
-                tabs.forEach(b => b.classList.remove("active"));
-                contents.forEach(c => c.classList.remove("active"));
+                if (!targetContent || !targetButton) return;
 
-                btn.classList.add("active");
-                document.getElementById(btn.dataset.tab).classList.add("active");
+                tabs.forEach((button) => button.classList.remove("active"));
+                contents.forEach((content) => content.classList.remove("active"));
+
+                targetButton.classList.add("active");
+                targetContent.classList.add("active");
+            };
+
+            tabs.forEach((btn) => {
+                btn.addEventListener("click", function () {
+                    window.showTabSection(btn.dataset.tab);
+                });
             });
-        });
 
-        // Faculty Modal Logic
-        const facultyModal = document.getElementById('facultyModal');
-        if (facultyModal) {
-            facultyModal.addEventListener('show.bs.modal', function (event) {
-                const button = event.relatedTarget;
-                const name = button.getAttribute('data-name');
-                const designation = button.getAttribute('data-designation');
-                const dept = button.getAttribute('data-dept');
-                const education = button.getAttribute('data-education');
-                const experience = button.getAttribute('data-experience');
-                const specialty = button.getAttribute('data-specialty');
-                const photo = button.getAttribute('data-photo');
+            
+            function handleHash() {
+                const hash = window.location.hash;
+                if (!hash) return;
 
-                document.getElementById('modalName').textContent = name;
-                document.getElementById('modalDesignation').textContent = designation;
-                document.getElementById('modalDept').textContent = dept;
-                document.getElementById('modalEducation').textContent = education;
-                document.getElementById('modalExperience').textContent = experience;
-                document.getElementById('modalSpecialty').textContent = specialty;
-                document.getElementById('modalImg').src = photo;
-            });
-        }
-
-
-
-        // Handle direct links from Navbar (Robust Hash detection with Jump Prevention)
-        function handleHash() {
-            const hash = window.location.hash;
-            if (hash) {
-                // Remove # and the "tab-" prefix to get the actual tabId
                 const tabId = hash.replace("#tab-", "").replace("#", "");
 
-                // Ensure everything is settled
                 setTimeout(() => {
-                    const targetTab = document.querySelector(`.top-tab[data-tab="${tabId}"]`);
                     const scrollTarget = document.getElementById('top-tabs-section');
+                    window.showTabSection(tabId);
 
-                    if (targetTab) {
-                        targetTab.click();
+                    if (scrollTarget) {
+                        const offset = 120;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = scrollTarget.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
 
-                        if (scrollTarget) {
-                            const offset = 120;
-                            const bodyRect = document.body.getBoundingClientRect().top;
-                            const elementRect = scrollTarget.getBoundingClientRect().top;
-                            const elementPosition = elementRect - bodyRect;
-                            const offsetPosition = elementPosition - offset;
-
-                            window.scrollTo({
-                                top: offsetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
                     }
                 }, 500);
             }
-        }
 
-        // Run once on load and every time hash changes
-        handleHash();
-        window.addEventListener("hashchange", handleHash);
+            handleHash();
+            window.addEventListener("hashchange", handleHash);
+        });
     </script>
 
     <script>
@@ -708,34 +816,19 @@
     </script>
 
     <script>
-        const swiper = new Swiper(".myPlacementSlider", {
-            slidesPerView: 1,
-            spaceBetween: 20,
-            loop: true,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-            speed: 800, // smooth transition
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-
-            // Responsive
-            breakpoints: {
-                768: {
-                    slidesPerView: 2
+        if (document.querySelector(".facilitiesSwiper")) {
+            new Swiper(".facilitiesSwiper", {
+                loop: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
                 },
-                1024: {
-                    slidesPerView: 3
+                pagination: {
+                    el: ".facilities-pagination",
+                    clickable: true,
                 }
-            }
-        });
+            });
+        }
     </script>
 </body>
 

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1774259204744,
@@ -32,6 +32,22 @@
                 {
                     "date": 1774260287321,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -105,9 +105,9 @@\n     content: '';\n     position: absolute;\n     bottom: 0;\n     left: 0;\n-    width: 50%;\n+    width: 199%;\n     height: 4px;\n     background: linear-gradient(90deg, #00b4d8, #f0a500);\n     border-radius: 2px;\n }\n"
+                },
+                {
+                    "date": 1774330098656,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n ::-webkit-scrollbar-track {\n     background: #e8edf3;\n }\n ::-webkit-scrollbar-thumb {\n-    background: linear-gradient(180deg, #1e3a5f, #00b4d8);\n+    /* background: linear-gradient(180deg, #1e3a5f, #00b4d8); */\n     border-radius: 4px;\n }\n \n /* ===== GLOBAL UTILITIES ===== */\n@@ -105,9 +105,9 @@\n     content: '';\n     position: absolute;\n     bottom: 0;\n     left: 0;\n-    width: 199%;\n+    width: 100%;\n     height: 4px;\n     background: linear-gradient(90deg, #00b4d8, #f0a500);\n     border-radius: 2px;\n }\n"
+                },
+                {
+                    "date": 1774330109732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n ::-webkit-scrollbar-track {\n     background: #e8edf3;\n }\n ::-webkit-scrollbar-thumb {\n-    /* background: linear-gradient(180deg, #1e3a5f, #00b4d8); */\n+    background: linear-gradient(180deg, #1e3a5f, #00b4d8);\n     border-radius: 4px;\n }\n \n /* ===== GLOBAL UTILITIES ===== */\n"
+                },
+                {
+                    "date": 1774334851702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n body {\n     font-family: 'Inter', Arial, sans-serif;\n     margin: 0;\n     padding: 0;\n+    overflow-x: hidden;\n     background-color: #f0f4f8;\n     color: #1a1a2e;\n     -webkit-font-smoothing: antialiased;\n     animation: pageReveal 0.8s ease-out forwards;\n"
+                },
+                {
+                    "date": 1774335474235,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -99,9 +99,9 @@\n     color: #1e3a5f;\n     position: relative;\n     display: inline-block;\n     padding-bottom: 15px;\n-    margin-bottom: 30px !important;\n+    margin-bottom: 29px !important;\n }\n .section-title::after{\n     content: '';\n     position: absolute;\n"
                 }
             ],
             "date": 1774259204744,
