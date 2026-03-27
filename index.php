@@ -145,137 +145,115 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
     </section><!-- /Counts Section -->
 
    <!-- Testimonials Section -->
-    <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" id="testimonials" class="testimonials section container" >
 
-        <h2 class="section-title">Testimonials</h2>
+   <?php
+$testimonials = [
+    [
+        "name" => "Saul Goodman",
+        "role" => "CEO & Founder",
+        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
+        "rating" => 5,
+        "message" => "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus."
+    ],
+    [
+        "name" => "Sara Wilsson",
+        "role" => "Designer",
+        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
+        "rating" => 5,
+        "message" => "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid."
+    ],
+    [
+        "name" => "Jena Karlis",
+        "role" => "Store Owner",
+        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
+        "rating" => 5,
+        "message" => "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla."
+    ],
+    [
+        "name" => "Matt Brandon",
+        "role" => "Freelancer",
+        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
+        "rating" => 5,
+        "message" => "Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim."
+    ],
+    [
+        "name" => "John Larson",
+        "role" => "Entrepreneur",
+        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
+        "rating" => 5,
+        "message" => "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor."
+    ]
+];
+?>
 
-      <div class="" data-aos="fade-up" data-aos-delay="100">
+<section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" 
+         id="testimonials" 
+         class="testimonials section container">
+
+    <h2 class="section-title">Testimonials</h2>
+
+    <div data-aos="fade-up">
 
         <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
+
+            <!-- Swiper Config -->
+            <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
+              "autoplay": { "delay": 5000 },
               "slidesPerView": "auto",
               "pagination": {
                 "el": ".swiper-pagination",
-                "type": "bullets",
                 "clickable": true
               },
               "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 20
-                }
+                "320": { "slidesPerView": 1, "spaceBetween": 40 },
+                "1200": { "slidesPerView": 3, "spaceBetween": 20 }
               }
             }
-          </script>
-          <div class="swiper-wrapper">
+            </script>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                  <div class="stars">
-                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <span>Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.</span>
-                    <i class="fa-solid fa-quote-right quote-icon"></i>
-                  </p>
+            <div class="swiper-wrapper">
+
+                <?php foreach ($testimonials as $t): ?>
+                <div class="swiper-slide">
+                    <div class="testimonial-wrap">
+                        <div class="testimonial-item">
+
+                            <img src="<?= $t['image']; ?>" 
+                                 class="testimonial-img" 
+                                 alt="<?= $t['name']; ?>">
+
+                            <h3><?= $t['name']; ?></h3>
+                            <h4><?= $t['role']; ?></h4>
+
+                            <!-- Stars -->
+                            <div class="stars">
+                                <?php for ($i = 0; $i < $t['rating']; $i++): ?>
+                                    <i class="fa-solid fa-star text-warning"></i>
+                                <?php endfor; ?>
+                            </div>
+
+                            <p>
+                                <i class="fa-solid fa-quote-left quote-icon"></i>
+                                <span><?= $t['message']; ?></span>
+                                <i class="fa-solid fa-quote-right quote-icon"></i>
+                            </p>
+
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div><!-- End testimonial item -->
+                <?php endforeach; ?>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                  <div class="stars">
-                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <span>Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.</span>
-                    <i class="fa-solid fa-quote-right quote-icon"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+            </div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                  <div class="stars">
-                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <span>Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.</span>
-                    <i class="fa-solid fa-quote-right quote-icon"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
+            <div class="swiper-pagination"></div>
 
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                  <div class="stars">
-                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.</span>
-                    <i class="fa-solid fa-quote-right quote-icon"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-wrap">
-                <div class="testimonial-item">
-                  <img src="Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                  <div class="stars">
-                    <i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i><i class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></i>
-                  </div>
-                  <p>
-                    <i class="fa-solid fa-quote-left quote-icon"></i>
-                    <span>Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
-                    <i class="fa-solid fa-quote-right quote-icon"></i>
-                  </p>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
         </div>
 
-      </div>
-
-    </section>
+    </div>
+</section>
     <!-- /Testimonials Section -->
 
 <section class="ask-us">

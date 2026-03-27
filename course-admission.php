@@ -1,10 +1,3 @@
-<?php
-
-/**
- * Course & Admission Page
- * METI College Website
- */
-?>
 <!DOCTYPE html>
 <html lang="en">
 
