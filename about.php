@@ -456,40 +456,135 @@
                 <!-- staff-faculty -->
                 <div class="tab-content-custom container" id="staff-faculty">
 
-                   <!-- Trainers Section -->
-                    <section id="trainers" class="section trainers">
-                        <div class="container row my-4 border " data-aos="fade-up" data-aos-delay="100">
-                         <div class="d-flex align-items-center">
-                        <h2 class="section-title mb-0">Department 1</h2></div>
-                                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up"        data-aos-delay="100">
-                                            <div class="member-img">
-                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="img-fluid" alt="">
+                    <!-- Trainers Section -->
+                    <section id="trainers" class="section trainers py-4">
+
+                        <!-- DEPARTMENT 1 -->
+                        <div class="faculty-dept-block" data-aos="fade-up" data-aos-delay="100">
+                            <div class="faculty-dept-header">
+                                <i class="fa fa-anchor me-2"></i> Department of Marine Engineering
+                            </div>
+                            <div class="row g-4">
+
+                                <!-- Card 1 -->
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="faculty-card" onclick="openFacultyModal(
+                                        'Saju M D',
+                                        'Course In-Charge',
+                                        'Department of Marine Engineering',
+                                        'B.E (Marine), M.Tech (Ocean Engineering)',
+                                        '15+ Years',
+                                        'Specializes in Marine Diesel Engines, Ship Stability and Naval Architecture. Oversees the entire GME course curriculum and practical training at METI.',
+                                        ['Marine Diesel Engines', 'Ship Stability', 'Naval Architecture'],
+                                        './Assets/faculty/saju-md-course-in-charge-photo-706x942.jpg'
+                                    )">
+                                        <div class="faculty-card-img-wrap">
+                                            <img src="./Assets/faculty/saju-md-course-in-charge-photo-706x942.jpg" alt="Saju M D">
+                                            <div class="faculty-card-overlay">
+                                                <i class="fa fa-expand-alt"></i> View Profile
                                             </div>
-                                            <div class="member-info text-center">
-                                            <h4>Walter White</h4>
-                                            <span>Business</span>
-                                            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
+                                        </div>
+                                        <div class="faculty-card-body">
+                                            <h5>Saju M D</h5>
+                                            <span class="faculty-role">Course In-Charge</span>
+                                            <p>Marine Diesel Engines · Ship Stability</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 2 -->
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="faculty-card" onclick="openFacultyModal(
+                                        'George Abraham',
+                                        'Head of Department',
+                                        'Department of Marine Engineering',
+                                        'B.E (Marine Engineering), M.Tech',
+                                        '18+ Years',
+                                        'Leads the Department of Marine Engineering at METI. Expert in engine room management, marine propulsion systems and STCW certification programs.',
+                                        ['Engine Room Management', 'Marine Propulsion', 'STCW Programs'],
+                                        './Assets/faculty/photo-george-abraham-hod-150x200.jpg'
+                                    )">
+                                        <div class="faculty-card-img-wrap">
+                                            <img src="./Assets/faculty/photo-george-abraham-hod-150x200.jpg" alt="George Abraham">
+                                            <div class="faculty-card-overlay">
+                                                <i class="fa fa-expand-alt"></i> View Profile
                                             </div>
-                                        </div><!-- End Team Member -->
+                                        </div>
+                                        <div class="faculty-card-body">
+                                            <h5>George Abraham</h5>
+                                            <span class="faculty-role">Head of Department</span>
+                                            <p>Propulsion Systems · STCW Programs</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Card 3 -->
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="faculty-card" onclick="openFacultyModal(
+                                        'Elizabeth K A',
+                                        'Senior Faculty',
+                                        'Department of Marine Engineering',
+                                        'B.Sc (Physics), M.Sc, B.Ed',
+                                        '12+ Years',
+                                        'Specializes in Mathematics and Applied Sciences for Marine Engineering cadets. Conducts STCW workshops and safety training at METI.',
+                                        ['Applied Mathematics', 'Physics', 'Safety Training'],
+                                        './Assets/faculty/elizabeth-k-a-photo-413x531.jpg'
+                                    )">
+                                        <div class="faculty-card-img-wrap">
+                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg" alt="Elizabeth K A">
+                                            <div class="faculty-card-overlay">
+                                                <i class="fa fa-expand-alt"></i> View Profile
+                                            </div>
+                                        </div>
+                                        <div class="faculty-card-body">
+                                            <h5>Elizabeth K A</h5>
+                                            <span class="faculty-role">Senior Faculty</span>
+                                            <p>Applied Mathematics · Safety Training</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
 
-                        <div class="container row my-4 border " data-aos="fade-up" data-aos-delay="100">
-                         <div class="d-flex align-items-center">
-                        <h2 class="section-title mb-0">Department 2</h2></div>
-                                        <div class="col-lg-4 col-md-6 member" data-aos="fade-up"        data-aos-delay="100">
-                                            <div class="member-img">
-                                            <img src="./Assets/faculty/elizabeth-k-a-photo-413x531.jpg" class="img-fluid" alt="">
+                        <!-- DEPARTMENT 2 -->
+                        <div class="faculty-dept-block" data-aos="fade-up" data-aos-delay="150">
+                            <div class="faculty-dept-header">
+                                <i class="fa fa-ship me-2"></i> Department of Nautical Studies
+                            </div>
+                            <div class="row g-4">
+
+                                <!-- Card 4 -->
+                                <div class="col-lg-3 col-md-4 col-sm-6">
+                                    <div class="faculty-card" onclick="openFacultyModal(
+                                        'Noushad T H',
+                                        'Faculty – Nautical Studies',
+                                        'Department of Nautical Studies',
+                                        'B.Sc (Nautical Science), M.Phil',
+                                        '10+ Years',
+                                        'Expert in Navigation, Maritime Laws and Cargo Operations. Trains marine cadets in bridge watchkeeping and integrated navigation systems.',
+                                        ['Navigation Systems', 'Maritime Laws', 'Cargo Operations'],
+                                        './Assets/faculty/noushad-th-706x872.jpeg'
+                                    )">
+                                        <div class="faculty-card-img-wrap">
+                                            <img src="./Assets/faculty/noushad-th-706x872.jpeg" alt="Noushad T H">
+                                            <div class="faculty-card-overlay">
+                                                <i class="fa fa-expand-alt"></i> View Profile
                                             </div>
-                                            <div class="member-info text-center">
-                                            <h4>Walter White</h4>
-                                            <span>Business</span>
-                                            <p>Aliquam iure quaerat voluptatem praesentium possimus unde laudantium vel dolorum distinctio dire flow</p>
-                                            </div>
-                                        </div><!-- End Team Member -->
+                                        </div>
+                                        <div class="faculty-card-body">
+                                            <h5>Noushad T H</h5>
+                                            <span class="faculty-role">Faculty – Nautical Studies</span>
+                                            <p>Navigation · Maritime Laws</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
+
                     </section>
-    
-                        <!-- /Trainers Section -->
+                    <!-- /Trainers Section -->
                 </div>
 
                     <!-- facilities -->
@@ -725,6 +820,64 @@
     include "./include/footer.php";
     ?>
 
+    <!-- ====== FACULTY PROFILE MODAL ====== -->
+    <div class="faculty-modal-backdrop" id="facultyModalBackdrop" onclick="closeFacultyModal()"></div>
+    <div class="faculty-modal-popup" id="facultyModalPopup" role="dialog" aria-modal="true">
+        <!-- Close Button -->
+        <button class="faculty-modal-close" onclick="closeFacultyModal()" title="Close">
+            <i class="fa fa-times"></i>
+        </button>
+
+        <div class="faculty-modal-inner">
+            <!-- LEFT: Photo Panel -->
+            <div class="faculty-modal-photo-panel">
+                <div class="faculty-modal-img-wrap">
+                    <img id="fm-photo" src="" alt="Faculty Photo">
+                </div>
+                <div class="faculty-modal-badge-row">
+                    <span class="fm-exp-badge"><i class="fa fa-clock me-1"></i><span id="fm-exp"></span></span>
+                </div>
+            </div>
+
+            <!-- RIGHT: Info Panel -->
+            <div class="faculty-modal-info-panel">
+                <div class="faculty-modal-header-block">
+                    <h3 id="fm-name"></h3>
+                    <span class="fm-role-pill" id="fm-role"></span>
+                    <p class="fm-dept" id="fm-dept"><i class="fa fa-university me-1"></i><span></span></p>
+                </div>
+
+                <div class="fm-detail-row">
+                    <div class="fm-detail-item">
+                        <i class="fa fa-graduation-cap"></i>
+                        <div>
+                            <small>Qualification</small>
+                            <strong id="fm-qual"></strong>
+                        </div>
+                    </div>
+                    <div class="fm-detail-item">
+                        <i class="fa fa-briefcase"></i>
+                        <div>
+                            <small>Experience</small>
+                            <strong id="fm-exp2"></strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fm-about-block">
+                    <h6><i class="fa fa-user me-2"></i>About</h6>
+                    <p id="fm-desc"></p>
+                </div>
+
+                <div class="fm-skills-block">
+                    <h6><i class="fa fa-tags me-2"></i>Specializations</h6>
+                    <div class="fm-tags" id="fm-tags"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ====== END FACULTY MODAL ====== -->
+
     <script src="./js/common.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script>
@@ -829,6 +982,74 @@
                 }
             });
         }
+    </script>
+
+    <script>
+    /* ====== FACULTY MODAL FUNCTIONS ====== */
+    function openFacultyModal(name, role, dept, qual, exp, desc, tags, img) {
+        document.getElementById('fm-name').textContent  = name;
+        document.getElementById('fm-role').textContent  = role;
+        document.getElementById('fm-dept').innerHTML    = '<i class="fa fa-university me-1"></i>' + dept;
+        document.getElementById('fm-qual').textContent  = qual;
+        document.getElementById('fm-exp').textContent   = exp;
+        document.getElementById('fm-exp2').textContent  = exp;
+        document.getElementById('fm-desc').textContent  = desc;
+        document.getElementById('fm-photo').src         = img;
+        document.getElementById('fm-photo').alt         = name;
+
+        // Build tags
+        const tagsContainer = document.getElementById('fm-tags');
+        tagsContainer.innerHTML = '';
+        tags.forEach(function(tag) {
+            const span = document.createElement('span');
+            span.className = 'fm-tag';
+            span.textContent = tag;
+            tagsContainer.appendChild(span);
+        });
+
+        // Get current scroll position
+        const scrollTop = window.scrollY;
+        
+        // Apply position to backdrop and modal wrapper
+        const backdrop = document.getElementById('facultyModalBackdrop');
+        const popup = document.getElementById('facultyModalPopup');
+        
+        backdrop.style.top = scrollTop + 'px';
+        popup.style.top = scrollTop + 'px';
+
+        // Show modal & prevent background scroll
+        document.body.style.overflow = 'hidden';
+        backdrop.classList.add('active');
+        popup.classList.add('active');
+    }
+
+    function closeFacultyModal() {
+        // Restore background scroll
+        document.body.style.overflow = '';
+        const backdrop = document.getElementById('facultyModalBackdrop');
+        const popup = document.getElementById('facultyModalPopup');
+        
+        backdrop.classList.remove('active');
+        popup.classList.remove('active');
+        
+        // small delay before removing top to avoid jump
+        setTimeout(() => {
+            backdrop.style.top = '';
+            popup.style.top = '';
+        }, 300);
+    }
+
+    // Close on Escape key or backdrop click
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeFacultyModal();
+    });
+    
+    document.getElementById('facultyModalPopup').addEventListener('click', function(e) {
+        // If clicking directly on the scrollable wrapper (outside the inner card), close it
+        if (e.target === this) {
+            closeFacultyModal();
+        }
+    });
     </script>
 </body>
 
