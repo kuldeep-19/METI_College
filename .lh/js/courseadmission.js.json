@@ -1,0 +1,22 @@
+{
+    "sourceFile": "js/courseadmission.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1774674453282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1774674469766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<script>\n+\n     document.addEventListener(\"DOMContentLoaded\", function () {\n             const tabs = document.querySelectorAll(\".top-tab\");\n     const contents = document.querySelectorAll(\".tab-content-custom\");\n \n"
+                }
+            ],
+            "date": 1774674453282,
+            "name": "Commit-0",
+            "content": "<script>\n    document.addEventListener(\"DOMContentLoaded\", function () {\n            const tabs = document.querySelectorAll(\".top-tab\");\n    const contents = document.querySelectorAll(\".tab-content-custom\");\n\n    window.showTabSection = function (tabId) {\n                const targetContent = document.getElementById(tabId);\n    const targetButton = document.querySelector(`.top-tab[data-tab=\"${tabId}\"]`);\n\n    if (!targetContent || !targetButton) return;\n\n                tabs.forEach((button) => button.classList.remove(\"active\"));\n                contents.forEach((content) => content.classList.remove(\"active\"));\n\n    targetButton.classList.add(\"active\");\n    targetContent.classList.add(\"active\");\n            };\n\n            tabs.forEach((btn) => {\n        btn.addEventListener(\"click\", function () {\n            window.showTabSection(btn.dataset.tab);\n        });\n            });\n\n\n    function handleHash() {\n                const hash = window.location.hash;\n    if (!hash) return;\n\n    const tabId = hash.replace(\"#tab-\", \"\").replace(\"#\", \"\");\n\n                setTimeout(() => {\n                    const scrollTarget = document.getElementById('top-tabs-section');\n    window.showTabSection(tabId);\n\n    if (scrollTarget) {\n                        const offset = 120;\n    const bodyRect = document.body.getBoundingClientRect().top;\n    const elementRect = scrollTarget.getBoundingClientRect().top;\n    const elementPosition = elementRect - bodyRect;\n    const offsetPosition = elementPosition - offset;\n\n    window.scrollTo({\n        top: offsetPosition,\n    behavior: 'smooth'\n                        });\n                    }\n                }, 500);\n            }\n\n    handleHash();\n    window.addEventListener(\"hashchange\", handleHash);\n        });\n</script>"
+        }
+    ]
+}

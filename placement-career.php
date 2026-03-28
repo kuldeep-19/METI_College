@@ -29,7 +29,7 @@
 
     <!-- HERO SECTION -->
     <section class="placement-hero-new">
-        <div class="container py-5">
+        <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-7" data-aos="fade-right">
                     <div class="placement-badge mb-3" data-aos="fade-down" data-aos-delay="200">

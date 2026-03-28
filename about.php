@@ -223,8 +223,8 @@ $mission_points = [
     ]
 ];
 ?>
-                        <div class="row gy-4 p-5 mb-5" data-aos="fade-up">
 
+                        <div class="row gy-4 p-5 mb-5" data-aos="fade-up">
                             <!-- Left Content -->
                             <div class="col-lg-5 content-text">
                                 <h2 class="section-title">
@@ -236,7 +236,6 @@ $mission_points = [
                                     <?= $mission_section['description']; ?>
                                 </p>
                             </div>
-
                             <!-- Right Cards -->
                             <div class="col-lg-7 order-1 order-lg-2">
                                 <div class="row g-4">
