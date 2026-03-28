@@ -8,21 +8,6 @@
     overflow: hidden;
 }
 
-.placement-badge {
-    display: inline-flex;
-    align-items: center;
-    background: rgba(0, 128, 128, 0.1);
-    color: #006666;
-    /* Darker teal for better contrast */
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-    border: 1px solid rgba(0, 128, 128, 0.2);
-}
-
-
 .mini-stat {
     background: white;
     padding: 20px;
@@ -41,30 +26,41 @@
 /* IMAGE STACKING */
 .hero-image-wrapper {
     position: relative;
-    padding: 20px;
-}
-
-.image-stack {
-    position: relative;
-    z-index: 1;
+    width: 100%;
+    max-width: 620px;
+    height: 450px;
+    margin-left: auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: heroZoomIn 4.5s ease-in-out infinite alternate;
+    border-radius: 25px;
 }
 
-.image-stack:hover .main-img {
-    transform: scale(1.03);
+.image-stack {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.floating-card {
-    position: absolute;
-    bottom: 20px;
-    right: -10px;
-    background: white;
-    z-index: 2;
-    min-width: 220px;
-    border: 1px solid #f1f5f9;
+@keyframes heroZoomIn {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
 }
 
 .icon-circle {
@@ -79,6 +75,12 @@
 
 
 @media (max-width: 576px) {
+    .hero-image-wrapper {
+        max-width: 100%;
+        height: 420px;
+        margin-left: 0;
+    }
+
     .placement-hero-new .d-flex.flex-wrap {
         flex-direction: column;
         width: 100%;
@@ -269,71 +271,181 @@
 }
 
 /* CAREER ROADMAP */
-.career-path {
+.career-roadmap-section {
+    background:
+        radial-gradient(circle at top left, rgba(0, 180, 216, 0.08), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(240, 165, 0, 0.1), transparent 30%),
+        linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
     position: relative;
-    padding: 40px 0;
+    overflow: hidden;
 }
 
-.career-step {
+.roadmap-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(7, 17, 17, 0.575);
+    color: var(--teal);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+}
+
+.roadmap-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.roadmap-grid::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba(0, 180, 216, 0.1), rgba(0, 31, 63, 0.18), rgba(240, 165, 0, 0.14));
+}
+
+.roadmap-card {
+    position: relative;
     padding: 30px;
-    background: var(--glass);
-    backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 1;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    backdrop-filter: blur(14px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
 
-.step-count {
-    width: 40px;
-    height: 40px;
-    background: var(--navy);
-    color: white;
-    border-radius: 50%;
+.roadmap-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 24px 55px rgba(15, 23, 42, 0.12);
+    border-color: rgba(0, 180, 216, 0.35);
+}
+
+.roadmap-card-offset {
+    margin-top: 48px;
+}
+
+.roadmap-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.roadmap-number {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--navy);
+    opacity: 0.22;
+}
+
+.roadmap-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 800;
-    margin-bottom: 15px;
+    background: linear-gradient(135deg, rgba(0, 128, 128, 0.14), rgba(0, 180, 216, 0.08));
+    color: var(--teal);
+    font-size: 1.25rem;
+    box-shadow: inset 0 0 0 1px rgba(0, 128, 128, 0.08);
 }
 
-/* KEYFRAMES */
-@keyframes kenBurns {
-    0% {
-        transform: scale(1);
+.roadmap-meta {
+    display: inline-block;
+    margin-bottom: 12px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--primary-light);
+}
+
+@media (max-width: 991.98px) {
+    .roadmap-grid {
+        grid-template-columns: 1fr;
     }
 
-    50% {
-        transform: scale(1.1);
+    .roadmap-grid::before {
+        left: 28px;
+        transform: none;
     }
 
-    100% {
-        transform: scale(1);
+    .roadmap-card-offset {
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .roadmap-card {
+        padding: 24px;
+        border-radius: 22px;
+    }
+
+    .roadmap-top {
+        margin-bottom: 14px;
+    }
+
+    .roadmap-number {
+        font-size: 1.75rem;
     }
 }
 
 /* SESSION RECORDS */
-.btn-session {
-    background: white;
-    border: 1px solid #e2e8f0;
-    color: var(--navy);
-    padding: 12px 25px;
-    border-radius: 50px;
+.session-tabs-wrap .top-tab.btn-session {
+    padding: 11px 22px;
+    border: 1px solid rgba(30, 58, 95, 0.12);
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
     font-weight: 600;
+    font-size: 0.92rem;
+    position: relative;
+    color: var(--navy);
+    border-radius: 999px;
     transition: all 0.3s ease;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
 }
 
-.btn-session:hover {
-    border-color: var(--teal);
-    color: var(--teal);
+.session-tabs-wrap .top-tab.btn-session::after {
+    content: "";
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 8px;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: center;
+    background: linear-gradient(90deg, var(--accent), var(--gold));
+    transition: transform 0.3s ease;
 }
 
-.btn-session.active {
-    background: var(--teal);
-    color: white;
-    border-color: var(--teal);
-    box-shadow: 0 8px 20px rgba(0, 128, 128, 0.2);
+.session-tabs-wrap .top-tab.btn-session:hover::after,
+.session-tabs-wrap .top-tab.btn-session.active::after {
+    transform: scaleX(1);
+}
+
+.session-tabs-wrap .top-tab.btn-session:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.96);
+    color: var(--navy);
+    border-color: rgba(0, 180, 216, 0.22);
+}
+
+.session-tabs-wrap .top-tab.btn-session.active {
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.92), rgba(30, 58, 95, 0.95));
+    border-color: rgba(255, 255, 255, 0.26);
+    color: #ffffff;
+    box-shadow: 0 14px 30px rgba(0, 128, 128, 0.2);
 }
 
 .session-record-details {
@@ -376,7 +488,6 @@
     justify-content: center;
     position: relative;
 }
-
 .circular-progress::before {
     content: "";
     position: absolute;

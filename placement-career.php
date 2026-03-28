@@ -28,70 +28,86 @@
     <?php include "./include/navbar.php"; ?>
 
     <!-- HERO SECTION -->
-    <section class="placement-hero-new">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-7" data-aos="fade-right">
-                    <div class="placement-badge mb-3" data-aos="fade-down" data-aos-delay="200">
-                        <i class="fas fa-check-circle me-2"></i> 100% PLACEMENT RECORD
-                    </div>
-                    <h1 class="display-3 fw-bold text-navy mb-4">Empowering Your <span class="text-teal">Maritime Career</span> Success</h1>
-                    <p class="lead text-muted mb-5">METI College is proud to shape the next generation of marine engineers with a proven history of excellence. Our intensive training and global industry partnerships guarantee that every cadet is career-ready for the world's leading shipping lines.</p>
+     <?php
+$hero = [
+    "title" => "Empowering Your <span class='text-teal'>Maritime Career</span> Success",
+    "description" => "METI College is proud to shape the next generation of marine engineers with a proven history of excellence. Our intensive training and global industry partnerships guarantee that every cadet is career-ready for the world's leading shipping lines.",
+    "image" => "https://www.brainwareuniversity.ac.in/images/career-employbility.jpg",
+    "buttons" => [
+        ["text" => "Explore Recruitment", "link" => "#recruitment", "class" => "btn btn-teal text-white"],
+        ["text" => "Apply Now", "link" => "apply-now.php", "class" => "btn btn-outline-navy"]
+    ],
+    "stats" => [
+        ["value" => "100%", "label" => "Record"],
+        ["value" => "50+", "label" => "Recruiters"],
+        ["value" => "5000+", "label" => "Alumni"]
+    ]
+];
+?>
+  <section class="placement-hero-new">
+    <div class="container">
+        <div class="row align-items-center gx-5">
 
-                    <div class="row g-4 mb-5">
-                        <div class="col-sm-4 col-6">
-                            <div class="mini-stat">
-                                <h3 class="fw-bold text-navy mb-0">100%</h3>
-                                <p class="text-muted small mb-0">Record</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div class="mini-stat">
-                                <h3 class="fw-bold text-navy mb-0">50+</h3>
-                                <p class="text-muted small mb-0">Recruiters</p>
-                            </div>
-                        </div>
-                        <div class="col-sm-4 col-6">
-                            <div class="mini-stat">
-                                <h3 class="fw-bold text-navy mb-0">5000+</h3>
-                                <p class="text-muted small mb-0">Alumni</p>
-                            </div>
-                        </div>
-                    </div>
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-7" data-aos="fade-right">
 
-                    <div class="d-flex flex-wrap gap-3">
-                        <a href="#recruitment" class="btn btn-teal px-5 py-3 rounded-pill fw-bold text-white shadow-lg">Explore Recruitment</a>
-                        <a href="apply-now.php" class="btn btn-outline-navy px-5 py-3 rounded-pill fw-bold">Apply Now</a>
-                    </div>
+                <h1 class="display-3 fw-bold text-navy mb-4">
+                    <?= $hero['title']; ?>
+                </h1>
+
+                <p class="lead text-muted mb-5">
+                    <?= $hero['description']; ?>
+                </p>
+
+                <!-- STATS -->
+                <div class="row g-4 mb-5">
+                    <?php foreach ($hero['stats'] as $stat): ?>
+                        <div class="col-sm-4 col-6">
+                            <div class="mini-stat">
+                                <h3 class="fw-bold text-navy mb-0">
+                                    <?= $stat['value']; ?>
+                                </h3>
+                                <p class="text-muted small mb-0">
+                                    <?= $stat['label']; ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
                 </div>
-                <div class="col-lg-5 mt-5 mt-lg-0" data-aos="fade-left">
-                    <div class="hero-image-wrapper">
-                        <div class="image-stack">
-                            <img src="./assets/image/students-2000x1279.jpg" class="img-fluid rounded-4 shadow-premium main-img" alt="METI Students">
-                            <div class="floating-card p-3 shadow-lg rounded-3" data-aos="zoom-in" data-aos-delay="400">
-                                <div class="d-flex align-items-center gap-3">
-                                    <div class="icon-circle bg-teal text-white">
-                                        <i class="fas fa-award"></i>
-                                    </div>
-                                    <div>
-                                        <h6 class="fw-bold mb-0">ISO 9001:2015</h6>
-                                        <p class="text-muted small mb-0">Quality Training</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+
+                <!-- BUTTONS -->
+                <div class="d-flex flex-wrap gap-3">
+                    <?php foreach ($hero['buttons'] as $btn): ?>
+                        <a href="<?= $btn['link']; ?>"
+                           class="<?= $btn['class']; ?> px-5 py-3 rounded-pill fw-bold shadow-lg">
+                            <?= $btn['text']; ?>
+                        </a>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-5 mt-2 mt-lg-0" data-aos="fade-left">
+                <div class="hero-image-wrapper">
+                    <div class="image-stack">
+                        <img src="<?= $hero['image']; ?>"
+                             class="img-fluid rounded-4 shadow-premium main-img"
+                             alt="Hero Image">
                     </div>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- WHY PLACEMENT SECTION -->
     <section id="recruitment" class="py-5">
         <div class="container py-4">
-            <div class="row align-items-center">
+            <div class="row align-items-center gx-5">
                 <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <h2 class="fw-bold text-navy mb-4">Why Global Giants Choose METI Engineers?</h2>
+                    <h2 class="fw-bold text-navy mb-4 section-title">Why Global Giants Choose METI Engineers?</h2>
                     <div class="d-flex gap-3 mb-4">
                         <div class="flex-shrink-0">
                             <i class="fa-solid fa-anchor fa-2x text-teal"></i>
@@ -122,7 +138,7 @@
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
                     <div class="modern-card p-0 overflow-hidden">
-                        <img src="./assets/image/students-2000x1279.jpg" class="img-fluid" alt="Training at METI">
+                        <img src="https://cslmeti.in/assets/images/home2-1288x859.jpg" class="img-fluid" alt="Training at METI">
                     </div>
                 </div>
             </div>
@@ -133,10 +149,7 @@
     <section class="partners-section-new py-5">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
-                <div class="placement-badge mb-3">
-                    <i class="fas fa-globe me-2"></i> GLOBAL NETWORK
-                </div>
-                <h2 class="display-5 fw-bold text-navy">Our Top Partners in Recruitment</h2>
+                <h2 class="display-5 fw-bold text-navy section-title">Our Top Partners in Recruitment</h2>
                 <p class="lead text-muted">Leading global shipping companies that trust METI for their future officers.</p>
             </div>
 
@@ -226,19 +239,16 @@
             ?>
 
             <div class="text-center mb-5" data-aos="fade-up">
-                <div class="placement-badge mb-3">
-                    <i class="fas fa-history me-2"></i> TRACK RECORD
-                </div>
-                <h2 class="display-5 fw-bold text-navy">Placement Records by Session</h2>
+                <h2 class="display-5 fw-bold text-navy section-title">Placement Records by Session</h2>
                 <p class="lead text-muted">Select an academic session to view detailed placement performance and company insights.</p>
             </div>
 
-            <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap" data-aos="fade-up">
+            <div class="d-flex justify-content-center gap-3 mb-5 flex-wrap session-tabs-wrap" data-aos="fade-up">
                 <?php
                 $is_first = true;
                 foreach ($placement_sessions as $year => $data):
                 ?>
-                    <button class="btn btn-session <?= $is_first ? 'active' : '' ?>" data-session="<?= $year ?>">Session <?= $year ?></button>
+                    <button type="button" class="btn top-tab btn-session <?= $is_first ? 'active' : '' ?>" data-session="<?= $year ?>">Session <?= $year ?></button>
                 <?php
                     $is_first = false;
                 endforeach;
@@ -289,7 +299,7 @@
                             </div>
                         </div>
 
-                        <h5 class="fw-bold text-navy mb-4 text-center"><i class="fas fa-graduation-cap me-2 text-teal"></i> Student Success Highlights</h5>
+                        <h5 class="d-inline-flex justify-content-center align-items-center text-navy section-title"> Student Success Highlights</h5>
                         <div class="student-swiper-container position-relative">
                             <div class="swiper student-swiper">
                                 <div class="swiper-wrapper">
@@ -330,45 +340,62 @@
     </section>
 
     <!-- CAREER ROADMAP -->
-    <section class="py-5">
+    <section class="career-roadmap-section py-5">
         <div class="container py-4">
             <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold text-navy">Global Career Progression</h2>
-                <p class="text-muted">From Cadet to Captain: The METI Roadmap</p>
+                <h2 class="display-6 fw-bold text-navy mb-3 section-title">Global Career Progression</h2>
+                <p class="lead text-muted mb-0">From cadet training to senior engine-room command, every stage is structured for real maritime growth.</p>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="career-step" data-aos="fade-right">
-                        <div class="step-count">1</div>
-                        <h4 class="fw-bold text-navy">12 Months Pre-Sea Training</h4>
-                        <p class="text-muted mb-0">Intensive residential training with 60% workshop and afloat experience at METI, CSL.</p>
+
+            <div class="roadmap-grid">
+                <div class="roadmap-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="roadmap-top">
+                        <div class="roadmap-number">01</div>
+                        <div class="roadmap-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
                     </div>
-                    <div class="career-step scale-up" data-aos="fade-left">
-                        <div class="step-count">2</div>
-                        <h4 class="fw-bold text-navy">6 Months On-Board Training</h4>
-                        <p class="text-muted mb-0">Practical shipboard training as a Junior Engineer with sponsored shipping lines.</p>
+                    <span class="roadmap-meta">Foundation Phase</span>
+                    <h4 class="fw-bold text-navy mb-3">12 Months Pre-Sea Training</h4>
+                    <p class="text-muted mb-0">Intensive residential training with 60% workshop and afloat experience at METI and Cochin Shipyard Limited.</p>
+                </div>
+
+                <div class="roadmap-card roadmap-card-offset" data-aos="fade-up" data-aos-delay="100">
+                    <div class="roadmap-top">
+                        <div class="roadmap-number">02</div>
+                        <div class="roadmap-icon">
+                            <i class="fa-solid fa-ship"></i>
+                        </div>
                     </div>
-                    <div class="career-step" data-aos="fade-right">
-                        <div class="step-count">3</div>
-                        <h4 class="fw-bold text-navy">MEO Class IV COC</h4>
-                        <p class="text-muted mb-0">Appear for DGS examination and become a designated Officer in Charge of an Engineering Watch.</p>
+                    <span class="roadmap-meta">Onboard Exposure</span>
+                    <h4 class="fw-bold text-navy mb-3">6 Months On-Board Training</h4>
+                    <p class="text-muted mb-0">Hands-on shipboard learning as a Junior Engineer under the guidance of sponsored shipping partners.</p>
+                </div>
+
+                <div class="roadmap-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="roadmap-top">
+                        <div class="roadmap-number">03</div>
+                        <div class="roadmap-icon">
+                            <i class="fa-solid fa-certificate"></i>
+                        </div>
                     </div>
-                    <div class="career-step" data-aos="fade-left">
-                        <div class="step-count">4</div>
-                        <h4 class="fw-bold text-navy">Chief Engineer Rank</h4>
-                        <p class="text-muted mb-0">Professional advancement through subsequent COCs (Class II & Class I) to the highest engineering command.</p>
+                    <span class="roadmap-meta">Certification Milestone</span>
+                    <h4 class="fw-bold text-navy mb-3">MEO Class IV COC</h4>
+                    <p class="text-muted mb-0">Qualify through the DGS examination and become an Officer in Charge of an Engineering Watch.</p>
+                </div>
+
+                <div class="roadmap-card roadmap-card-offset" data-aos="fade-up" data-aos-delay="300">
+                    <div class="roadmap-top">
+                        <div class="roadmap-number">04</div>
+                        <div class="roadmap-icon">
+                            <i class="fa-solid fa-anchor-circle-check"></i>
+                        </div>
                     </div>
+                    <span class="roadmap-meta">Leadership Destination</span>
+                    <h4 class="fw-bold text-navy mb-3">Chief Engineer Rank</h4>
+                    <p class="text-muted mb-0">Advance through higher COCs, gain command-level experience, and reach the highest engineering rank at sea.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="py-5 bg-teal text-white text-center">
-        <div class="container py-4" data-aos="zoom-in">
-            <h2 class="display-5 fw-bold mb-4">Ready to Start Your Journey?</h2>
-            <p class="lead mb-5">Admissions are open for our upcoming batch. Fast track your maritime career today.</p>
-            <a href="apply-now.php" class="btn btn-navy btn-lg px-5 py-3 rounded-pill fw-bold text-white shadow">Apply for Admission</a>
         </div>
     </section>
 

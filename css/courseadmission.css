@@ -24,11 +24,6 @@
     inset: 0;
     background: linear-gradient(115deg, rgba(10, 22, 40, 0.82) 10%, rgba(10, 22, 40, 0.42) 52%, rgba(0, 180, 216, 0.18) 100%);
 }
-.top-tabs-banner-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(115deg, rgba(10, 22, 40, 0.82) 10%, rgba(10, 22, 40, 0.42) 52%, rgba(0, 180, 216, 0.18) 100%);
-}
 .top-tabs-content {
     position: absolute;
     inset: 0;
