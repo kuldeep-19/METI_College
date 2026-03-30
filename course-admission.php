@@ -9,7 +9,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
   <link rel="stylesheet" href="./css/global.css" />
-  <link rel="stylesheet" href="./css/index.css" />
+  <!-- <link rel="stylesheet" href="./css/index.css" /> -->
   <link rel="stylesheet" href="./css/courseadmission.css">
 
   <!-- JS Includes -->
@@ -19,36 +19,43 @@
 <body>
 
   <?php include "./include/navbar.php"; ?>
+  <?php
+  $topTabsConfig = [
+    'id' => 'top-tabs-section',
+    'title' => 'Course & Admission',
+    'image' => './Assets/577a7723-2643x1762.jpg',
+    'image_alt' => 'METI campus banner',
+    'active_tab' => 'Course',
+    'buttons' => [
+      [
+        'tab' => 'Course',
+        'label' => 'Course',
+        'icon' => 'fa fa-building',
+      ],
+      [
+        'tab' => 'Apply-Now',
+        'label' => 'Apply Now',
+        'icon' => 'fa fa-graduation-cap',
+      ],
+      [
+        'tab' => 'Fee-Payment',
+        'label' => 'Fee Payment',
+        'icon' => 'fa fa-eye',
+      ],
+      [
+        'tab' => 'Admission-Information',
+        'label' => 'Admission Information',
+        'icon' => 'fa fa-bullseye',
+      ],
+    ],
+  ];
+  ?>
 
   <!-- MAIN CONTENT -->
   <section>
     <div class="container" style="background: linear-gradient(135deg,#eef2ff,#f8fafc);">
       <!-- TOP BUTTONS -->
-      <div id="top-tabs-section" class="top-tabs-banner mb-5" data-aos="fade-up">
-        <img src="./Assets/577a7723-2643x1762.jpg" alt="METI campus banner" class="top-tabs-banner-image">
-        <div class="top-tabs-banner-overlay"></div>
-        <div class="top-tabs-content">
-          <h1 class="top-tabs-title">Course & Admission</h1>
-          <div class="top-tabs-actions d-flex justify-content-center flex-wrap gap-3">
-            <button type="button" class="top-tab active" data-tab="Course" onclick="showTabSection('Course')">
-              <i class="fa fa-building me-2"></i>Course
-            </button>
-
-            <button type="button" class="top-tab" data-tab="Apply-Now" onclick="showTabSection('Apply-Now')">
-              <i class="fa fa-graduation-cap me-2"></i>Apply Now
-            </button>
-
-            <button type="button" class="top-tab" data-tab="Fee-Payment" onclick="showTabSection('Fee-Payment')">
-              <i class="fa fa-eye me-2"></i>Fee Payment
-            </button>
-
-            <button type="button" class="top-tab" data-tab="Admission-Information"
-              onclick="showTabSection('Admission-Information')">
-              <i class="fa fa-bullseye me-2"></i>Admission Information
-            </button>
-          </div>
-        </div>
-      </div>
+      <?php include "./include/top-tabs-banner.php"; ?>
     </div>
     <div class="tab-content-area">
       <div id="Course" class="tab-content-custom active">
@@ -408,7 +415,6 @@
   <?php include "./include/footer.php"; ?>
 
   <script src="./js/common.js"></script>
-  <script src="./js/courseadmission.js"></script>
 
   <script>
     AOS.init({

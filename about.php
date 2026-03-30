@@ -22,39 +22,42 @@
 
     <?php
     include "./include/navbar.php";
+    $topTabsConfig = [
+        'id' => 'top-tabs-section',
+        'title' => 'Explore METI',
+        'image' => './Assets/577a7723-2643x1762.jpg',
+        'image_alt' => 'METI campus banner',
+        'active_tab' => 'about',
+        'buttons' => [
+            [
+                'tab' => 'about',
+                'label' => 'About METI',
+                'icon' => 'fa fa-building',
+            ],
+            [
+                'tab' => 'whyus',
+                'label' => 'Why Us',
+                'icon' => 'fa fa-graduation-cap',
+            ],
+            [
+                'tab' => 'staff-faculty',
+                'label' => 'Staff & Faculty',
+                'icon' => 'fa fa-eye',
+            ],
+            [
+                'tab' => 'facilities',
+                'label' => 'Facilities',
+                'icon' => 'fa fa-bullseye',
+            ],
+        ],
+    ];
     ?>
     <section>
         <div style="background: linear-gradient(135deg,#eef2ff,#f8fafc);">
             <div class="container">
 
                 <!-- TOP BUTTONS -->
-                <div id="top-tabs-section" class="top-tabs-banner mb-5"data-aos="fade-up">
-                    <img src="./Assets/577a7723-2643x1762.jpg" alt="METI campus banner" class="top-tabs-banner-image">
-                    <div class="top-tabs-banner-overlay"></div>
-                    <div class="top-tabs-content">
-                        <h1 class="top-tabs-title">Explore METI</h1>
-                        <div class="top-tabs-actions d-flex justify-content-center flex-wrap gap-3">
-                            <button type="button" class="top-tab active" data-tab="about"
-                                onclick="showTabSection('about')">
-                                <i class="fa fa-building me-2"></i>About METI
-                            </button>
-
-                            <button type="button" class="top-tab" data-tab="whyus" onclick="showTabSection('whyus')">
-                                <i class="fa fa-graduation-cap me-2"></i>Why Us
-                            </button>
-
-                            <button type="button" class="top-tab" data-tab="staff-faculty"
-                                onclick="showTabSection('staff-faculty')">
-                                <i class="fa fa-eye me-2"></i>Staff & Faculty
-                            </button>
-
-                            <button type="button" class="top-tab" data-tab="facilities"
-                                onclick="showTabSection('facilities')">
-                                <i class="fa fa-bullseye me-2"></i>Facilities
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <?php include "./include/top-tabs-banner.php"; ?>
 
                 <!-- CONTENT AREA -->
 
@@ -800,61 +803,6 @@ $placements = [
             once: true
         });
     </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tabs = document.querySelectorAll(".top-tab");
-            const contents = document.querySelectorAll(".tab-content-custom");
-
-            window.showTabSection = function (tabId) {
-                const targetContent = document.getElementById(tabId);
-                const targetButton = document.querySelector(`.top-tab[data-tab="${tabId}"]`);
-
-                if (!targetContent || !targetButton) return;
-
-                tabs.forEach((button) => button.classList.remove("active"));
-                contents.forEach((content) => content.classList.remove("active"));
-
-                targetButton.classList.add("active");
-                targetContent.classList.add("active");
-            };
-
-            tabs.forEach((btn) => {
-                btn.addEventListener("click", function () {
-                    window.showTabSection(btn.dataset.tab);
-                });
-            });
-
-            
-            function handleHash() {
-                const hash = window.location.hash;
-                if (!hash) return;
-
-                const tabId = hash.replace("#tab-", "").replace("#", "");
-
-                setTimeout(() => {
-                    const scrollTarget = document.getElementById('top-tabs-section');
-                    window.showTabSection(tabId);
-
-                    if (scrollTarget) {
-                        const offset = 120;
-                        const bodyRect = document.body.getBoundingClientRect().top;
-                        const elementRect = scrollTarget.getBoundingClientRect().top;
-                        const elementPosition = elementRect - bodyRect;
-                        const offsetPosition = elementPosition - offset;
-
-                        window.scrollTo({
-                            top: offsetPosition,
-                            behavior: 'smooth'
-                        });
-                    }
-                }, 500);
-            }
-
-            handleHash();
-            window.addEventListener("hashchange", handleHash);
-        });
-    </script>
-
     <script>
         function scrollSlider(direction) {
             const track = document.querySelector('.placement-track');
