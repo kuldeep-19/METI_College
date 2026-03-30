@@ -54,7 +54,7 @@
 
         <div class="collapse navbar-collapse" id="menu">
           <ul class="navbar-nav mx-auto">
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-house"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.php"><i class="fa-solid fa-house"></i> Home</a></li>
 
             <li class="nav-item dropdown">
               <a
@@ -88,7 +88,7 @@
             <li class="nav-item">
               <a class="nav-link " href="placement-career.php"><i class="fa-solid fa-briefcase"></i> Placement & Career</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-user-group"></i> Alumni</a></li>
+            <li class="nav-item"><a class="nav-link" href="alumni.php"><i class="fa-solid fa-user-group"></i> Alumni</a></li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle nav-dropdown"
@@ -115,4 +115,4 @@
     </nav>
 
  
- 
+
