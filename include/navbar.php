@@ -92,7 +92,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle nav-dropdown"
-                href="#"
+                href="blog.php"
                 data-bs-toggle="dropdown"
               >
                 <i class="fa-solid fa-blog"></i> Blog
