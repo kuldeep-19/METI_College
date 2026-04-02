@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>METI BLOG</title>
-    <link rel="stylesheet" href="./css/global.css">
   <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/global.css">
@@ -19,192 +18,30 @@
             margin-bottom: 30px;
         }
 
-        /*--------------------------------------------------------------
-# Events Section
---------------------------------------------------------------*/
-.events .card {
-  background-color: var(--background-color);
-  border: 0;
-  padding: 0 30px;
-  margin-bottom: 60px;
-  position: relative;
-}
-
-.events .card-img {
-  width: calc(100% + 60px);
-  margin-left: -30px;
-  overflow: hidden;
-  z-index: 9;
-  border-radius: 0;
-}
-
-.events .card-img img {
-  max-width: 100%;
-  transition: all 0.3s ease-in-out;
-}
-
-.events .card-body {
-  z-index: 10;
-  background: var(--surface-color);
-  border-top: 4px solid var(--surface-color);
-  padding: 30px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  margin-top: -60px;
-  transition: 0.3s;
-}
-
-.events .card-title {
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.events .card-title a {
-  color: var(--default-color);
-  transition: 0.3s;
-}
-
-.events .card-text {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-.events .card:hover img {
-  transform: scale(1.1);
-}
-
-.events .card:hover .card-body {
-  border-color: var(--accent-color);
-}
-
-.events .card:hover .card-body .card-title a {
-  color: var(--accent-color);
-}
-
-/* Latest Blog Sidebar */
-.latest-blog-sidebar {
-  position: sticky;
-  top: 100px;
-  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
-  border: 2px solid rgba(13, 110, 253, 0.15);
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-}
-
-.sidebar-header {
-  margin-bottom: 25px;
-  border-bottom: 2px solid rgba(13, 110, 253, 0.2);
-  padding-bottom: 15px;
-}
-
-.sidebar-title {
-  color: var(--default-color);
-  font-weight: 700;
-  font-size: 1.1rem;
-  margin: 0;
+.events-preview-footer {
   display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.sidebar-title i {
-  color: #f0a500;
-  font-size: 1.2rem;
-}
-
-.notification-list {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.notification-item {
-  display: flex;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 10px;
-  background: white;
-  border-left: 4px solid var(--accent-color);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.notification-item:hover {
-  background: rgba(13, 110, 253, 0.05);
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(13, 110, 253, 0.1);
-}
-
-.notification-number {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  min-width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, #0d6efd, #0a58ca);
-  color: white;
-  border-radius: 50%;
-  font-weight: 700;
-  font-size: 0.9rem;
+  margin-top: 30px;
 }
 
-.notification-content {
-  flex: 1;
-}
-
-.notification-title {
-  margin: 0 0 6px 0;
-  font-size: 0.95rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
-
-.notification-title a {
-  color: var(--default-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.notification-title a:hover {
-  color: var(--accent-color);
-}
-
-.notification-date {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #64748b;
-  display: flex;
+.see-more-link {
+  display: inline-flex;
   align-items: center;
-  gap: 5px;
-}
-
-.sidebar-footer {
-  text-align: center;
-  padding-top: 15px;
-  border-top: 1px solid rgba(13, 110, 253, 0.1);
-}
-
-.view-all-btn {
-  color: var(--accent-color);
-  text-decoration: none;
+  gap: 10px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: var(--nav-bg);
+  color: #ffffff;
   font-weight: 600;
-  transition: all 0.3s ease;
-  display: inline-block;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(10, 22, 40, 0.18);
+  transition: var(--transition-smooth);
 }
 
-.view-all-btn:hover {
-  color: #0d6efd;
-  transform: translateX(5px);
-}
-
-/* Responsive Sidebar */
-@media (max-width: 991.98px) {
-  .latest-blog-sidebar {
-    position: relative;
-    top: 0;
-    margin-bottom: 30px;
-  }
+.see-more-link:hover {
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 30px rgba(10, 22, 40, 0.24);
 }
 
 /* Reduce Left-Right Margins */
@@ -230,22 +67,169 @@
 
 /* Search Box Styling */
 .search-box {
-  border: 2px solid rgba(13, 110, 253, 0.2) !important;
-  border-radius: 12px !important;
+  border: none !important;
+  border-radius: 0 !important;
   padding: 12px 18px !important;
   font-size: 0.95rem !important;
   transition: all 0.3s ease !important;
-  background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%) !important;
+  background: white !important;
 }
 
 .search-box:focus {
-  border-color: var(--accent-color) !important;
-  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1) !important;
+  box-shadow: none !important;
+  outline: none !important;
   background: white !important;
 }
 
 .search-box::placeholder {
   color: #9ca3af;
+}
+
+/* Input Group Enhancement */
+.input-group-lg .input-group-text {
+  border: none !important;
+  padding: 0 15px !important;
+  font-size: 1.1rem !important;
+  color: var(--accent);
+  background: white !important;
+}
+
+.input-group-lg .btn {
+  border: none !important;
+  border-radius: 0 8px 8px 0 !important;
+  transition: var(--transition-smooth) !important;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--accent), #1e3a5f ) !important;
+  color: white !important;
+}
+
+.input-group-lg .btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3) !important;
+}
+
+.input-group-lg {
+  border-radius: 8px !important;
+  overflow: hidden !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+.input-group-lg .input-group-text {
+  border-radius: 8px 0 0 8px !important;
+}
+
+/* Activities & Blog Cards */
+.blog-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: var(--transition-smooth);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 180, 216, 0.15);
+}
+
+.blog-card .blog-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition-smooth);
+}
+
+.blog-card:hover .blog-img {
+  transform: scale(1.05);
+}
+
+.blog-card .card-body {
+  padding: 20px;
+}
+
+.blog-card h5 {
+  color: var(--text-dark);
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: var(--transition-smooth);
+}
+
+.blog-card:hover h5 {
+  color: var(--accent);
+}
+
+.blog-card .text-muted {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-card .text-muted i {
+  color: var(--accent);
+}
+
+.blog-card .desc-preview {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.blog-card .tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, var(--accent), #008ba3);
+  color: white;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  width: fit-content;
+  transition: var(--transition-smooth);
+  margin-left: 8px;
+}
+
+.blog-card .tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 180, 216, 0.35);
+}
+
+.collapse-desc {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #e8edf3;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.btn-collapse {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: var(--transition-smooth);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-collapse i {
+  transition: transform 0.2s ease;
+}
+
+.btn-collapse[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.btn-collapse:hover {
+  color: var(--primary);
 }
     </style>
 
@@ -260,42 +244,27 @@
     'image_alt' => 'METI campus banner',
     'active_tab' => 'blog',
   ];
-
-  $events = [
-            [
-              'title' => 'Introduction to webdesign',
-              'date' => 'Sunday, September 26th at 7:00 pm',
-              'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-              'description' => 'Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat'
-            ],
-            [
-              'title' => 'Marketing Strategies',
-              'date' => 'Sunday, November 15th at 7:00 pm',
-              'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-              'description' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo'
-            ],   [
-              'title' => 'Marketing Strategies',
-              'date' => 'Sunday, November 15th at 7:00 pm',
-              'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-              'description' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo'
-            ],
-               [
-              'title' => 'Marketing Strategies',
-              'date' => 'Sunday, November 15th at 7:00 pm',
-              'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-              'description' => 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo'
-            ]
-          ];
-
+  require __DIR__ . '/include/blog-data.php';
+  $previewEvents = array_slice($events, 0, 4);
   ?>
  <?php include "./include/top-tabs-banner.php"; ?>
         <!-- Search -->
-    <div class="row mb-5">
-                <div class="section-title">
-            <h2>Latest Blog Posts</h2>
-        </div>
-        <div class="col-md-3 ms-auto">
-            <input type="text" class="form-control search-box" placeholder="🔍 Search blog...">
+    <div class="container mt-3 mb-3">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md-4">
+                <h2 class="section-title mb-0">Blogs</h2>
+            </div>
+            <div class="col-md-3">
+                <div class="input-group input-group-lg shadow-sm">
+                    <span class="input-group-text bg-white border-0">
+                        <i class="fa-solid fa-magnifying-glass text-primary"></i>
+                    </span>
+                    <input type="text" class="form-control search-box border-0" placeholder="Search blog posts..." id="blogSearchInput">
+                    <button class="btn btn-primary px-4" type="button" id="searchBtn">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
  <div class="container">
@@ -303,18 +272,18 @@
     <!-- Events Section -->
     <section id="events" class="events section">
         
-        <div class="row g-4" data-aos="fade-up">
+        <div class="row g-5" data-aos="fade-up">
             <!-- Left Section: Blog Posts Grid -->
-            <div class="col-lg-8">
+            <div class="col-lg-9">
                 <div class="row g-4">
-                    <?php foreach ($events as $event): ?>
-                        <div class="col-md-6 d-flex">
+                    <?php foreach ($previewEvents as $event): ?>
+                        <div class="col-md-4 d-flex blog-card-item">
                             <div class="card">
                                 <div class="card-img">
                                     <img src="<?php echo htmlspecialchars($event['image']); ?>" alt="<?php echo htmlspecialchars($event['title']); ?>">
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href=""><?php echo htmlspecialchars($event['title']); ?></a></h5>
+                                    <h6 class="card-title"><a href="all-blogs.php"><?php echo htmlspecialchars($event['title']); ?></a></h6>
                                     <p class="fst-italic text-center"><?php echo htmlspecialchars($event['date']); ?></p>
                                     <p class="card-text"><?php echo htmlspecialchars($event['description']); ?></p>
                                 </div>
@@ -322,54 +291,46 @@
                         </div>
                     <?php endforeach; ?>
                 </div>
+                <div class="events-preview-footer">
+                    <a href="all-blogs.php" class="see-more-link">
+                        See More
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
             </div>
 
             <!-- Right Section: Fixed Latest Blog Notifications -->
-            <div class="col-lg-4">
-                <div class="latest-blog-sidebar">
-                    <div class="sidebar-header">
-                        <h5 class="sidebar-title">
-                            <i class="fa-solid fa-fire"></i> Latest Updates
-                        </h5>
-                    </div>
-                    
-                    <div class="notification-list">
-                        <?php foreach (array_slice($events, 0, 5) as $index => $post): ?>
-                            <div class="notification-item">
-                                <div class="notification-number"><?php echo $index + 1; ?></div>
-                                <div class="notification-content">
-                                    <h6 class="notification-title">
-                                        <a href=""><?php echo htmlspecialchars($post['title']); ?></a>
-                                    </h6>
-                                    <p class="notification-date">
-                                        <i class="fa-solid fa-calendar-days"></i> 
-                                        <?php echo htmlspecialchars($post['date']); ?>
-                                    </p>
-                                </div>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
-
-                    <div class="sidebar-footer">
-                        <a href="#" class="view-all-btn">View All Posts →</a>
-                    </div>
-                </div>
+            <div class="col-lg-3">
+                <?php
+                $blogSidebarLinkUrl = 'all-blogs.php#all-blogs';
+                include __DIR__ . '/include/blog-sidebar.php';
+                ?>
             </div>
         </div>
     </section><!-- /Events Section -->
 
     <!-- ACTIVITIES -->
     <h2 class="section-title mt-5">Activities</h2>
-    <div class="row g-4">
+    <div class="row g-4 align-items-start">
 
         <div class="col-md-4">
             <div class="card blog-card">
                 <img src="https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg" class="blog-img">
                 <div class="card-body">
-                    <h5>Web Development Workshop</h5>
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                        <h5 class="mb-0">Web Development Workshop</h5>
+                        <span class="tag">Workshop</span>
+                    </div>
                     <p class="text-muted"><i class="fa-solid fa-calendar"></i> Jan 10, 2025</p>
-                    <p>Hands-on workshop on modern web technologies.</p>
-                    <span class="tag">Workshop</span>
+                    <p class="desc-preview">Hands-on workshop on modern web technologies.</p>
+                    
+                    <button type="button" class="btn-collapse" data-bs-toggle="collapse" data-bs-target="#desc1" aria-expanded="false" aria-controls="desc1">
+                        <i class="fa-solid fa-chevron-down"></i> Read More
+                    </button>
+                    
+                    <div class="collapse collapse-desc" id="desc1">
+                        Learn the latest techniques in web development including HTML5, CSS3, JavaScript, and popular frameworks. This workshop covers responsive design, best practices, and real-world project implementations.
+                    </div>
                 </div>
             </div>
         </div>
@@ -378,10 +339,20 @@
             <div class="card blog-card">
                 <img src="https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg" class="blog-img">
                 <div class="card-body">
-                    <h5>Community Service</h5>
+                    <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                        <h5 class="mb-0">Community Service</h5>
+                        <span class="tag">Social</span>
+                    </div>
                     <p class="text-muted"><i class="fa-solid fa-calendar"></i> Dec 5, 2024</p>
-                    <p>Students engaged in social activities and support programs.</p>
-                    <span class="tag">Social</span>
+                    <p class="desc-preview">Students engaged in social activities and support programs.</p>
+                    
+                    <button type="button" class="btn-collapse" data-bs-toggle="collapse" data-bs-target="#desc2" aria-expanded="false" aria-controls="desc2">
+                        <i class="fa-solid fa-chevron-down"></i> Read More
+                    </button>
+                    
+                    <div class="collapse collapse-desc" id="desc2">
+                        Our students actively participate in community service initiatives, helping local organizations and families in need. From educational outreach to environmental conservation, we're committed to making a positive impact in society.
+                    </div>
                 </div>
             </div>
         </div>
@@ -406,19 +377,48 @@
         </div>
 
     </div>
-
-    <!-- SUBSCRIBE -->
-    <div class="mt-5 text-center">
-        <h4>Subscribe for Updates</h4>
-        <input type="email" class="form-control w-50 mx-auto my-3" placeholder="Enter your email">
-        <button class="btn btn-primary px-4">
-            <i class="fa-solid fa-envelope"></i> Subscribe
-        </button>
-    </div>
-
 </div>
 
     <?php include('./include/footer.php'); ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="./js/common.js"></script>
+<script>
+    // Blog Search Functionality - Only target blog cards in Events section
+    const searchInput = document.getElementById('blogSearchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const blogCardContainers = document.querySelectorAll('#events .blog-card-item'); // Only Events section
+
+    function filterBlogs() {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        blogCardContainers.forEach(container => {
+            const card = container.querySelector('.card');
+            const title = card.querySelector('.card-title')?.textContent || '';
+            const description = card.querySelector('.card-text')?.textContent || '';
+            const text = (title + description).toLowerCase();
+            
+            if (text.includes(searchTerm)) {
+                container.style.display = 'flex';
+            } else {
+                container.style.display = 'none';
+            }
+        });
+    }
+
+    // Search on button click
+    searchBtn.addEventListener('click', filterBlogs);
+
+    // Search on Enter key
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            filterBlogs();
+        }
+    });
+
+    // Real-time search
+    searchInput.addEventListener('input', filterBlogs);
+
+</script>
+<?php include __DIR__ . '/include/blog-sidebar-script.php'; ?>
 </body>
 </html>
