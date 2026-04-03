@@ -256,7 +256,7 @@ $testimonials = [
 </section>
     <!-- /Testimonials Section -->
 
-<section class="ask-us">
+<section class="ask-us" id="contact">
   <div class="container" data-aos="fade-up">
     <h2 class="section-title">Ask Us</h2>
     <p class="section-subtitle">Have a question? Our recruitment experts are ready to help.</p>

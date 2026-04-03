@@ -189,7 +189,7 @@ body {
     gap: 24px;
 }
 
-.latest-blog-sidebar {
+.latest-blog-sidebar, .blog-subscribe-card {
     background: var(--surface-alt);
     border: 2px solid var(--primary-light);
     border-radius: 10px;
@@ -291,13 +291,6 @@ body {
     transform: translateX(5px);
 }
 
-.blog-subscribe-card {
-    background: #ffffff;
-    border: 2px solid rgba(0, 180, 216, 0.18);
-    border-radius: 14px;
-    padding: 20px;
-    box-shadow: 0 12px 28px rgba(10, 22, 40, 0.08);
-}
 
 .subscribe-title {
     margin: 0 0 10px;

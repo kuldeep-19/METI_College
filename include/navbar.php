@@ -103,8 +103,8 @@
                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-camera"></i> Photo</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-envelope"></i> Contact</a></li>
-            <li class="nav-item"><a class="nav-link" href="#"><i class="fa-solid fa-images"></i> Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="contact.php"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="gallery.php"><i class="fa-solid fa-images"></i> Gallery</a></li>
             <li class="nav-item">
               <a class="nav-link" href="#"><i class="fa-solid fa-right-to-bracket"></i> Sign in/ Login</a>
             </li>
