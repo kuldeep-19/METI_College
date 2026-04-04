@@ -738,7 +738,7 @@ $placements = [
     ?>
 
     <!-- ====== FACULTY PROFILE MODAL ====== -->
-    <div class="faculty-modal-backdrop" id="facultyModalBackdrop" onclick="closeFacultyModal()"></div>
+<div class="faculty-modal-backdrop" id="facultyModalBackdrop" onclick="closeFacultyModal()"></div>
     <div class="faculty-modal-popup" id="facultyModalPopup" role="dialog" aria-modal="true">
         <!-- Close Button -->
         <button class="faculty-modal-close" onclick="closeFacultyModal()" title="Close">
@@ -792,7 +792,7 @@ $placements = [
                 </div>
             </div>
         </div>
-    </div>
+</div>
     <!-- ====== END FACULTY MODAL ====== -->
 
     <script src="./js/common.js"></script>
