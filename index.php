@@ -121,50 +121,40 @@ $content = mysqli_fetch_assoc(
           </div>
         </div>
       </section>
-
+<?php
+$counters = [
+  ["title" => "Students", "value" => 1232, "delay" => 0],
+  ["title" => "Courses", "value" => 64, "delay" => 100],
+  ["title" => "Events", "value" => 42, "delay" => 200],
+  ["title" => "Trainers", "value" => 24, "delay" => 300]
+];
+?>
   <!-- Counts Section -->
-  <section id="counts" class="section counts">
+<section id="counts" class="section counts">
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4">
 
-    <div class="container" data-aos="fade-up">
-      <div class="row gy-4">
+      <?php foreach($counters as $item): ?>
+      <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="<?= $item['delay']; ?>">
+        
+        <div class="stats-item text-center h-100">
+          
+          <span class="purecounter"
+            data-purecounter-start="0"
+            data-purecounter-end="<?= $item['value']; ?>"
+            data-purecounter-duration="2">0</span>
+          
+          <p><?= $item['title']; ?></p>
 
-        <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="0">
-          <div class="stats-item text-center h-100">
-            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="1232"
-              data-purecounter-duration="2">0</span>
-            <p>Students</p>
-          </div>
-        </div><!-- End Stats Item -->
-
-        <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
-          <div class="stats-item text-center h-100">
-            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="64"
-              data-purecounter-duration="2">0</span>
-            <p>Courses</p>
-          </div>
-        </div><!-- End Stats Item -->
-
-        <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
-          <div class="stats-item text-center h-100">
-            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="42"
-              data-purecounter-duration="2">0</span>
-            <p>Events</p>
-          </div>
-        </div><!-- End Stats Item -->
-
-        <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
-          <div class="stats-item text-center h-100">
-            <span class="purecounter" data-purecounter-start="0" data-purecounter-end="24"
-              data-purecounter-duration="2">0</span>
-            <p>Trainers</p>
-          </div>
-        </div><!-- End Stats Item -->
+        </div>
 
       </div>
+      <?php endforeach; ?>
 
     </div>
-
-  </section><!-- /Counts Section -->
+  </div>
+</section>
+  <!-- /Counts Section -->
 
   <!-- Testimonials Section -->
 

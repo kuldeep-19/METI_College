@@ -1,4 +1,29 @@
-
+<?php
+$menus = [
+  [
+    "name" => "Home",
+    "link" => "index.php",
+    "icon" => "fa-house",
+    "type" => "single"
+  ],
+  [
+    "name" => "About Us",
+    "icon" => "fa-circle-info",
+    "type" => "dropdown",
+    "submenu" => [
+      ["name"=>"About METI","link"=>"about.php#tab-about"],
+      ["name"=>"Why Us","link"=>"about.php#tab-whyus"],
+      ["name"=>"Staff & Faculty","link"=>"about.php#tab-staff-faculty"]
+    ]
+  ],
+  [
+    "name" => "Contact",
+    "link" => "contact.php",
+    "icon" => "fa-envelope",
+    "type" => "single"
+  ]
+];
+?>
     <!-- TOP BAR -->
     <div class="top-bar py-2">
       <div class="container d-flex align-items-center">
