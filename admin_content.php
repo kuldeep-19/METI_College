@@ -1,9 +1,6 @@
 <?php
 include "config.php";
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 /* SAVE DATA */
 if(isset($_POST['save'])){
 
@@ -12,45 +9,41 @@ if(isset($_POST['save'])){
   $button = $_POST['button'];
   $link = $_POST['link'];
 
-  echo "<h3>DEBUG INFO</h3>";
-
-  // FILE DEBUG
-  echo "<pre>";
-  print_r($_FILES);
-  echo "</pre>";
-
-  $image = "";
-
   if(isset($_FILES['image']) && $_FILES['image']['error'] == 0){
-
     $image = time().'_'.$_FILES['image']['name'];
-
-    // TARGET PATH (ABSOLUTE)
-    $target = __DIR__ . "/Assets/upload/" . $image;
-
-    echo "Target Path: " . $target . "<br>";
-    echo "Temp File: " . $_FILES['image']['tmp_name'] . "<br>";
-
-    // CHECK FOLDER EXIST
-    if(!is_dir(__DIR__ . "/Assets/upload/")){
-        echo "❌ Folder does NOT exist<br>";
-    } else {
-        echo "✅ Folder exists<br>";
-    }
-
-    // TRY UPLOAD
-    if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
-        echo "✅ Upload Success<br>";
-    } else {
-        echo "❌ Upload Failed<br>";
-    }
-
-  } else {
-    echo "❌ No file uploaded OR error code: ".$_FILES['image']['error']."<br>";
+    move_uploaded_file($_FILES['image']['tmp_name'], "Assets/upload/".$image);
   }
 
-  // INSERT QUERY
   mysqli_query($conn,"INSERT INTO content_section(title,description,button_text,button_link,image)
   VALUES('$title','$description','$button','$link','$image')");
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Content Admin</title>
+</head>
+
+<body style="font-family:Arial; padding:20px;">
+
+<h2>Add Content</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+<input type="text" name="title" placeholder="Title"><br><br>
+
+<textarea name="description" placeholder="Description"></textarea><br><br>
+
+<input type="text" name="button" placeholder="Button Text"><br><br>
+
+<input type="text" name="link" placeholder="Button Link"><br><br>
+
+<input type="file" name="image"><br><br>
+
+<button name="save">Save</button>
+
+</form>
+
+</body>
+</html>

@@ -385,6 +385,7 @@ $testimonials = [
   </script>
   <script src="./js/common.js"></script>
   <script src="./js/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@srexi/purecounterjs/dist/purecounter_vanilla.js"></script>
 </body>
 
 </html>
