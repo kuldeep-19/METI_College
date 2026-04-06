@@ -19,12 +19,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    180deg,
-    rgba(10, 22, 40, 0.4) 0%,
-    rgba(10, 22, 40, 0.2) 50%,
-    rgba(10, 22, 40, 0.6) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(10, 22, 40, 0.4) 0%,
+      rgba(10, 22, 40, 0.2) 50%,
+      rgba(10, 22, 40, 0.6) 100%);
   z-index: 1;
 }
 
@@ -74,13 +72,25 @@
 }
 
 @keyframes kenBurnsHome {
-  0% { transform: scale(1); }
-  100% { transform: scale(1.15); }
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.15);
+  }
 }
 
 @keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Carousel Controls */
@@ -102,23 +112,39 @@
 
 .carousel-control-prev-icon:hover,
 .carousel-control-next-icon:hover {
-  background-color: rgba(0, 180, 216, 0.7);
+  background-color: var(--primary-dark);
 }
 
 /* Carousel Indicators */
+.carousel-indicators {
+  bottom: 30px;
+  background: rgba(92, 87, 87, 0.2);
+  padding: 10px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  width: fit-content;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  gap: 3px;
+}
+
 .carousel-indicators button {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50% !important;
+  background-color: rgb(255, 255, 255) !important;
+  border: none !important;
+  margin: 0 4px !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  opacity: 0.6;
 }
 
 .carousel-indicators button.active {
-  background-color: #00b4d8;
-  border-color: #ffffff;
-  transform: scale(1.2);
+  background-color:var(--primary-dark) !important;
+  opacity: 1;
+  transform: scale(1.3);
+
 }
 
 .carousel-item img {
@@ -129,75 +155,114 @@
 
 /* Responsive Hero */
 @media (max-width: 991px) {
-  .carousel-item img { height: 70vh; }
-  .hero-content h1 { font-size: 32px; }
-  .hero-content p { font-size: 16px; }
-  .hero-content { bottom: 30%; }
+  .carousel-item img {
+    height: 70vh;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-content {
+    bottom: 30%;
+  }
 }
 
 @media (max-width: 576px) {
-  .carousel-item img { height: 50vh; }
-  .hero-content h1 { font-size: 22px; }
-  .hero-content p { font-size: 14px; }
-  .hero-content { bottom: 25%; }
+  .carousel-item img {
+    height: 50vh;
+  }
+
+  .hero-content h1 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    bottom: 25%;
+  }
 }
 
 /* ================================================
    CONCISE CONTENT SECTION
    ================================================ */
 .content-section {
-    min-height: 80vh;
-    padding: 5vh 2.5rem;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(135deg, var(--surface), var(--surface-alt));
+  min-height: 80vh;
+  padding: 5vh 2.5rem;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--surface), var(--surface-alt));
 }
 
 
 
 /* Description */
 .content-desc {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    line-height: 1.7;
-    max-width: 500px;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 500px;
 }
+
 /* Animation */
 .content-text {
-    animation: fadeLeft 1s ease forwards;
-    font-size: 1.2em; /* 20% larger base */
+  animation: fadeLeft 1s ease forwards;
+  font-size: 1.2em;
+  /* 20% larger base */
 }
+
 .content-image {
-    animation: fadeRight 1s ease forwards;
+  animation: fadeRight 1s ease forwards;
 }
 
 .content-text .btn-teal {
-    padding: 16px 40px;
-    font-size: 1.1rem;
+  padding: 16px 40px;
+  font-size: 1.1rem;
 }
 
 @keyframes fadeLeft {
-    from { opacity: 0; transform: translateX(-40px); }
-    to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes fadeRight {
-    from { opacity: 0; transform: translateX(40px); }
-    to { opacity: 1; transform: translateX(0); }
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
 
-    .content-desc {
-        text-align: center;
-        margin: 0 auto;
-    }
+  .content-desc {
+    text-align: center;
+    margin: 0 auto;
+  }
 
-    .content-text {
-        margin-bottom: 30px;
-        text-align: center;
-    }
+  .content-text {
+    margin-bottom: 30px;
+    text-align: center;
+  }
 }
 
 .counts {
@@ -420,8 +485,7 @@
   }
 
 }
+
 /* ================================================
    ASK US / CONTACT SECTION
    ================================================ */
-
-

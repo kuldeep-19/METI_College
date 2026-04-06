@@ -79,6 +79,7 @@ if(isset($_GET['edit'])){
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Slider Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -86,154 +87,174 @@ if(isset($_GET['edit'])){
 
 <body class="p-4">
 
-<div class="container">
+    <div class="container">
 
-<h2>Slider CMS</h2>
+        <h2>Slider CMS</h2>
 
-<!-- ================= FORM ================= -->
-<form method="POST" enctype="multipart/form-data" class="mb-4">
+        <!-- ================= FORM ================= -->
+        <form method="POST" enctype="multipart/form-data" class="mb-4">
 
-    <input type="hidden" name="id" value="<?php echo $editData['id'] ?? ''; ?>">
+            <input type="hidden" name="id" value="<?php echo $editData['id'] ?? ''; ?>">
 
-    <div class="row">
-        <div class="col">
-            <input class="form-control" name="title" placeholder="Title"
-            value="<?php echo $editData['title'] ?? ''; ?>">
-        </div>
+            <div class="row">
+                <div class="col">
+                    <input class="form-control" name="title" placeholder="Title"
+                        value="<?php echo $editData['title'] ?? ''; ?>">
+                </div>
 
-        <div class="col">
-            <input class="form-control" name="subtitle" placeholder="Subtitle"
-            value="<?php echo $editData['subtitle'] ?? ''; ?>">
-        </div>
+                <div class="col">
+                    <input class="form-control" name="subtitle" placeholder="Subtitle"
+                        value="<?php echo $editData['subtitle'] ?? ''; ?>">
+                </div>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="col">
+                    <input class="form-control" name="button" placeholder="Button Text"
+                        value="<?php echo $editData['button_text'] ?? ''; ?>">
+                </div>
+
+                <div class="col">
+                    <input class="form-control" name="button_link" placeholder="Button Link"
+                        value="<?php echo $editData['button_link'] ?? ''; ?>">
+                </div>
+            </div>
+
+            <br>
+
+            <input type="file" name="image" class="form-control">
+
+            <?php if(!empty($editData['image'])){ ?>
+            <img src="uploads/<?php echo $editData['image']; ?>" width="120" class="mt-2">
+            <?php } ?>
+
+            <br><br>
+
+            <button class="btn btn-primary" name="save">
+                <?php echo $editData ? 'Update Slider' : 'Add Slider'; ?>
+            </button>
+
+        </form>
+
+        <!-- ================= TABLE ================= -->
+
+        <table class="table table-bordered">
+            <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+
+            <?php
+                $res = mysqli_query($conn,"SELECT * FROM banaer_slider ORDER BY id DESC");
+
+                while($row = mysqli_fetch_assoc($res)){
+                ?>
+
+            <tr>
+                <td>
+                    <?php echo $row['id']; ?>
+                </td>
+
+                <td>
+                    <img src="uploads/<?php echo $row['image']; ?>" width="80">
+                </td>
+
+                <td>
+                    <?php echo $row['title']; ?>
+                </td>
+
+                <td>
+                    <?php if($row['status']==1){ ?>
+                    <a class="btn btn-success btn-sm"
+                        href="?toggle=<?php echo $row['id']; ?>&status=0&type=slider">ON</a>
+                    <?php } else { ?>
+                    <a class="btn btn-secondary btn-sm"
+                        href="?toggle=<?php echo $row['id']; ?>&status=1&type=slider">OFF</a>
+                    <?php } ?>
+                </td>
+
+                <td>
+                    <a class="btn btn-warning btn-sm" href="?edit=<?php echo $row['id']; ?>">Edit</a>
+                    <a class="btn btn-danger btn-sm" href="?delete=<?php echo $row['id']; ?>"
+                        onclick="return confirm('Delete?')">Delete</a>
+                </td>
+            </tr>
+
+            <?php } ?>
+
+        </table>
+
     </div>
 
-    <br>
 
-    <div class="row">
-        <div class="col">
-            <input class="form-control" name="button" placeholder="Button Text"
-            value="<?php echo $editData['button_text'] ?? ''; ?>">
-        </div>
 
-        <div class="col">
-            <input class="form-control" name="button_link" placeholder="Button Link"
-            value="<?php echo $editData['button_link'] ?? ''; ?>">
-        </div>
+    <div class="container">
+        <h2>All Inquiries</h2>
+
+        <table border="1" cellpadding="10">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>subject</th>
+                <th>Message</th>
+                <th>Status</th>
+            </tr>
+
+            <?php
+                $res = mysqli_query($conn,"SELECT * FROM inquiries ORDER BY id DESC");
+
+                while($row = mysqli_fetch_assoc($res)){
+                ?>
+
+            <tr>
+                <td>
+                    <?php echo $row['id']; ?>
+                </td>
+                <td>
+                    <?php echo $row['name']; ?>
+                </td>
+                <td>
+                    <?php echo $row['email']; ?>
+                </td>
+                <td>
+                    <?php echo $row['phone']; ?>
+                </td>
+                <td>
+                    <?php echo $row['subject']; ?>
+                </td>
+                <td>
+                    <?php echo $row['message']; ?>
+                </td>
+
+                <td>
+                    <?php if($row['status']==0){ ?>
+                    <a href="?toggle=<?php echo $row['id']; ?>&status=1&type=inquiry"
+                        onclick="return confirm('Mark as Contacted?')"
+                        style="color:red; text-decoration:none; font-weight:bold;">
+                        🔴 New
+                    </a>
+                    <?php } else { ?>
+                    <a href="?toggle=<?php echo $row['id']; ?>&status=0&type=inquiry"
+                        onclick="return confirm('Mark as New again?')"
+                        style="color:green; text-decoration:none; font-weight:bold;">
+                        🟢 Contacted
+                    </a>
+                    <?php } ?>
+                </td>
+            </tr>
+
+            <?php } ?>
+        </table>
     </div>
 
-    <br>
 
-    <input type="file" name="image" class="form-control">
-
-    <?php if(!empty($editData['image'])){ ?>
-        <img src="uploads/<?php echo $editData['image']; ?>" width="120" class="mt-2">
-    <?php } ?>
-
-    <br><br>
-
-    <button class="btn btn-primary" name="save">
-        <?php echo $editData ? 'Update Slider' : 'Add Slider'; ?>
-    </button>
-
-</form>
-
-<!-- ================= TABLE ================= -->
-
-<table class="table table-bordered">
-<tr>
-    <th>ID</th>
-    <th>Image</th>
-    <th>Title</th>
-    <th>Status</th>
-    <th>Actions</th>
-</tr>
-
-<?php
-$res = mysqli_query($conn,"SELECT * FROM banaer_slider ORDER BY id DESC");
-
-while($row = mysqli_fetch_assoc($res)){
-?>
-
-<tr>
-    <td><?php echo $row['id']; ?></td>
-
-    <td>
-        <img src="uploads/<?php echo $row['image']; ?>" width="80">
-    </td>
-
-    <td><?php echo $row['title']; ?></td>
-
-    <td>
-        <?php if($row['status']==1){ ?>
-           <a class="btn btn-success btn-sm"
-   href="?toggle=<?php echo $row['id']; ?>&status=0&type=slider">ON</a>
-        <?php } else { ?>
-           <a class="btn btn-secondary btn-sm"
-   href="?toggle=<?php echo $row['id']; ?>&status=1&type=slider">OFF</a>
-        <?php } ?>
-    </td>
-
-    <td>
-        <a class="btn btn-warning btn-sm" href="?edit=<?php echo $row['id']; ?>">Edit</a>
-        <a class="btn btn-danger btn-sm" href="?delete=<?php echo $row['id']; ?>" onclick="return confirm('Delete?')">Delete</a>
-    </td>
-</tr>
-
-<?php } ?>
-
-</table>
-
-</div>
-
-
-
-<div class="container">
-    <h2>All Inquiries</h2>
-
-<table border="1" cellpadding="10">
-<tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Phone</th>
-    <th>subject</th>
-    <th>Message</th>
-    <th>Status</th>
-</tr>
-
-<?php
-$res = mysqli_query($conn,"SELECT * FROM inquiries ORDER BY id DESC");
-
-while($row = mysqli_fetch_assoc($res)){
-?>
-
-<tr>
-    <td><?php echo $row['id']; ?></td>
-    <td><?php echo $row['name']; ?></td>
-    <td><?php echo $row['email']; ?></td>
-    <td><?php echo $row['phone']; ?></td>
-    <td><?php echo $row['subject']; ?></td>
-    <td><?php echo $row['message']; ?></td>
-
-  <td>
-    <?php if($row['status']==0){ ?>
-        <a href="?toggle=<?php echo $row['id']; ?>&status=1&type=inquiry"
-           onclick="return confirm('Mark as Contacted?')"
-           style="color:red; text-decoration:none; font-weight:bold;">
-           🔴 New
-        </a>
-    <?php } else { ?>
-        <a href="?toggle=<?php echo $row['id']; ?>&status=0&type=inquiry"
-           onclick="return confirm('Mark as New again?')"
-           style="color:green; text-decoration:none; font-weight:bold;">
-           🟢 Contacted
-        </a>
-    <?php } ?>
-</td>
-</tr>
-
-<?php } ?>
-</table>
-</div>
 </body>
+
 </html>

@@ -80,9 +80,9 @@
               >
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="course-admission.php#course"><i class="fa-solid fa-book-open"></i> Course</a></li>
-                <li><a class="dropdown-item" href="course-admission.php#apply"><i class="fa-solid fa-pen-to-square"></i> Apply Now</a></li>
-                <li><a class="dropdown-item" href="course-admission.php#fee"><i class="fa-solid fa-credit-card"></i> Fee Payment</a></li>
-                <li><a class="dropdown-item" href="course-admission.php#info"><i class="fa-solid fa-clipboard-list"></i> Admission Info</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#Apply-Now""><i class="fa-solid fa-pen-to-square"></i> Apply Now</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#Fee-Payment"><i class="fa-solid fa-credit-card"></i> Fee Payment</a></li>
+                <li><a class="dropdown-item" href="course-admission.php#Admission-Information"><i class="fa-solid fa-clipboard-list"></i> Admission Info</a></li>
               </ul>
             </li>
             <li class="nav-item">
