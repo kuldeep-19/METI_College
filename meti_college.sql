@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 18, 2026 at 01:19 PM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost
+-- Generation Time: Apr 07, 2026 at 10:43 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,6 +49,43 @@ INSERT INTO `banaer_slider` (`id`, `title`, `subtitle`, `button_text`, `button_l
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `content_section`
+--
+
+CREATE TABLE `content_section` (
+  `id` int(11) NOT NULL,
+  `title` varchar(255) DEFAULT NULL,
+  `description` text DEFAULT NULL,
+  `button_text` varchar(100) DEFAULT NULL,
+  `button_link` varchar(255) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `content_section`
+--
+
+INSERT INTO `content_section` (`id`, `title`, `description`, `button_text`, `button_link`, `image`, `status`) VALUES
+(1, 'sadcac', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae iste rerum dolorem harum aperiam, veritatis amet! Ab ipsa aperiam dolores. Rerum ab odit enim error modi nemo eos. Quod temporibus consequatur libero inventore iusto accusantium rem, modi laudantium at pariatur amet velit illo voluptatem reiciendis placeat assumenda perspiciatis ea eaque.', 'adga', '', '1775477888_Screenshot from 2026-04-04 15-35-51.png', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `counters`
+--
+
+CREATE TABLE `counters` (
+  `id` int(11) NOT NULL,
+  `label` varchar(100) DEFAULT NULL,
+  `value` int(11) DEFAULT NULL,
+  `delay` int(11) DEFAULT 0,
+  `status` tinyint(4) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `inquiries`
 --
 
@@ -68,7 +105,9 @@ CREATE TABLE `inquiries` (
 --
 
 INSERT INTO `inquiries` (`id`, `name`, `email`, `phone`, `subject`, `message`, `created_at`, `status`) VALUES
-(1, 'kuldeep gupta', 'Telecon@gmail.com', '26378467', 'hi ', 'world', '2026-03-17 07:22:17', 1);
+(1, 'kuldeep gupta', 'Telecon@gmail.com', '26378467', 'hi ', 'world', '2026-03-17 07:22:17', 0),
+(2, 'Telecon Systems', 'ER.PANKAJ12345@GMAIL.COM', '07983116873', 'GTCO', 'gerw', '2026-04-03 05:09:07', 0),
+(3, 'GEM', 'pankaj.gangwar@telecon-systems.com', '07983116873', 'gyid', 'se', '2026-04-03 05:09:40', 0);
 
 --
 -- Indexes for dumped tables
@@ -78,6 +117,18 @@ INSERT INTO `inquiries` (`id`, `name`, `email`, `phone`, `subject`, `message`, `
 -- Indexes for table `banaer_slider`
 --
 ALTER TABLE `banaer_slider`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `content_section`
+--
+ALTER TABLE `content_section`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `counters`
+--
+ALTER TABLE `counters`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -94,13 +145,25 @@ ALTER TABLE `inquiries`
 -- AUTO_INCREMENT for table `banaer_slider`
 --
 ALTER TABLE `banaer_slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `content_section`
+--
+ALTER TABLE `content_section`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `counters`
+--
+ALTER TABLE `counters`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `inquiries`
 --
 ALTER TABLE `inquiries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

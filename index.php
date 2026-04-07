@@ -27,15 +27,15 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
       ?>
 
   <!-- Banner  SECTION -->
-  <section class="hero">
-    <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  <section class="banner">
+    <div id="bannerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <!-- Indicators -->
       <div class="carousel-indicators">
         <?php 
       $i = 0;
       while($row = mysqli_fetch_assoc($result)) { ?>
-        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="<?php echo $i; ?>"
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="<?php echo $i; ?>"
           class="<?php if($i==0) echo 'active'; ?>"></button>
         <?php $i++; } ?>
       </div>
@@ -52,7 +52,7 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
 
           <img src="Assets/image/<?php echo $row['image']; ?>" class="d-block w-100">
 
-          <div class="carousel-caption hero-content">
+          <div class="carousel-caption banner-content">
             <h1 data-aos="fade-down" data-aos-duration="1200">
               <?php echo $row['title']; ?>
             </h1>
@@ -72,11 +72,11 @@ $result = mysqli_query($conn,"SELECT * FROM banaer_slider WHERE status=1");
       </div>
 
       <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>

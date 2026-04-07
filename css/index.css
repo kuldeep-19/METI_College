@@ -3,10 +3,10 @@
    ================================================ */
 
 /* ================================================
-   HERO / BANNER SECTION
+   banner / BANNER SECTION
    ================================================ */
 
-.hero {
+.banner {
   height: 100vh;
   position: relative;
 }
@@ -26,14 +26,14 @@
   z-index: 1;
 }
 
-.hero-content {
+.banner-content {
   z-index: 2;
   bottom: 35%;
   text-align: center;
   animation: fadeUp 1s ease;
 }
 
-.hero-content h1 {
+.banner-content h1 {
   font-size: 52px;
   font-weight: 800;
   color: #fff;
@@ -41,14 +41,14 @@
   letter-spacing: 1px;
 }
 
-.hero-content p {
+.banner-content p {
   font-size: 20px;
   margin-top: 12px;
   color: #e0e8f0;
   font-weight: 300;
 }
 
-.hero-content .btn {
+.banner-content .btn {
   padding: 14px 36px;
   font-size: 16px;
   font-weight: 600;
@@ -60,7 +60,7 @@
   letter-spacing: 0.5px;
 }
 
-.hero-content .btn:hover {
+.banner-content .btn:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(240, 165, 0, 0.4);
   background: linear-gradient(135deg, #ffc947, #f0a500);
@@ -153,21 +153,21 @@
   object-fit: cover;
 }
 
-/* Responsive Hero */
+/* Responsive banner */
 @media (max-width: 991px) {
   .carousel-item img {
     height: 70vh;
   }
 
-  .hero-content h1 {
+  .banner-content h1 {
     font-size: 32px;
   }
 
-  .hero-content p {
+  .banner-content p {
     font-size: 16px;
   }
 
-  .hero-content {
+  .banner-content {
     bottom: 30%;
   }
 }
@@ -177,15 +177,15 @@
     height: 50vh;
   }
 
-  .hero-content h1 {
+  .banner-content h1 {
     font-size: 22px;
   }
 
-  .hero-content p {
+  .banner-content p {
     font-size: 14px;
   }
 
-  .hero-content {
+  .banner-content {
     bottom: 25%;
   }
 }
