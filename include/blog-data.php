@@ -33,3 +33,4 @@ $events = [
         'description' => 'Professionals from the maritime and technical sectors engaged with students on future opportunities, skills in demand, and how to prepare confidently for industry expectations.',
     ],
 ];
+?>

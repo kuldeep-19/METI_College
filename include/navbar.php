@@ -123,7 +123,7 @@ $menus = [
                 <i class="fa-solid fa-blog"></i> Blog
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#"><i class="fa-solid fa-calendar-days"></i> Event</a></li>
+                <li><a class="dropdown-item" href="blog.php"><i class="fa-solid fa-calendar-days"></i> Event</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-person-running"></i> Activities</a></li>
                 <li><a class="dropdown-item" href="#"><i class="fa-solid fa-camera"></i> Photo</a></li>
               </ul>

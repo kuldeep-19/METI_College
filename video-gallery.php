@@ -30,72 +30,10 @@ $videoData = [
 $categoryIndex = isset($_GET['category']) ? (int)$_GET['category'] : 0;
 $category = isset($videoData[$categoryIndex]) ? $videoData[$categoryIndex] : $videoData[0];
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= $category['title'] ?> - Video Gallery</title>
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="./css/global.css">
-    <style>
-        .video-player-container {
-            display: none;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            margin-bottom: 50px;
-        }
-        .video-card {
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .video-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
-        }
-        .play-icon-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            font-size: 3rem;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-        .video-card:hover .play-icon-overlay {
-            opacity: 1;
-        }
-        .video-desc-box {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        video {
-            border-radius: 10px;
-            width: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-        .btn-back {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-            color: #1b1b1cff;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .btn-back:hover { color: #034f91ff; }
-    </style>
-</head>
+<?php
+$page_title = "Video Gallery";
+include('include/header.php');
+?>
 <body>
     <?php include './include/navbar.php'; ?>
 
