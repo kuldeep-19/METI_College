@@ -77,10 +77,10 @@ foreach ($eventLookup as $slug => $event) {
 ?>
 <?php
 $page_title = "All Blogs";
-include("include/header.php");
+include __DIR__ . "/include/header.php";
 ?>
 <body>
-    <?php include "./include/navbar.php"; ?>
+    <?php include __DIR__ . "/include/navbar.php"; ?>
     <?php
     $topTabsConfig = [
         'id' => 'top-tabs-section',
@@ -90,7 +90,7 @@ include("include/header.php");
         'active_tab' => 'blog',
     ];
     ?>
-    <?php include "./include/top-tabs-banner.php"; ?>
+    <?php include __DIR__ . "/include/top-tabs-banner.php"; ?>
 
     <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3 mb-4">
         <div>
@@ -257,7 +257,7 @@ include("include/header.php");
         </div>
     </section>
 
-    <?php include "./include/footer.php"; ?>
+    <?php include __DIR__ . "/include/footer.php"; ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./js/common.js"></script>
     <script>
@@ -318,6 +318,12 @@ include("include/header.php");
                     }
                 }
             });
+        });
+
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
         });
     </script>
     <?php include __DIR__ . '/include/blog-sidebar-script.php'; ?>

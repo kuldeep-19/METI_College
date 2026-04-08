@@ -1,9 +1,10 @@
 <?php
-$page_title = "All Blogs";
-include('include/header.php');
+$page_title = "Blogs";
+include __DIR__ . '/include/header.php';
 ?>
 <body>
-    <?php include "./include/navbar.php"; ?>
+    <?php include __DIR__ . "/include/navbar.php"; ?>
+     
     <?php
   $topTabsConfig = [
     'id' => 'top-tabs-section',
@@ -12,15 +13,18 @@ include('include/header.php');
     'image_alt' => 'METI campus banner',
     'active_tab' => 'blog',
   ];
+  include __DIR__ . "/include/top-tabs-banner.php"; 
   require __DIR__ . '/include/blog-data.php';
+  
+  $events = isset($events) ? $events : [];
   $previewEvents = array_slice($events, 0, 4);
   ?>
- <?php include "./include/top-tabs-banner.php"; ?>
+
         <!-- Search -->
     <div class="container mt-3 mb-3">
         <div class="row align-items-center justify-content-between">
             <div class="col-md-4">
-                <h2 class="section-title mb-0">Blogs</h2>
+                <h2 class="section-title mb-0">Events</h2>
             </div>
             <div class="col-md-3">
                 <div class="input-group input-group-lg shadow-sm">
@@ -186,12 +190,7 @@ include('include/header.php');
             <div class="row g-4">
                 <?php foreach ($galleryItems as $galleryItem): ?>
                     <div class="col-12 col-sm-6 col-lg-3">
-                        <article class="photo-gallery-card gallery-item"
-                        data-title="<?= $galleryItem['title']; ?>"
-                        data-image="<?= $galleryItem['image']; ?>"
-                        data-date="<?= $galleryItem['date']; ?>"
-                        data-desc="<?= $galleryItem['desc']; ?>"
-                        data-likes="<?= $galleryItem['likes']; ?>">
+                        <article class="photo-gallery-card">
                             <img src="<?= $galleryItem['image']; ?>" class="photo-gallery-image">
 
         <div class="photo-gallery-caption">
@@ -203,68 +202,10 @@ include('include/header.php');
             </div>
     </section>
 </div>
-    <?php include('./include/footer.php'); ?>
+    <?php include __DIR__ . '/include/footer.php'; ?>
     <?php include __DIR__ . '/include/blog-sidebar-script.php'; ?>
-<div class="modal fade" id="galleryModal" tabindex="-1">
-  <div class="modal-dialog modal-xl modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="row g-0">
-
-        <!-- LEFT IMAGE -->
-        <div class="col-md-7 bg-dark">
-          <img id="modalImage" class="w-100 h-100 object-fit-cover">
-          <div class="modal-prev modal-nav"><i class="fa fa-chevron-left"></i></div>
-<div class="modal-next modal-nav"><i class="fa fa-chevron-right"></i></div>
-        </div>
-
-        <!-- RIGHT SIDE -->
-        <div class="col-md-5 d-flex flex-column" style="height:600px">
-
-          <!-- HEADER -->
-          <div class="p-3 border-bottom">
-            <h5 id="modalTitle" class="mb-1 fw-bold"></h5>
-            <small id="modalDate" class="text-muted"></small>
-          </div>
-
-          <!-- DESCRIPTION -->
-          <div class="p-3 border-bottom">
-            <p id="modalDesc"></p>
-          </div>
-
-          <!-- LIKE + SHARE -->
-          <div class="p-3 border-bottom d-flex justify-content-between align-items-center">
-            <div>
-              👍 <span id="likeCount">0</span> Likes
-            </div>
-
-            <div class="d-flex gap-2">
-              <button class="btn btn-light btn-sm" id="likeBtn">👍 Like</button>
-              <button class="btn btn-light btn-sm" id="shareBtn">🔗 Share</button>
-            </div>
-          </div>
-
-          <!-- COMMENTS -->
-          <div class="flex-grow-1 overflow-auto p-3" id="commentList">
-            <!-- comments will appear here -->
-          </div>
-
-          <!-- COMMENT INPUT -->
-          <div class="p-3 border-top">
-            <div class="input-group">
-              <input type="text" id="commentInput" class="form-control" placeholder="Write a comment...">
-              <button class="btn btn-primary" id="postComment">Post</button>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <?php include __DIR__ . '/include/footer.php'; ?>
+    <?php include __DIR__ . '/include/blog-sidebar-script.php'; ?>
 <script src="./js/common.js"></script>
 <script>
 const searchInput = document.getElementById('blogSearchInput');
@@ -310,70 +251,12 @@ searchInput.addEventListener('keypress', (e) => {
 
 // Live typing
 searchInput.addEventListener('input', filterBlogs);
-</script>
-<script>
-let currentIndex = 0;
-let items = document.querySelectorAll(".gallery-item");
-let currentLikes = 0;
 
-// OPEN MODAL
-items.forEach((item, index) => {
-    item.addEventListener("click", () => {
-        currentIndex = index;
-        loadData(item);
-
-        const modal = bootstrap.Modal.getOrCreateInstance(document.getElementById('galleryModal'));
-        modal.show();
-    });
+// Initialize AOS
+AOS.init({
+    duration: 800,
+    once: true
 });
-
-// LOAD DATA
-function loadData(item){
-    const title = item.dataset.title;
-    const image = item.dataset.image;
-    const date = item.dataset.date;
-    const desc = item.dataset.desc;
-    currentLikes = parseInt(item.dataset.likes || 0);
-
-    document.getElementById("modalTitle").innerText = title;
-    document.getElementById("modalImage").src = image;
-    document.getElementById("modalDate").innerText = date;
-    document.getElementById("modalDesc").innerText = desc;
-    document.getElementById("likeCount").innerText = currentLikes;
-}
-
-// NEXT
-document.querySelector(".modal-next").onclick = () => {
-    currentIndex = (currentIndex + 1) % items.length;
-    loadData(items[currentIndex]);
-};
-
-// PREV
-document.querySelector(".modal-prev").onclick = () => {
-    currentIndex = (currentIndex - 1 + items.length) % items.length;
-    loadData(items[currentIndex]);
-};
-
-// LIKE ANIMATION
-document.getElementById("likeBtn").onclick = function(){
-    currentLikes++;
-    document.getElementById("likeCount").innerText = currentLikes;
-
-    this.classList.add("liked");
-    setTimeout(()=> this.classList.remove("liked"), 300);
-};
-
-// COMMENT
-document.getElementById("postComment").onclick = function(){
-    const input = document.getElementById("commentInput");
-    if(input.value.trim() === "") return;
-
-    document.getElementById("commentList").innerHTML +=
-        `<div class="mb-2 p-2 bg-white rounded shadow-sm">${input.value}</div>`;
-
-    input.value="";
-};
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
