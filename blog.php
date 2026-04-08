@@ -15,6 +15,7 @@ include __DIR__ . '/include/header.php';
   ];
   include __DIR__ . "/include/top-tabs-banner.php"; 
   require __DIR__ . '/include/blog-data.php';
+  require __DIR__ . '/include/gallery-data.php';
   
   $events = isset($events) ? $events : [];
   $previewEvents = array_slice($events, 0, 4);
@@ -84,7 +85,9 @@ include __DIR__ . '/include/header.php';
     ❌ No matching blog found
 </div>
     <!-- ACTIVITIES -->
-    <h2 class="section-title mt-5">Activities</h2>
+    <div class="container activities-section-header" id="activities">
+        <h2 class="section-title mt-5">Activities</h2>
+    </div>
     <div class="row g-4 align-items-start">
 
         <div class="col-md-4">
@@ -133,77 +136,32 @@ include __DIR__ . '/include/header.php';
 
     </div>
 </div>
-<div class="container">
+
+<div class="container" id="photo-gallery">
     <!-- GALLERY -->
-    <div class="gallery-section-header">
+    <div class="container pt-3">
         <h2 class="section-title mt-5 mb-2">Photo Gallery</h2>
     </div>
-
-    <?php
-    $galleryItems = [
-        [
-            'title' => 'Workshop Highlights',
-            'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-             'date' => 'April 5, 2026',
-        'desc' => 'This workshop covered modern web development including HTML, CSS, JS and frameworks. Students built real-world projects.',
-        'likes' => 12
-        ],
-        [
-            'title' => 'Student Activities',
-            'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-            'date' => 'March 20, 2026',
-        'desc' => 'Students participated in community services and creative events across campus.',
-        'likes' => 8
-        ],
-        [
-            'title' => 'Creative Projects',
-            'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-              'date' => 'April 5, 2026',
-        'desc' => 'This workshop covered modern web development including HTML, CSS, JS and frameworks. Students built real-world projects.',
-        'likes' => 12
-        ],
-        [
-            'title' => 'Campus Memories',
-            'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-            'date' => 'March 20, 2026',
-        'desc' => 'Students participated in community services and creative events across campus.',
-        'likes' => 8
-        ],
-        [
-            'title' => 'Campus Memories',
-            'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-            'date' => 'March 20, 2026',
-        'desc' => 'Students participated in community services and creative events across campus.',
-        'likes' => 8
-        ],
-        [
-            'title' => 'Campus Memories',
-            'image' => 'https://thumbs.dreamstime.com/b/blogging-blog-concepts-ideas-worktable-blogging-blog-concepts-ideas-white-worktable-110423482.jpg',
-            'date' => 'March 20, 2026',
-        'desc' => 'Students participated in community services and creative events across campus.',
-        'likes' => 8
-        ],
-    ];
-    ?>
 
     <section class="mb-4">
             <div class="row g-4">
                 <?php foreach ($galleryItems as $galleryItem): ?>
-                    <div class="col-12 col-sm-6 col-lg-3">
-                        <article class="photo-gallery-card">
-                            <img src="<?= $galleryItem['image']; ?>" class="photo-gallery-image">
-
-        <div class="photo-gallery-caption">
-            <h3><?= $galleryItem['title']; ?></h3>
-        </div>
-                        </article>
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <a href="gallery-detail.php?id=<?= $galleryItem['id']; ?>" class="text-decoration-none">
+                            <article class="photo-gallery-card">
+                                <img src="<?= $galleryItem['image']; ?>" class="photo-gallery-image" alt="<?= $galleryItem['title']; ?>">
+                                <div class="photo-gallery-caption">
+                                    <h3><?= $galleryItem['title']; ?></h3>
+                                    <p class="mb-0 small text-white-50"><?= $galleryItem['date']; ?></p>
+                                </div>
+                            </article>
+                        </a>
                     </div>
                 <?php endforeach; ?>
             </div>
     </section>
 </div>
-    <?php include __DIR__ . '/include/footer.php'; ?>
-    <?php include __DIR__ . '/include/blog-sidebar-script.php'; ?>
+
     <?php include __DIR__ . '/include/footer.php'; ?>
     <?php include __DIR__ . '/include/blog-sidebar-script.php'; ?>
 <script src="./js/common.js"></script>

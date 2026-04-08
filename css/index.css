@@ -1116,11 +1116,6 @@
 .btn-collapse:hover {
   color: var(--primary);
 }
-
-.gallery-section-header {
-  max-width: 720px;
-}
-
 .photo-gallery-card {
   position: relative;
   min-height: 320px;
