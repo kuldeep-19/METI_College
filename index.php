@@ -80,7 +80,7 @@ $content = mysqli_fetch_assoc(
 );
 ?>
 
-      <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" class="content-section py-5">
+      <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" class="content-section py-4">
         <div class="container">
           <div class="row gy-4 align-items-center">
 
@@ -123,7 +123,7 @@ $counters = [
     <div class="row gy-4">
 
       <?php foreach($counters as $item): ?>
-      <div class="col-lg-3 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="<?= $item['delay']; ?>">
+      <div class="col-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="<?= $item['delay']; ?>">
         
         <div class="stats-item text-center h-100">
           
@@ -193,7 +193,7 @@ $testimonials = [
 
     <div data-aos="fade-up">
 
-      <div class="swiper init-swiper">
+      <div class="swiper init-swiper ">
 
         <!-- Swiper Config -->
         <script type="application/json" class="swiper-config">
