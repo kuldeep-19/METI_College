@@ -8,8 +8,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />   
-    <link rel="stylesheet" href="./css/global.css" />
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Custome CSS Files  -->
+
+    <link rel="stylesheet" href="./css/global.css" />
     <link rel="stylesheet" href="./css/aboutus.css">
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/courseadmission.css">
