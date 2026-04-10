@@ -5,8 +5,9 @@ include('include/navbar.php');
 include('include/sidebar.php');
 
 // ✅ FETCH DATA
-$query = "SELECT * FROM banaer_slider ORDER BY id DESC";
+$query = "SELECT * FROM banaer_slider ORDER BY id ASC";
 $result = mysqli_query($conn, $query);
+$id =1;
 ?>
 
 <!-- Content Wrapper -->
@@ -65,7 +66,7 @@ $result = mysqli_query($conn, $query);
                 
                 <?php while ($row = mysqli_fetch_assoc($result)) { ?>
                   <tr>
-                    <td><?= $row['id']; ?></td>
+                    <td><?= $id++; ?></td>
 
                     <td><?= htmlspecialchars($row['title']); ?></td>
                     <td><?= htmlspecialchars($row['subtitle']); ?></td>

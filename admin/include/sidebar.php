@@ -33,42 +33,86 @@
       </div>
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Home
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="addbanner.php" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Banner</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="viewbanner.php" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>View Banner</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index3.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v3</p>
-                </a>
-              </li>
-            </ul>
-          </li>
+<?php
+include ('sidebar-data/admin-data.php')
+?>
 
-        </ul>
-      </nav>
+<?php
+$menu = [
+    [
+        "title" => "Home",
+        "icon" => "fas fa-tachometer-alt",
+        "submenu" => [
+            [
+                "name" => "Banner",
+                "submenu" => [
+                    ["name" => "Add Banner", "link" => "addbanner.php"],
+                    ["name" => "View Banner", "link" => "viewbanner.php"]
+                ]
+            ],
+            [
+                "name" => "Settings",
+                "submenu" => [
+                    ["name" => "Profile", "link" => "#"],
+                    ["name" => "Security", "link" => "#"]
+                ]
+            ]
+        ]
+    ]
+];
+?>
+
+<!-- Sidebar Menu -->
+<nav class="mt-2">
+<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview">
+
+<?php foreach($menu as $main){ ?>
+  
+  <li class="nav-item menu-open">
+    <a href="#" class="nav-link active">
+      <i class="nav-icon <?= $main['icon']; ?>"></i>
+      <p>
+        <?= $main['title']; ?>
+        <i class="right fas fa-angle-left"></i>
+      </p>
+    </a>
+
+    <!-- LEVEL 2 -->
+    <ul class="nav nav-treeview">
+      <?php foreach($main['submenu'] as $sub1){ ?>
+
+        <li class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="far fa-circle nav-icon"></i>
+            <p>
+              <?= $sub1['name']; ?>
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+
+          <!-- LEVEL 3 -->
+          <ul class="nav nav-treeview">
+            <?php foreach($sub1['submenu'] as $sub2){ ?>
+              <li class="nav-item">
+                <a href="<?= $sub2['link']; ?>" class="nav-link">
+                  <i class="far fa-dot-circle nav-icon"></i>
+                  <p><?= $sub2['name']; ?></p>
+                </a>
+              </li>
+            <?php } ?>
+          </ul>
+
+        </li>
+
+      <?php } ?>
+    </ul>
+
+  </li>
+
+<?php } ?>
+
+</ul>
+</nav>
       <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
