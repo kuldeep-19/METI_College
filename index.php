@@ -38,7 +38,7 @@ include('include/header.php');
       ?>
         <div class="carousel-item <?php if($i==0) echo 'active'; ?>">
 
-          <img src="Assets/image/<?php echo $row['image']; ?>" class="d-block w-100">
+          <img src="admin/uploads/banners/<?php echo $row['image']; ?>" class="d-block w-100">
 
           <div class="carousel-caption banner-content">
             <h1 data-aos="fade-down" data-aos-duration="1200">
@@ -60,11 +60,11 @@ include('include/header.php');
       </div>
 
       <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+      <button class="carousel-control-prev mx-4" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+      <button class="carousel-control-next mx-4" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
