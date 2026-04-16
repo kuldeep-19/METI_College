@@ -14,6 +14,7 @@ $subtitle = "";
 $button_text = "";
 $button_link = "";
 $image = "";
+$image_path = "";
 $status = 1;
 
 // FETCH DATA FOR EDIT
@@ -29,6 +30,7 @@ if($id != ""){
         $button_text = $row['button_text'];
         $button_link = $row['button_link'];
         $image = $row['image'];
+        $image_path = $row['image_path']; // ✅ important
         $status = $row['status'];
     }
 }
@@ -42,45 +44,56 @@ if(isset($_POST['save_banner'])){
     $button_link = $_POST['button_link'];
     $status = $_POST['status'];
 
-    // IMAGE UPLOAD
+    // 🔥 IMAGE UPLOAD FIXED
     if(!empty($_FILES['image']['name'])){
-        $image_name = time() . "_" . $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], "uploads/banners/".$image_name);
 
-        // DELETE OLD IMAGE (only in edit)
-        if($edit && !empty($image) && file_exists("uploads/banners/".$image)){
-            unlink("uploads/banners/".$image);
+        $folder = "uploads/";
+
+        if(!is_dir($folder)){
+            mkdir($folder, 0755, true);
+        }
+
+        $image_name = time() . "_" . $_FILES['image']['name'];
+        $image_path = $folder . $image_name;
+
+        move_uploaded_file($_FILES['image']['tmp_name'], $image_path);
+
+        // DELETE OLD IMAGE
+        if($edit && !empty($image_path) && file_exists($row['image_path'])){
+            unlink($row['image_path']);
         }
 
     } else {
-        $image_name = $image; // keep old
+        $image_name = $image;
+        $image_path = $row['image_path'] ?? "";
     }
 
     if($edit){
-        // UPDATE
+        // ✅ UPDATE
         $update = "UPDATE banaer_slider SET 
             title='$title',
             subtitle='$subtitle',
             button_text='$button_text',
             button_link='$button_link',
             image='$image_name',
+            image_path='$image_path',
             status='$status'
             WHERE id='$id'";
 
         mysqli_query($conn, $update);
 
-        echo "<script>alert('Banner Updated'); window.location='viewbanner.php';</script>";
+        echo "<script>alert('Banner Updated Successfully'); window.location='viewbanner.php';</script>";
 
     } else {
-        // INSERT
+        // ✅ INSERT
         $insert = "INSERT INTO banaer_slider 
-        (title, subtitle, button_text, button_link, image, status, created_at)
+        (title, subtitle, button_text, button_link, image, image_path, status, created_at)
         VALUES 
-        ('$title','$subtitle','$button_text','$button_link','$image_name','$status',NOW())";
+        ('$title','$subtitle','$button_text','$button_link','$image_name','$image_path','$status',NOW())";
 
         mysqli_query($conn, $insert);
 
-        echo "<script>alert('Banner Added'); window.location='viewbanner.php';</script>";
+        echo "<script>alert('Banner Added Successfully'); window.location='viewbanner.php';</script>";
     }
 }
 ?>
@@ -150,9 +163,9 @@ if(isset($_POST['save_banner'])){
                   <input type="file" class="form-control" name="image" onchange="previewImage(event)">
 
                   <!-- OLD IMAGE SHOW -->
-                  <?php if($edit && !empty($image) && file_exists("uploads/banners/".$image)){ ?>
+                  <?php if($edit && !empty($image_path) && file_exists($image_path)){ ?>
                     <p class="mt-2">Old Image:</p>
-                    <img src="uploads/banners/<?= $image ?>" width="120" style="border:1px solid #ccc; padding:5px;">
+                    <img src="<?= $image_path ?>" width="120" style="border:1px solid #ccc; padding:5px;">
                   <?php } else if($edit){ ?>
                     <p class="text-danger mt-2">No Image Found</p>
                   <?php } ?>

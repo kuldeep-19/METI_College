@@ -13,18 +13,26 @@ if(isset($_POST['save_banner'])){
     $button_link = $_POST['button_link'];
     $status = $_POST['status'];
 
-    // IMAGE UPLOAD
-    $image_name = "";
-    if($_FILES['image']['name'] != ""){
-        $image_name = time() . "_" . $_FILES['image']['name'];
-        move_uploaded_file($_FILES['image']['tmp_name'], "uploads/banners/".$image_name);
+   // IMAGE UPLOAD
+$image_name = "";
+$image_path = "";
+
+if($_FILES['image']['name'] != ""){
+
+   $folder = "uploads/";
+    if(!is_dir($folder)){
+        mkdir($folder, 0755, true);
     }
+    $image_name = time() . "_" . $_FILES['image']['name'];
+    $image_path = $folder . $image_name;
+    move_uploaded_file($_FILES['image']['tmp_name'], $image_path);
+}
 
     // INSERT QUERY
     $query = "INSERT INTO banaer_slider 
-    (title, subtitle, button_text, button_link, image, status, created_at)
-    VALUES 
-    ('$title','$subtitle','$button_text','$button_link','$image_name','$status',NOW())";
+(title, subtitle, button_text, button_link, image, image_path, status, created_at)
+VALUES 
+('$title','$subtitle','$button_text','$button_link','$image_name','$image_path','$status',NOW())";
 
     mysqli_query($conn, $query);
 
@@ -76,7 +84,7 @@ if(isset($_POST['save_banner'])){
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Button Text</label>
-                  <input type="text" class="form-control" name="button_text">
+                  <input type="text" class="form-control" name="button_text" !require>
                 </div>
               </div>
 
@@ -84,7 +92,7 @@ if(isset($_POST['save_banner'])){
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Button Link</label>
-                  <input type="url" class="form-control" name="button_link">
+                  <input type="url" class="form-control" name="button_link" !require>
                 </div>
               </div>
 

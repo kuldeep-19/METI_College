@@ -78,7 +78,7 @@ $id =1;
 
                     <td>
                       <?php if(!empty($row['image'])){ ?>
-                        <img src="uploads/banners/<?= $row['image']; ?>" width="80">
+                        <img src="<?= $row['image_path']; ?>" width="80">
                       <?php } else { ?>
                         No Image
                       <?php } ?>

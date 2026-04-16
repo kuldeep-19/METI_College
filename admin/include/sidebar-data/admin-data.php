@@ -1,12 +1,23 @@
 <?php
 $menu = [
     [
-        "title" => "Home",
+        "title" => "Home Page",
         "icon" => "fas fa-tachometer-alt",
         "submenu" => [
-            ["name" => "Add Banner", "link" => "addbanner.php"],
-            ["name" => "View Banner", "link" => "viewbanner.php"],
-            ["name" => "Dashboard v3", "link" => "index3.html"]
+            [
+                "name" => "Banner Section",
+                "submenu" => [
+                    ["name" => "Add Banner", "link" => "addbanner.php"],
+                    ["name" => "View Banner", "link" => "viewbanner.php"]
+                ]
+            ],
+            [
+                "name" => "Content Section",
+                "submenu" => [
+                    ["name" => "Add Content", "link" => "add-content.php"],
+                    ["name" => "View Content", "link" => "view-content.php"]
+                ]
+            ]
         ]
     ]
 ];

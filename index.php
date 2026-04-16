@@ -15,7 +15,7 @@ include('include/header.php');
       ?>
 
   <!-- Banner  SECTION -->
-  <section class="banner">
+<section class="banner">
     <div id="bannerCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <!-- Indicators -->
@@ -38,7 +38,7 @@ include('include/header.php');
       ?>
         <div class="carousel-item <?php if($i==0) echo 'active'; ?>">
 
-          <img src="admin/uploads/banners/<?php echo $row['image']; ?>" class="d-block w-100">
+          <img src="admin/uploads/<?php echo $row['image']; ?>" class="d-block w-100">
 
           <div class="carousel-caption banner-content">
             <h1 data-aos="fade-down" data-aos-duration="1200">
@@ -69,12 +69,12 @@ include('include/header.php');
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-  </section>
+</section>
 
             
   <!-- content section  -->
 
-  <?php
+<?php
 $content = mysqli_fetch_assoc(
   mysqli_query($conn,"SELECT * FROM content_section LIMIT 1")
 );
@@ -102,7 +102,7 @@ $content = mysqli_fetch_assoc(
             <!-- RIGHT IMAGE -->
             <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
               <img class="img-fluid"
-                  src="Assets/upload/<?= $content['image']; ?>"
+                  src="admin/uploads/<?= $content['image']; ?>"
                   alt="Content Image">
             </div>
 

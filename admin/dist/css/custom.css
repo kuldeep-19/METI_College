@@ -1,0 +1,164 @@
+/* ================================================
+   METI ADMIN — PREMIUM SIDEBAR CUSTOM STYLES
+   ================================================ */
+
+:root {
+    --sidebar-bg: linear-gradient(180deg, #0a1628 0%, #1e3a5f 100%);
+    --sidebar-accent: #f0a500; /* METI Gold */
+    --sidebar-hover-bg: rgba(255, 255, 255, 0.05);
+    --sidebar-active-bg: rgba(255, 255, 255, 0.12);
+    --sidebar-text: #e0e8f0;
+    --sidebar-muted: #8ca0b3;
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --transition-standard: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Main Sidebar Container */
+.main-sidebar {
+    background: var(--sidebar-bg) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Brand Logo Area */
+.brand-link {
+    border-bottom: 1px solid var(--glass-border) !important;
+    padding: 1rem 0.5rem !important;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.brand-text {
+    font-weight: 700 !important;
+    letter-spacing: 0.5px;
+    color: #fff !important;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Sidebar User Panel */
+.user-panel {
+    border-bottom: 1px solid var(--glass-border) !important;
+    padding: 1.2rem 0.5rem !important;
+}
+
+.user-panel .info a {
+    color: var(--sidebar-text) !important;
+    font-weight: 500;
+}
+
+/* Navigation Sidebar Styles */
+.nav-sidebar .nav-link {
+    color: var(--sidebar-text) !important;
+    border-radius: 8px !important;
+    margin: 4px 10px !important;
+    padding: 10px 15px !important;
+    transition: var(--transition-standard) !important;
+    border: 1px solid transparent;
+}
+
+/* Nav Icons */
+.nav-sidebar .nav-icon {
+    color: var(--sidebar-accent) !important;
+    width: 25px !important;
+    font-size: 1.1rem !important;
+    transition: var(--transition-standard) !important;
+}
+
+/* Hover State */
+.nav-sidebar .nav-link:hover {
+    background: var(--sidebar-hover-bg) !important;
+    color: #fff !important;
+    transform: translateX(4px);
+}
+
+/* Active State — Premium Glass Effect */
+.nav-sidebar .nav-link.active {
+    background: var(--sidebar-active-bg) !important;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+    color: #fff !important;
+    position: relative;
+}
+
+.nav-sidebar .nav-link.active::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: var(--sidebar-accent);
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 0 10px rgba(240, 165, 0, 0.5);
+}
+
+/* Menu Open Background */
+.nav-treeview {
+    background: rgba(0, 0, 0, 0.15) !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 0 0 8px 8px;
+}
+
+.nav-treeview .nav-link {
+    margin-left: 20px !important;
+    font-size: 0.9rem !important;
+    opacity: 0.8;
+}
+
+.nav-treeview .nav-link:hover {
+    opacity: 1;
+}
+
+/* Animation for Expand/Collapse */
+.nav-sidebar .menu-open > .nav-treeview {
+    animation: fadeInDown 0.3s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Sidebar Search Override */
+.form-control-sidebar {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: #fff !important;
+    border-radius: 20px !important;
+}
+
+.form-control-sidebar:focus {
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+
+.btn-sidebar {
+    background: transparent !important;
+    color: var(--sidebar-accent) !important;
+}
+
+/* Custom Scrollbar */
+.sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background: rgba(255, 165, 0, 0.2);
+    border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 165, 0, 0.5);
+}
