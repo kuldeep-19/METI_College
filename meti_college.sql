@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 10, 2026 at 11:16 AM
+-- Generation Time: Apr 16, 2026 at 07:45 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -44,7 +44,7 @@ CREATE TABLE `banaer_slider` (
 
 INSERT INTO `banaer_slider` (`id`, `title`, `subtitle`, `button_text`, `button_link`, `image`, `status`, `created_at`) VALUES
 (6, 'Welcome To Marine Engineering Training Institute', '', 'expoler', 'https://www.goggle.com', '1775811933_577a7723-2643x1762.jpg', 1, '2026-03-17 06:47:35'),
-(20, '', '', '', '', '1775812058_students-2000x1279.jpg', 1, '2026-04-10 09:07:38');
+(21, '', '', '', '', '1775812921_students-2000x1279.jpg', 1, '2026-04-10 09:22:01');
 
 -- --------------------------------------------------------
 
@@ -164,7 +164,7 @@ ALTER TABLE `inquiries`
 -- AUTO_INCREMENT for table `banaer_slider`
 --
 ALTER TABLE `banaer_slider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `comment_table`

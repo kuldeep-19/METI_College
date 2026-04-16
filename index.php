@@ -86,7 +86,7 @@ $content = mysqli_fetch_assoc(
 
             <!-- LEFT CONTENT -->
             <div class="col-lg-6 content-text">
-              <h2 class="content-title">
+              <h2 class="section-title fs-1">
                 <?= $content['title']; ?>
               </h2>
 
@@ -187,7 +187,7 @@ $testimonials = [
 ?>
 
   <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" id="testimonials"
-    class="testimonials section container">
+    class="testimonials container py-4">
 
     <h2 class="section-title">Testimonials</h2>
 
@@ -295,11 +295,6 @@ $testimonials = [
   <?php
   include "./include/footer.php";
 ?>
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <!-- PureCounter Vanilla JS Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/purecounter/1.5.0/purecounter_vanilla.min.js"></script>
   <script>

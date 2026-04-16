@@ -197,15 +197,14 @@
 /* ================================================
    CONCISE CONTENT SECTION
    ================================================ */
-.content-section {
-  min-height: 80vh;
-  padding: 4vh 1.5rem;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(135deg, var(--surface), var(--surface-alt));
-}
 
 
+/* .content-title {
+    font-weight: 800;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+} */
 
 /* Description */
 .content-desc {
@@ -251,7 +250,7 @@
 
   to {
     opacity: 1;
-    transform: translateX(0);
+   transform: translateX(0);
   }
 }
 
@@ -267,6 +266,14 @@
     margin-bottom: 30px;
     text-align: center;
   }
+    .content-title {
+      text-align: center;
+    }
+  
+    .content-title::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
 }
 
 .counts {
@@ -1121,6 +1128,7 @@
 .btn-collapse:hover {
   color: var(--primary);
 }
+
 .photo-gallery-card {
   position: relative;
   min-height: 320px;

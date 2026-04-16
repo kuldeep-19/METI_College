@@ -8,48 +8,48 @@ if (document.querySelector('.init-swiper')) {
   }
 }
 
-  document.getElementById("inquiryForm").addEventListener("submit", function(e){
+document.getElementById("inquiryForm").addEventListener("submit", function (e) {
 
-    e.preventDefault(); // stop page reload
+  e.preventDefault(); // stop page reload
 
-    let formData = new FormData(this);
+  let formData = new FormData(this);
 
-    // Loader popup
-    Swal.fire({
-        title: 'Submitting...',
-        text: 'Please wait',
-        allowOutsideClick: false,
-        didOpen: () => {
-            Swal.showLoading();
-        }
-    });
+  // Loader popup
+  Swal.fire({
+    title: 'Submitting...',
+    text: 'Please wait',
+    allowOutsideClick: false,
+    didOpen: () => {
+      Swal.showLoading();
+    }
+  });
 
-    fetch("save_inquiry.php", {
-        method: "POST",
-        body: formData
-    })
+  fetch("save_inquiry.php", {
+    method: "POST",
+    body: formData
+  })
     .then(res => res.text())
     .then(response => {
 
-        if(response.trim() === "success"){
+      if (response.trim() === "success") {
 
-            Swal.fire({
-                icon: 'success',
-                title: 'Success!',
-                text: 'Inquiry submitted successfully',
-                timer: 2000,
-                showConfirmButton: false
-            });
+        Swal.fire({
+          icon: 'success',
+          title: 'Success!',
+          text: 'Inquiry submitted successfully',
+          timer: 2000,
+          showConfirmButton: false
+        });
 
-            document.getElementById("inquiryForm").reset();
+        document.getElementById("inquiryForm").reset();
 
-        } else {
-            Swal.fire({
-                icon: 'error',
-                title: 'Error!',
-                text: 'Something went wrong'
-            });
-        }
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error!',
+          text: 'Something went wrong'
+        });
+      }
     });
 });
 
