@@ -76,11 +76,13 @@ include('include/header.php');
 
 <?php
 $content = mysqli_fetch_assoc(
-  mysqli_query($conn,"SELECT * FROM content_section LIMIT 1")
+  mysqli_query($conn,"SELECT * FROM content_section WHERE status=1 LIMIT 1")
 );
 ?>
 
-      <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" class="content-section py-4">
+<?php if($content): ?>
+
+      <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" class="content-section py-5">
         <div class="container">
           <div class="row gy-4 align-items-center">
 
@@ -94,9 +96,11 @@ $content = mysqli_fetch_assoc(
                 <?= $content['description']; ?>
               </p>
 
-              <a href="<?= $content['button_link']; ?>" class="btn btn-teal mt-3">
-                <?= $content['button_text']; ?>
-              </a>
+              <?php if(!empty($content['button_text'])): ?>
+                <a href="<?= $content['button_link']; ?>" class="btn btn-teal mt-3">
+                  <?= $content['button_text']; ?>
+                </a>
+              <?php endif; ?>
             </div>
 
             <!-- RIGHT IMAGE -->
@@ -109,83 +113,46 @@ $content = mysqli_fetch_assoc(
           </div>
         </div>
       </section>
+<?php endif; ?>
+
+<!-- Dynamic counter feild of METI College -->
 <?php
-$counters = [
-  ["title" => "Students", "value" => 1232, "delay" => 0],
-  ["title" => "Courses", "value" => 64, "delay" => 100],
-  ["title" => "Events", "value" => 42, "delay" => 200],
-  ["title" => "Trainers", "value" => 24, "delay" => 300]
-];
+$counters_query = mysqli_query($conn, "SELECT * FROM counters WHERE status=1 ORDER BY id ASC");
 ?>
   <!-- Counts Section -->
-<section id="counts" class="section counts">
-  <div class="container" data-aos="fade-up">
-    <div class="row gy-4">
+<?php if(mysqli_num_rows($counters_query) > 0): ?>
+  <section id="counts" class="section counts">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4">
 
-      <?php foreach($counters as $item): ?>
-      <div class="col-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="<?= $item['delay']; ?>">
-        
-        <div class="stats-item text-center h-100">
+        <?php while($item = mysqli_fetch_assoc($counters_query)): ?>
+        <div class="col-6 col-md-6 col-lg-3" data-aos="zoom-in" data-aos-delay="<?= $item['delay']; ?>">
           
-          <span class="purecounter"
-            data-purecounter-start="0"
-            data-purecounter-end="<?= $item['value']; ?>"
-            data-purecounter-duration="2">0</span>
-          
-          <p><?= $item['title']; ?></p>
+          <div class="stats-item text-center h-100">
+            
+            <span class="purecounter"
+              data-purecounter-start="0"
+              data-purecounter-end="<?= $item['value']; ?>"
+              data-purecounter-duration="2">0</span>
+            
+            <p style="font-size: 18px; text-transform: capitalize;"><?= $item['label']; ?></p>
+
+          </div>
 
         </div>
+        <?php endwhile; ?>
 
       </div>
-      <?php endforeach; ?>
-
     </div>
-  </div>
-</section>
+  </section>
+<?php endif; ?>
   <!-- /Counts Section -->
 
-  <!-- Testimonials Section -->
-
-  <?php
-$testimonials = [
-    [
-        "name" => "Saul Goodman",
-        "role" => "CEO & Founder",
-        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
-        "rating" => 5,
-        "message" => "Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus."
-    ],
-    [
-        "name" => "Sara Wilsson",
-        "role" => "Designer",
-        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
-        "rating" => 5,
-        "message" => "Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid."
-    ],
-    [
-        "name" => "Jena Karlis",
-        "role" => "Store Owner",
-        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
-        "rating" => 5,
-        "message" => "Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla."
-    ],
-    [
-        "name" => "Matt Brandon",
-        "role" => "Freelancer",
-        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
-        "rating" => 5,
-        "message" => "Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim."
-    ],
-    [
-        "name" => "John Larson",
-        "role" => "Entrepreneur",
-        "image" => "Assets/faculty/elizabeth-k-a-photo-413x531.jpg",
-        "rating" => 5,
-        "message" => "Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor."
-    ]
-];
+<?php
+$testimonial_query = mysqli_query($conn, "SELECT * FROM testimonials WHERE status=1 ORDER BY id DESC");
 ?>
 
+<?php if(mysqli_num_rows($testimonial_query) > 0): ?>
   <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" id="testimonials"
     class="testimonials container py-4">
 
@@ -215,18 +182,18 @@ $testimonials = [
 
         <div class="swiper-wrapper">
 
-          <?php foreach ($testimonials as $t): ?>
+          <?php while ($t = mysqli_fetch_assoc($testimonial_query)): ?>
           <div class="swiper-slide">
             <div class="testimonial-wrap">
               <div class="testimonial-item">
 
-                <img src="<?= $t['image']; ?>" class="testimonial-img" alt="<?= $t['name']; ?>">
+                <img src="admin/uploads/<?= $t['image']; ?>" class="testimonial-img" alt="<?= htmlspecialchars($t['name']); ?>">
 
                 <h3>
-                  <?= $t['name']; ?>
+                  <?= htmlspecialchars($t['name']); ?>
                 </h3>
                 <h4>
-                  <?= $t['role']; ?>
+                  <?= htmlspecialchars($t['designation']); ?>
                 </h4>
 
                 <!-- Stars -->
@@ -239,7 +206,7 @@ $testimonials = [
                 <p>
                   <i class="fa-solid fa-quote-left quote-icon"></i>
                   <span>
-                    <?= $t['message']; ?>
+                    <?= htmlspecialchars($t['message']); ?>
                   </span>
                   <i class="fa-solid fa-quote-right quote-icon"></i>
                 </p>
@@ -247,7 +214,7 @@ $testimonials = [
               </div>
             </div>
           </div>
-          <?php endforeach; ?>
+          <?php endwhile; ?>
 
         </div>
 
@@ -257,6 +224,7 @@ $testimonials = [
 
     </div>
   </section>
+<?php endif; ?>
   <!-- /Testimonials Section -->
 
   <section class="ask-us" id="contact">
