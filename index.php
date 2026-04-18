@@ -88,7 +88,7 @@ $content = mysqli_fetch_assoc(
 
             <!-- LEFT CONTENT -->
             <div class="col-lg-6 content-text">
-              <h2 class="section-title fs-1">
+              <h2 class="section-title">
                 <?= $content['title']; ?>
               </h2>
 
@@ -149,7 +149,6 @@ $counters_query = mysqli_query($conn, "SELECT * FROM counters WHERE status=1 ORD
 
 <!-- RECRUITERS SLIDER and Placement Records -->
     <?php include('include/partner-section.php'); 
-          // include('include/placement-record.php');
     ?>
   <!-- /Counts Section -->
 
@@ -158,10 +157,11 @@ $testimonial_query = mysqli_query($conn, "SELECT * FROM testimonials WHERE statu
 ?>
 
 <?php if(mysqli_num_rows($testimonial_query) > 0): ?>
-  <section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" id="testimonials"
+  
+<section style="background: linear-gradient(135deg,#eef2ff,#f8fafc);" id="testimonials"
     class="testimonials container py-4">
 
-    <h2 class="section-title">Testimonials</h2>
+    <h2 class="section-title" style="margin-bottom: -8px;">Testimonials</h2>
 
     <div data-aos="fade-up">
 
