@@ -146,6 +146,11 @@ $counters_query = mysqli_query($conn, "SELECT * FROM counters WHERE status=1 ORD
     </div>
   </section>
 <?php endif; ?>
+
+<!-- RECRUITERS SLIDER and Placement Records -->
+    <?php include('include/partner-section.php'); 
+          // include('include/placement-record.php');
+    ?>
   <!-- /Counts Section -->
 
 <?php
